@@ -8,9 +8,13 @@ let StudentSchema = new Schema({
         type: Number,
         required: true
     },
-    activities: [{
-        type: activity
-    }],
+    amount_due: {
+        type: Number,
+        required: true
+    },
+    activities: [
+        activity
+    ],
     img_url: {
         type: mongoose.SchemaTypes.Url
     },
