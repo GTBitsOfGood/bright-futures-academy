@@ -13,6 +13,10 @@ activitySchema = new Schema({
     name: {
         type: String,
         required: true
+    },
+    isPaid: {
+        type: boolean,
+        required: true
     }
 
 })

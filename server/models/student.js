@@ -8,6 +8,10 @@ let StudentSchema = new Schema({
         type: Number,
         required: true
     },
+    amount_due: {
+        type: Number,
+        required: true
+    },
     activities: [{
         type: activity
     }],
