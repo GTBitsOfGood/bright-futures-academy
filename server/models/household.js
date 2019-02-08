@@ -3,15 +3,14 @@ let student = require('student.js')
 let Schema = mongoose.Schema;
 
 let HouseHoldSchema = new Schema({
-    students:
-        [student],
-    id:
-    {
+    students: [
+        student
+    ],
+    id: {
         type: Number,
         required: true
     },
-    paypal_id:
-    {
+    paypal_id: {
         type: String
     }
 

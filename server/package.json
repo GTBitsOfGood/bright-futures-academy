@@ -5,18 +5,15 @@
   "scripts": {
     "_comment": "we don't have a src folder right now, and until we make that, these scripts won't work.",
     "start": "node ./src/bin/www",
-<<<<<<< HEAD
-    "dev": "SET PORT=3001 dotenv nodemon ./src/bin/www --watch src --ignore src/logs"
-=======
     "dev-lin": "PORT=3001 dotenv nodemon ./src/bin/www --watch src --ignore src/logs",
     "dev-win": "SET PORT=3001 dotenv nodemon ./src/bin/www --watch src --ignore src/logs"
->>>>>>> f78870ebbeed8adff20fb1fbd846720439a64ecb
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "dotenv-cli": "^1.4.0",
     "express": "~4.16.0",
+    "mongoose-type-url": "^1.0.5",
     "morgan": "~1.9.0",
     "nodemon": "^1.18.9"
   }
