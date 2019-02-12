@@ -17,11 +17,12 @@ import {
  * Container for the navbar component. 
  * Currently shows a basic navbar with dummy links since there are no pages.
  */
-class BFSNav extends Component {
+class PrimaryNavBar extends Component {
   constructor(props) {
     super(props);
 
-    //Allows the use of this keyword in the functions "dropdownXToggle"
+    //Allows the use of this keyword in the functions "XToggle"
+    this.toggle = this.toggle.bind(this);
     this.dropdownOneToggle = this.dropdownOneToggle.bind(this);
     this.dropdownTwoToggle = this.dropdownTwoToggle.bind(this);
     this.dummyToggle = this.dummyToggle.bind(this)
@@ -33,6 +34,11 @@ class BFSNav extends Component {
     };
   }
 
+  toggle() {
+    this.setState({
+      isOpen : !this.state.isOpen
+    });
+  }
   /**
    * Empty toggle to make sure that hover behaviour for dropdowns works as expected
    */
@@ -140,4 +146,4 @@ class BFSNav extends Component {
   }
 }
 
-export default BFSNav;
+export default PrimaryNavBar;
