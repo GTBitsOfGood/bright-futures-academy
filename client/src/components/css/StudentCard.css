@@ -1,0 +1,18 @@
+.card > img {
+
+    position: absolute !important;
+    left: -10px;
+}
+
+.card {
+
+    width: 380px;
+    float: left;
+    margin: 10px 10px;
+
+}
+
+.card-body > button{
+    margin: 0px 2px 0px 2px;
+}
+

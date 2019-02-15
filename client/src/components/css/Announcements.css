@@ -1,0 +1,5 @@
+#Announcements{
+    height: 200px !important;
+    width: 300px !important;
+    overflow: scroll !important;
+}

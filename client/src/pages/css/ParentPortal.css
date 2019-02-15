@@ -1,0 +1,20 @@
+#p-p-container > button{
+    display: block;
+    position: relative;
+    left: -140px;
+    top: 150px;
+}
+
+@media screen and (max-width:1200px) and (min-width: 991px) {
+#p-p-container > button{
+left:85%;
+top:-260px;
+}
+}
+
+@media screen and (max-width:990px) {
+    #p-p-container > button{
+    left: 9%;
+    top: 100px;
+    }
+    }
