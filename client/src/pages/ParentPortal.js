@@ -26,7 +26,7 @@ class PaymentPortal extends Component {
   //TODO: Add logic for making payment
   render() {
     return (
-    <div id='p-p-container'>
+    <div id='parent-portal-container'>
       <PrimaryNavBar />
       <div className="container"> 
       <StudentCard studentName={"Name1"} studentID={1} studentBalance={1234}/>
