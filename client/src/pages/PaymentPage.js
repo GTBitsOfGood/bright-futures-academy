@@ -13,8 +13,10 @@ class PaymentPage extends Component {
     super(props);
     
     this.state = {
-        currentPage: 0 // will be used to determine what page to float to UI (might change to Enum)
+        currentPage: 0, // will be used to determine what page to float to UI (might change to Enum)
+        activities: [{name:"Activity Fee", price:"400"}, {name:"Uniform Fee", price:"40"}, {name:"Transportation Fee", price:"40"}, {name:"Textbook Fee", price:"40"}]
     }
+
   }
 
   render() {
@@ -22,7 +24,7 @@ class PaymentPage extends Component {
       <div>
         <h2>Account Payment</h2>
         <PaymentPageProgress currentPage={this.state.currentPage} />
-        <PaymentPageContent currentPage={this.state.currentPage} />
+        <PaymentPageContent currentPage={this.state.currentPage} activities={this.state.activities} />
       </div>
     );
   }

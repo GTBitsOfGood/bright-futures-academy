@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ChargesList from './ChargesList';
 
 /**
  * Container for payment page content. Each page's content will be different, but switched here.
@@ -12,11 +13,21 @@ class PaymentPageContent extends Component {
   // TODO: Add logic to switch between content of different pages
   // TODO: Add styling
   render() {
-  return (
-    <div>
-      <h3>{this.props.currentPage}</h3>
-    </div>
-    );
+    switch (this.props.currentPage) {
+      case 0:
+        return (
+          <div>
+            <ChargesList activities={this.props.activities}/>
+          </div>
+        );
+    }
+
+    return (
+      <div>
+        <h3>{this.props.currentPage}</h3>
+        {/* <PaymentContent0/> */}
+      </div>
+      );
   }
 }
 
