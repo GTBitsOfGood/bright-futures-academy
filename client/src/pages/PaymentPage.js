@@ -14,8 +14,10 @@ class PaymentPage extends Component {
     
     this.state = {
         currentPage: 1, // will be used to determine what page user is on. We start at page 1, end on numPages
-        numPages: 4
+        numPages: 4,
+        activities: [{name:"Activity Fee", price:"400"}, {name:"Uniform Fee", price:"40"}, {name:"Transportation Fee", price:"40"}, {name:"Textbook Fee", price:"40"}]
     }
+
   }
 
   render() {
@@ -23,7 +25,7 @@ class PaymentPage extends Component {
       <div>
         <h2>Account Payment</h2>
         <PaymentPageProgress currentPage={this.state.currentPage} numPages={this.state.numPages}/>
-        <PaymentPageContent currentPage={this.state.currentPage} />
+        <PaymentPageContent currentPage={this.state.currentPage} activities={this.state.activities}/>
       </div>
     );
   }
