@@ -4,10 +4,12 @@ class Announcement extends Component {
     constructor(props) {
         super(props);
     this.state = {
-        announcement: this.props.announcement
+        announcement: this.props.announcement,
+        id: this.props.key
     }
     }
 
+    //TODO: Add key for announcement
     render() {
         return (
             <li>

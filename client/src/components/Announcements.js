@@ -8,10 +8,12 @@ class Announcements extends Component {
       super(props);
       
       this.state = {
-          announcements : this.props.announcements
+        announcements : this.props.announcements,
+          id: this.props.id
       }
     }
 
+    //TODO: Add KEY FOR ANNOUNCEMENT
     render() {
         return(
             <div>
@@ -19,22 +21,10 @@ class Announcements extends Component {
                 
                 <ul id="Announcements">
                 <h2>Announcements</h2>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
-                    <Announcement announcement="Some stuff"/>
+                    {this.state.announcements.map(function(d, id){
+                        return <Announcement announcement={d}/>;
+                    })}
+                    
                 </ul>
             </div>
         )
