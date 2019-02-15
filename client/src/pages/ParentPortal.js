@@ -33,6 +33,8 @@ class PaymentPortal extends Component {
           <StudentCard studentName={"Name2"} studentID={2} studentBalance={123}/>
           <StudentCard studentName={"Name2"} studentID={2} studentBalance={123}/>
           <StudentCard studentName={"Name2"} studentID={2} studentBalance={123}/>
+          <StudentCard studentName={"Name2"} studentID={2} studentBalance={123}/>
+          <StudentCard studentName={"Name2"} studentID={2} studentBalance={123}/>
       <Announcements announcements={["some stuff1", "some stuff2", "some stuff3"]}/>
       </div>
       <Button>Make Payment</Button>
