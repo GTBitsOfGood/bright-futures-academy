@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import PaymentPageContent from '../components/PaymentPageContent';
-import PaymentPageProgress from '../components/PaymentPageContent'; // TODO: make a class that will export all these
+import PaymentPageProgress from '../components/PaymentPageProgress'; // TODO: make a class that will export all these
 
 /**
  * Parent class for Payment Page. Contains the text "Account Payment", then the progress bar through the pages, and a

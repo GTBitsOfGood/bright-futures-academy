@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 /**
  * The bubbles o(≧∇≦o) that show the user how many of the pages they have completed.
  */
-class PaymentProgress extends Component {
+class PaymentPageProgress extends Component {
   constructor(props) {
     super(props);
   }
@@ -20,4 +20,4 @@ class PaymentProgress extends Component {
   }
 }
 
-export default PaymentProgress;
+export default PaymentPageProgress;
