@@ -8,9 +8,11 @@ class PaymentContent0 extends Component {
   constructor(props) {
     super(props);
 
+    // Allows the use of this keyword in the ActivityList function
     this.ActivityList = this.ActivityList.bind(this);
   }
 
+  // TODO: add styling
   ActivityList() {
     const activities = this.props.activities;
     const listItems = activities.map((activity) =>

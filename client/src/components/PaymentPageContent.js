@@ -10,7 +10,7 @@ class PaymentPageContent extends Component {
   }
 
   // currently printing out the current page number.
-  // TODO: Add logic to switch between content of different pages
+  // TODO: Add more cases to switch between content of different pages
   // TODO: Add styling
   render() {
     switch (this.props.currentPage) {
@@ -22,10 +22,10 @@ class PaymentPageContent extends Component {
         );
     }
 
+    // never gets called
     return (
       <div>
         <h3>{this.props.currentPage}</h3>
-        {/* <PaymentContent0/> */}
       </div>
       );
   }
