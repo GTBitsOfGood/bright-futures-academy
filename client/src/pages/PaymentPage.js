@@ -13,7 +13,8 @@ class PaymentPage extends Component {
     super(props);
     
     this.state = {
-        currentPage: 0 // will be used to determine what page to float to UI (might change to Enum)
+        currentPage: 1, // will be used to determine what page user is on. We start at page 1, end on numPages
+        numPages: 4
     }
   }
 
@@ -21,7 +22,7 @@ class PaymentPage extends Component {
     return (
       <div>
         <h2>Account Payment</h2>
-        <PaymentPageProgress currentPage={this.state.currentPage} />
+        <PaymentPageProgress currentPage={this.state.currentPage} numPages={this.state.numPages}/>
         <PaymentPageContent currentPage={this.state.currentPage} />
       </div>
     );
