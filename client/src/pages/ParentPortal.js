@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PrimaryNavBar from './../components/Navbar';
 import StudentCard from './../components/StudentCard';
-import Announcements from './../components/Announcements';
+import AnnouncementList from './../components/Announcements';
 import {Button} from 'reactstrap';
 import './css/ParentPortal.css';
 /**
@@ -35,7 +35,7 @@ class PaymentPortal extends Component {
           <StudentCard studentName={"Name2"} studentID={2} studentBalance={123}/>
           <StudentCard studentName={"Name2"} studentID={2} studentBalance={123}/>
           <StudentCard studentName={"Name2"} studentID={2} studentBalance={123}/>
-      <Announcements announcements={["some stuff1", "some stuff2", "some stuff3"]}/>
+      <AnnouncementList announcements={["some stuff1", "some stuff2", "some stuff3"]}/>
       </div>
       <Button>Make Payment</Button>
       </div>

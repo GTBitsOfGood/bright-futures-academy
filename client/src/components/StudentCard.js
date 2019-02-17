@@ -3,9 +3,9 @@ import './css/StudentCard.css';
 import { Card, CardText, CardBody,
     CardTitle, CardSubtitle, Button} from 'reactstrap';
 import logoImage from './../images'
-
-  
-
+/**
+ * Container class for cards on parent portal page
+ */
 class StudentCard extends Component {
     constructor(props){
         super(props);
@@ -22,12 +22,15 @@ class StudentCard extends Component {
       <Card>
         <img width="150px" position="absolute" src={logoImage} alt="Student" />
         <CardBody>
+          <div>
           <CardTitle>Name: {this.state.studentName}</CardTitle>
           <CardSubtitle>ID: {this.state.studentID}</CardSubtitle>
           <CardText>Balance Due: {this.state.studentBalance}</CardText>
           <Button>Details</Button>
           <Button>Make a Payment</Button>
+          </div>
         </CardBody>
+          
       </Card>
     );
 }

@@ -1,9 +1,13 @@
 .card > img {
 
-    position: absolute !important;
+    position: relative;
     left: -10px;
 }
 
+.card > .card-body > div {
+    position: relative;
+    left: 20%;
+}
 .card {
 
     width: 380px;
