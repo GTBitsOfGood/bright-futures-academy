@@ -14,7 +14,7 @@ class PaymentPageContent extends Component {
   // TODO: Add styling
   render() {
     switch (this.props.currentPage) {
-      case 0:
+      case 1:
         return (
           <div>
             <ChargesList activities={this.props.activities}/>
