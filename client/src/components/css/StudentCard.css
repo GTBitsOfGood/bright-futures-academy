@@ -1,0 +1,22 @@
+.card > img {
+
+    position: relative;
+    left: -10px;
+}
+
+.card > .card-body > div {
+    position: relative;
+    left: 20%;
+}
+.card {
+
+    width: 380px;
+    float: left;
+    margin: 10px 10px;
+
+}
+
+.card-body > button{
+    margin: 0px 2px 0px 2px;
+}
+
