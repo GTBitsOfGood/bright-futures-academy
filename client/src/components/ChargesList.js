@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './PaymentContent.css';
 
 /**
- * Content for page 0.
+ * List of charges to student account, names + prices retrieved from backend
  */
-class PaymentContent0 extends Component {
+class ChargesList extends Component {
   constructor(props) {
     super(props);
 
@@ -37,4 +37,4 @@ class PaymentContent0 extends Component {
 
 
 
-export default PaymentContent0;
+export default ChargesList;
