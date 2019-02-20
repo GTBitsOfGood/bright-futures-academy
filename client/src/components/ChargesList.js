@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './PaymentContent.css';
+import './css/PaymentContent.css';
 
 /**
  * List of charges to student account, names + prices retrieved from backend
