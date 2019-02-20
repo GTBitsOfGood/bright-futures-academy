@@ -15,3 +15,5 @@ script:
 #  project: ./client/build/
 on:
   branch: master
+notifications:
+  slack: hack4impact:IP34Jc0vy3g1y8DINTyOsjTe
