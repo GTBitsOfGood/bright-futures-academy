@@ -6,7 +6,7 @@
     "_comment": "TODO: Add a script for running tests. We don't have a src folder right now, and until we make that, these scripts won't work.",
     "start": "node ./src/bin/www",
     "dev-lin": "PORT=3001 dotenv nodemon ./src/bin/www --watch src --ignore src/logs",
-    "dev-win": "SET PORT=3001 dotenv nodemon ./src/bin/www --watch src --ignore src/logs",
+    "dev-win": "SET PORT=3001 dotenv nodemon ./src/bin/www --watch src --ignore src/logs"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
