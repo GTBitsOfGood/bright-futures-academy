@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - client/node_modules
+    - server/node_modules
+script:
+  - bash scripts/travis_test.sh
+  - bash scripts/travis_build.sh
+#deploy:
+#  provider: TODO: Add Heroku as a provider
+#  skip_cleanup: true
+#  domain: TODO: Add Domain
+#  project: ./client/build/
+on:
+  branch: master
