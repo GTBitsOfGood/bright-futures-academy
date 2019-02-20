@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ChargesList from './ChargesList';
+import Confirmation from './Confirmation';
 
 /**
  * Container for payment page content. Each page's content will be different, but switched here.
@@ -20,6 +21,12 @@ class PaymentPageContent extends Component {
             <ChargesList activities={this.props.activities}/>
           </div>
         );
+      case 3:
+        return (
+          <div>
+            <Confirmation />
+          </div>
+        )
     }
 
     // never gets called
