@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd ../client/
-npm install
+npm i -f
 npm build
