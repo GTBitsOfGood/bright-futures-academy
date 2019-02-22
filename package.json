@@ -7,12 +7,13 @@
     "server/node_modules"
   ],
   "scripts": {
+    "_comment": "We're force npm installing to fix an issue with fsevents, TODO: Fix this",
     "start": "cd server/ && npm start",
-    "install-client": "npm install --prefix client",
-    "install-server": "npm install --prefix server",
+    "install-client": "npm install -f --prefix client",
+    "install-server": "npm install -f --prefix server",
     "build-client": "cd client/ && npm build",
-    "postinstall": "npm run install-client && npm run install-server && npm run build-client",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "postinstall": "npm run install-client -f && npm run install-server -f && npm run build-client -f",
+    "heroku-postbuild": "cd client && npm install --only=dev -f && npm install -f && rm -rf ~/node_modules/babel-jest ~/node_modules/jest && npm run build"
   },
   "engines": {
     "npm": "~6.7.0",
