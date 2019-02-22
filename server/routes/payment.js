@@ -1,7 +1,9 @@
+require('dotenv').config()
+
 var express = require('express');
 var router = express.Router();
 //Testing Paypal API
-require('dotenv').config()
+
 let profile_name = Math.random().toString(36).substring(7);
 let paypal = require('paypal-rest-sdk')
 
@@ -24,15 +26,14 @@ const web_profile = {
 
 paypal.configure({
     'mode': 'sandbox',
-    'client_id': process.env.client_id,//'AZPizo1pg8Ne0XFiy5aaO_fp4Q65kKzcDDPLvX4gWmG_5EaFrhk-BEuYsSYESi2c-RwFYjA1sBxQe4fS',
-    'client_secret': process.env.client_secret //'ECNjD9CVuKfojZxyQZL934P12Wbkv8HPQHEWI___ijt6Xy5DtKmafkTV5s1fckEvDbc0JeTQUIwylNoz'
+    'client_id': process.env.CLIENT_ID,
+    'client_secret': process.env.CLIENT_SECRET
 })
 
 //Come up with a strategy to make dyanmic payment JSON
 
 
 router.get('/', (req, res) => {
-    console.log(process.env.client_id)
     res.send("Welcome to payment route")
 })
 
