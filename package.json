@@ -13,7 +13,7 @@
     "install-server": "npm install -f --prefix server",
     "build-client": "cd client/ && npm build",
     "postinstall": "npm run install-client -f && npm run install-server -f && npm run build-client -f",
-    "heroku-postbuild": "rm -rf ~/node_modules/babel-jest ~/node_modules/jest && cd client && npm install --only=dev -f && npm install -f && npm run build"
+    "heroku-postbuild": "cd client && npm install --only=dev -f && npm install -f && rm -rf ~/node_modules/babel-jest ~/node_modules/jest && npm run build"
   },
   "engines": {
     "npm": "~6.7.0",
