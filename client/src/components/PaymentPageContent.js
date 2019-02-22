@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ChargesList from './ChargesList';
 import Confirmation from './Confirmation';
+import MemoTotal from './MemoTotal'
 
 /**
  * Container for payment page content. Each page's content will be different, but switched here.
@@ -14,11 +15,13 @@ class PaymentPageContent extends Component {
   // TODO: Add more cases to switch between content of different pages
   // TODO: Add styling
   render() {
-    switch (this.props.currentPage) {
+    const { activities, currentPage, onClickNextPage } = this.props;
+    switch (currentPage) {
       case 1:
         return (
           <div>
-            <ChargesList activities={this.props.activities}/>
+            <ChargesList activities={activities} />
+            <MemoTotal onClickNextPage={onClickNextPage} />
           </div>
         );
       case 3:
