@@ -3,6 +3,7 @@ import './css/StudentCard.css';
 import { Card, CardText, CardBody,
     CardTitle, CardSubtitle, Button} from 'reactstrap';
 import logoImage from './../images'
+import {Link} from 'react-router-dom';
 /**
  * Container class for cards on parent portal page
  */
@@ -27,7 +28,7 @@ class StudentCard extends Component {
           <CardSubtitle>ID: {this.state.studentID}</CardSubtitle>
           <CardText>Balance Due: {this.state.studentBalance}</CardText>
           <Button>Details</Button>
-          <Button>Make a Payment</Button>
+          <Button tag={Link} to="/paymentPage">Make a Payment</Button>
           </div>
         </CardBody>
           
