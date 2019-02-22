@@ -9,7 +9,7 @@ import NoMatch from './pages/NoMatch';
 
 //TODO: Add more pages for routing.
 
-const BasicExample = () => (
+const App = () => (
   <Router>
     <div>
       <Switch>
@@ -22,4 +22,4 @@ const BasicExample = () => (
 );
 
 
-export default BasicExample;
+export default App;
