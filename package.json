@@ -11,7 +11,8 @@
     "install-client": "npm install --prefix client",
     "install-server": "npm install --prefix server",
     "build-client": "cd client/ && npm build",
-    "postinstall": "npm run install-client && npm run install-server && npm run build-client"
+    "postinstall": "npm run install-client && npm run install-server && npm run build-client",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "engines": {
     "npm": "~6.7.0",

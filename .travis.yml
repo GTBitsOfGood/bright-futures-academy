@@ -1,21 +1,22 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 cache:
   directories:
-    - client/node_modules
-    - server/node_modules
+  - client/node_modules
+  - server/node_modules
 script:
-  - bash scripts/travis_test.sh
-  - bash scripts/travis_build.sh
-#deploy:
-#  provider: TODO: Add Heroku as a provider
-#  skip_cleanup: true
-#  domain: TODO: Add Domain
-#  project: ./client/build/
-on:
+- bash scripts/travis_test.sh
+- bash scripts/travis_build.sh
+true:
   branch: master
 os:
-  - osx
+- osx
 notifications:
   slack: hack4impact:IP34Jc0vy3g1y8DINTyOsjTe
+deploy:
+  provider: heroku
+  api_key:
+    secure: wVswhhTfNjjicv0cOWKxF5GbwDgbzq3k4FFM8BPBWlyOojy9D1PV56KXkmsHLw0SfGX/8hGrUOvbELaVuskNF6PfnLj34qr9Y88gVyI0wCgVUDk2FJVz5V3s80me/WQzXNUeHlwck8RsWwwOJ5naWMBN2E73STe4VFlMjD/gZbj5Y3AgSnrFuNhgci7MjjKwsRfOFhBLK+OirfUL7DXDyAFazCM28SgfDGqB9YrDhXYDHS6EntsG2HCWfR60Ee1O0MHS6z+c9oWadqMbhvzFFM+ftEJ1UNnoi3a4Vhf8iYvvqGnFsD489hs3C0UrEB19FsNI98MQIwzCDRXeeCNoHBH/dySyS9hxmk9GPEo38hPd3B+qDAGL6gnCvMbuPqShZbWyeTZemJTEiLiXtEvwdHG2GihC238l8oEIL5eL/FxXdqhw9YjS8fJ1Gl6+q4SPb9rwCp+bh5bKk2xAhAz9/lzN0qZqSwwRAWJn6jJcrsjS80xhVlPAGJo/McDqNcNDcXRf7mHXx6mkzD7PW3EnoZfGA5TWUDb4DNoSm+OcOQ2vVPXRlSE+ZoVM+TE1EolPs0wHuPanRA6ZS8v+KBWNjJ3YTStwrdvg+IpNm2fKbeoMyq1Pb/glxlyCUtUZEY8UV+e3Cf/JSm+cga1WIc1m/T5snaRmElws+XW08lL0o6w=
+  app: bright-futures-academy-dev
+  strategy: git
