@@ -1,29 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import BFSNav from './components/Navbar';
+import PaymentPortal from './pages/ParentPortal';
+import PaymentPage from './pages/PaymentPage';
+import NoMatch from './pages/NoMatch';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+//TODO: Add more pages for routing.
+
+const App = () => (
+  <Router>
+    <div>
+      <Switch>
+      <Route path="/makepayment" component={PaymentPortal} />
+      <Route path="/paymentPage" component={PaymentPage} />
+      <Route component={NoMatch} />
+      </Switch>
+    </div>
+  </Router>
+);
+
 
 export default App;
