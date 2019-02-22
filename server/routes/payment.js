@@ -24,8 +24,8 @@ const web_profile = {
 
 paypal.configure({
     'mode': 'sandbox',
-    'client_id': process.env.client_id,//'AZPizo1pg8Ne0XFiy5aaO_fp4Q65kKzcDDPLvX4gWmG_5EaFrhk-BEuYsSYESi2c-RwFYjA1sBxQe4fS',
-    'client_secret': process.env.client_secret //'ECNjD9CVuKfojZxyQZL934P12Wbkv8HPQHEWI___ijt6Xy5DtKmafkTV5s1fckEvDbc0JeTQUIwylNoz'
+    'client_id': process.env.client_id,
+    'client_secret': process.env.client_secret
 })
 
 //Come up with a strategy to make dyanmic payment JSON
