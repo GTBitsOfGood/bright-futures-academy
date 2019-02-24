@@ -10,19 +10,78 @@ activityRouter.route('/')
         })
     })
 
-activityRouter.route('/:activityId')
-    .get((req, res) => {
-        Activity.findById(req.params.activityId, (err, activity) => {
+activityRouter.route('/:householdId/:studentId')
+    .post((req, res) => {
+        let activity = new Activity(req.body)
+        activity.save()
+        Household.findById((req.params.householdId), (err, household) => {
             if (err) {
-                res.status(500).send(err)
+                res.status(404).send("could not find household")
             } else {
-                res.json(activity)
+                let student = household.students.findOne({ _id: req.studentId })
+                if (student === undefined) {
+                    res.status(404).send("could not find student")
+                } else {
+                    student.activities.insertOne(activity)
+                    res.status(201).json(activity)
+                }
             }
         })
     })
-    .post((req, res) => {
-        let activity = new Activity(req.body);activity.save()
-        res.status(201).send(activity)
+    .get((req, res) => {
+        activity.save()
+        Household.findById((req.params.householdId), (err, household) => {
+            if (err) {
+                res.status(404).json("could not find household")
+            } else {
+                let student = household.students.findOne({ _id: req.studentId })
+                if (student === undefined) {
+                    res.status(404).json("could not find student")
+                } else {
+                    res.status(200).json(student.activities)
+                }
+            }
+        })
+    })
+
+activityRouter.route('/:householdId/:studentId/:activityId')
+    .get((req, res) => {
+        Household.findById((req.params.householdId), (err, household) => {
+            if (err) {
+                res.status(404).send("could not find household")
+            } else {
+                let student = household.students.findOne({ _id: req.studentId })
+                if (student === undefined) {
+                    res.status(404).send("could not find student")
+                } else {
+                    var activity = student.activities.findOne({ _id: req.params.activityId })
+                    if (activity === undefined) {
+                        res.status(404).send("could not find activity")
+                    } else {
+                        res.status(200).json(activity)
+                    }
+                }
+            }
+        })
+    })
+    .delete((req, res) => {
+        Household.findById((req.params.householdId), (err, household) => {
+            if (err) {
+                res.status(404).send("could not find household")
+            } else {
+                let student = household.students.findOne({ _id: req.studentId })
+                if (student === undefined) {
+                    res.status(404).send("could not find student")
+                } else {
+                    var deletedCount = student.activities.deleteOne({ _id: req.params.activityId }).deletedCount
+                    if (deletedCount == 0) {
+                        res.status(404)
+                    } else {
+                        res.status(204).json(activity)
+                    }
+                }
+            }
+        })
     })
 
 module.exports = activityRouter;

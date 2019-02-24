@@ -20,7 +20,7 @@ studentRouter.route('/:householdId/')
                 res.status(500).send(err)
             } else {
                 household.students.insertOne(student)
-                res.status(201).send(student)
+                res.status(201).json(student)
             }
         })
     })
@@ -30,10 +30,28 @@ studentRouter.route('/:householdId/:studentId')
     .get((req, res) => {
         Household.findById((req.params.householdId), (err, household) => {
             if (err) {
-                res.status(500).send(err)
+                res.status(404).send("could not find household")
             } else {
-                const student = household.students.find({ _id: req.paramsstudentId })
-                res.json(student);
+                let student = household.students.findOne({ _id: req.studentId })
+                if (student === undefined) {
+                    res.status(404).send("could not find student")
+                } else {
+                    res.json(student)
+                }
+            }
+        })
+    })
+    .delete((req, res) => {
+        Household.findById((req.params.householdId), (err, household) => {
+            if (err) {
+                res.status(404).send("could not find household")
+            } else {
+                var deletedCount = household.students.deleteOne({ _id: req.params.studentId }).deletedCount
+                if (deletedCount == 0) {
+                    res.status(404)
+                } else {
+                    res.status(200)
+                }
             }
         })
     })

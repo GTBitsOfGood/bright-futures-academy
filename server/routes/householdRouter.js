@@ -16,7 +16,7 @@ householdRouter.route('/')
     .post((req, res) => {
         let household = new Household(req.body)
         household.save()
-        res.status(201).send(household)
+        res.status(201).json(household)
     })
 
 householdRouter.route('/:householdId')
