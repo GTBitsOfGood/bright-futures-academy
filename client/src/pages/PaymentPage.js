@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
+// TODO: make an index.js that exports all of these
 import PaymentPageContent from '../components/PaymentPageContent';
-import PaymentPageProgress from '../components/PaymentPageProgress'; // TODO: make a class that will export all these
+import PaymentPageProgress from '../components/PaymentPageProgress'; 
 
+// TODO: get this value from new Model.js file described below
 const NUM_PAGES = 4;
 
 /**
