@@ -29,7 +29,6 @@ activityRouter.route('/:householdId/:studentId')
         })
     })
     .get((req, res) => {
-        activity.save()
         Household.findById((req.params.householdId), (err, household) => {
             if (err) {
                 res.status(404).json("could not find household")
