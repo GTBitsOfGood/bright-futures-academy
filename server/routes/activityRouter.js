@@ -12,8 +12,6 @@ activityRouter.route('/')
 
 activityRouter.route('/:householdId/:studentId')
     .post((req, res) => {
-        let activity = new Activity(req.body)
-        activity.save()
         Household.findById((req.params.householdId), (err, household) => {
             if (err) {
                 res.status(404).send("could not find household")
@@ -22,6 +20,9 @@ activityRouter.route('/:householdId/:studentId')
                 if (student === undefined) {
                     res.status(404).send("could not find student")
                 } else {
+                    let activity = new Activity(req.body)
+                    activity.save()
+                    student.amount_due += activity.amount
                     student.activities.insertOne(activity)
                     res.status(201).json(activity)
                 }
@@ -72,10 +73,12 @@ activityRouter.route('/:householdId/:studentId/:activityId')
                 if (student === undefined) {
                     res.status(404).send("could not find student")
                 } else {
-                    var deletedCount = student.activities.deleteOne({ _id: req.params.activityId }).deletedCount
-                    if (deletedCount == 0) {
+                    var activity = student.activities.findOne({ _id: req.params.activityId })
+                    if (activity === undefined) {
                         res.status(404)
                     } else {
+                        student.amount_due -= activity.amount
+                        student.activities.deleteOne({ _id: req.params.activityId }).deletedCount
                         res.status(204).json(activity)
                     }
                 }
