@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
     res.send("Welcome to payment route")
 })
 
-router.post('/payment/:amount', (req, res) => {
+router.post('/payment/:amount/:studentId', (req, res) => {
     let create_payment_json = {
         "intent": "sale",
         "payer": {
@@ -46,8 +46,8 @@ router.post('/payment/:amount', (req, res) => {
         },
         "redirect_urls": {
             //Redirect to next page
-            "return_url": "http://localhost:5000/pay/success",
-            "cancel_url": "http://localhost:5000/pay/cancel"
+            "return_url": `http://localhost:5000/pay/success/?studentid=${req.params.studentId}`,
+            "cancel_url": `http://localhost:5000/pay/cancel/?studentid=${req.params.studentId}`
         },
         "transactions": [{
             "amount": {
