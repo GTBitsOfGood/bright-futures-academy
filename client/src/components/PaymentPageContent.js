@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ChargesList from './ChargesList';
 import Confirmation from './Confirmation';
-import MemoTotal from './MemoTotal'
+import MemoTotal from './MemoTotal';
+import Receipt from './Receipt';
 
 /**
  * Container for payment page content. Each page's content will be different, but switched here.
@@ -28,6 +29,12 @@ class PaymentPageContent extends Component {
         return (
           <div>
             <Confirmation />
+          </div>
+        )
+      case 4: 
+        return (
+          <div>
+            <Receipt />
           </div>
         )
     }
