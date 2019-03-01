@@ -7,12 +7,17 @@ var router = express.Router();
  */
 router.get('/', function (req, res, next) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   //This is temporary
   // TODO: replace route with proper action
 
   res.send(`<form action="/pay/payment/123/4801782027" method="post">
 
 =======
+=======
+  //This is temporary
+  // TODO: replace route with proper action
+>>>>>>> Added comments
   res.send(`<form action="/pay/payment/123" method="post">
 >>>>>>> Updated paypal integration
   <input type="submit" value="Buy">
