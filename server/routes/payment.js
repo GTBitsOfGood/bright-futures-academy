@@ -10,6 +10,9 @@ let paypal = require('paypal-rest-sdk')
 
 //We may have to store USER_ID for name to prevent the creation of new profiles
 //To prevent the possibility for an error thrown in the creation of one
+/**
+ * TODO: Make sure that we can eventually start getting previously made web-profiles or just one
+ */
 const web_profile = {
     "name": profile_name,
     "presentation": {
@@ -37,7 +40,10 @@ paypal.configure({
 router.get('/', (req, res) => {
     res.send("Welcome to payment route")
 })
-
+/**
+ * params: amount, studentid
+ * POST: Creates a web profile and paypal payment
+ */
 router.post('/payment/:amount/:studentId', (req, res) => {
     let create_payment_json = {
         "intent": "sale",
@@ -45,9 +51,11 @@ router.post('/payment/:amount/:studentId', (req, res) => {
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            //Redirect to next page
-            "return_url": `http://localhost:5000/pay/success/?studentid=${req.params.studentId}`,
-            "cancel_url": `http://localhost:5000/pay/cancel/?studentid=${req.params.studentId}`
+            /**
+             * TODO: Replace links with proper links for deployment
+             */
+            "return_url": `http://localhost:5000/pay/success/?studentid=${req.params.studentId}`, //TODO: replace route with route after successful payment
+            "cancel_url": `http://localhost:5000/pay/cancel/?studentid=${req.params.studentId}` //TODO: replace route with route after a failed payment
         },
         "transactions": [{
             "amount": {
@@ -84,6 +92,10 @@ router.post('/payment/:amount/:studentId', (req, res) => {
 })
 
 
+/**
+ * GET: Gets success page when payment is successful
+ * TODO: Make sure these will render the proper pages
+ */
 
 router.get('/success', (req, res) => {
     const payerId = req.query.PayerID;
@@ -121,7 +133,7 @@ router.get('/success', (req, res) => {
                         console.log(err)
                         throw err
                     })
-                    //Change to redirect to specified page
+                    // TODO: Change to redirect to specified page
                     res.send("Success")
                 }
             })
@@ -132,6 +144,10 @@ router.get('/success', (req, res) => {
 
 })
 
+/**
+ * GET: Gets cancel page when payment is no sucessful
+ * TODO: Make sure these will render the proper pages
+ */
 router.get('/cancel', (req, res) => {
     res.send("Cancelled")
 })
