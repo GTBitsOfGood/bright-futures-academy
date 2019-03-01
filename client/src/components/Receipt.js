@@ -4,8 +4,7 @@ import ChargesList from './ChargesList';
 import './css/PaymentContent.css';
 
 /**
- * Parent class for Payment Page. Contains the text "Account Payment", then the progress bar through the pages, and a
- * placeholder for the current PaymentPageContent.
+ * Parent class for Receipt Page. Contains labels and placeholder data to be retrieved by the API.
  */
 class Receipt extends Component {
 
