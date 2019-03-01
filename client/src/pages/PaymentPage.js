@@ -20,6 +20,8 @@ class PaymentPage extends Component {
         currentPage: 1, // will be used to determine what page user is on. We start at page 1, end on numPages
         activities: [],
     }
+
+    this.onClickNextPage = this.onClickNextPage.bind(this);
   }
 
   componentDidMount() {
@@ -42,7 +44,7 @@ class PaymentPage extends Component {
   onClickNextPage() {
     // TODO: create a Model.js file which holds an array of all possible pages, among other things
     // TODO: use pages array from Model.js to robustly update currentPage
-    this.state.currentPage++;
+    this.setState({currentPage: this.state.currentPage + 1});
   }
 }
 
