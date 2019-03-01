@@ -3,14 +3,17 @@ var express = require('express');
 
 const householdRouter = express.Router();
 
+/**
+* GET: get all households
+* POST: create a new household
+*/
 householdRouter.route('/')
     .get((req, res) => {
         Household.find({}, (err, households) => {
             if (err) {
-                res.status(500).send(err)
-            } else {
-                res.json(households)
+                return res.status(500).json(err)
             }
+            res.json(households)
         })
     })
     .post((req, res) => {
@@ -19,14 +22,17 @@ householdRouter.route('/')
         res.status(201).json(household)
     })
 
+/**
+* params: household id
+* GET: get the household corresponding to the given id
+*/
 householdRouter.route('/:householdId')
     .get((req, res) => {
         Household.findById(req.params.householdId, (err, household) => {
             if (err) {
-                throw err
-            } else {
-                res.json(household)
+                return res.status(500).json(err)
             }
+            res.json(household)
         })
     })
 
