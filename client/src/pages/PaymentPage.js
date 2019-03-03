@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import "./css/PaymentPage.css";
+import PrimaryNavbar from './../components/Navbar';
+import "./css/PaymentPageOne.css";
 
 // TODO: make an index.js that exports all of these
 import PaymentPageContent from '../components/PaymentPageContent';
@@ -32,11 +33,14 @@ class PaymentPage extends Component {
   render() {
     const { activities, currentPage } = this.state;
     return (
-      <div>
+      <>
+      <PrimaryNavbar />
+      <div className="container">
         <h2>Account Payment</h2>
-        <div> <PaymentPageProgress currentPage={currentPage} numPages={NUM_PAGES} /></div>
-        <PaymentPageContent currentPage={currentPage} activities={activities} onClickNextPage={this.onClickNextPage}/>
+        <div className="ProgressBar"><PaymentPageProgress currentPage={currentPage} numPages={NUM_PAGES} /></div>
+        <div className="PaymentPageContent"><PaymentPageContent currentPage={currentPage} activities={activities} onClickNextPage={this.onClickNextPage}/></div>
       </div>
+      </>
     );
   }
 
