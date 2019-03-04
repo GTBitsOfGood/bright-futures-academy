@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import check from './../images/check.svg';
+import './css/Confirmation.css';
 
 /**
  * This is the Confirmation component for the third page of the account payment portal.
@@ -26,7 +27,7 @@ class Confirmation extends Component {
      */
     render() {
         return (
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className="center">
 
             <p>Thank you!</p>
             <img src={check} />
