@@ -1,0 +1,16 @@
+.center {
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+  text-align: center;
+}
+
+span p, h5 {
+  display: inline-block;
+}
+
+.left {
+  text-align: left;
+  display: inline-block;
+  margin-bottom: 15px;
+}
