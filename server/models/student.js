@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 require('mongoose-type-url');
-let activity = require('activity.js')
+let activity = require('./activity').schema;
 let Schema = mongoose.Schema;
 
 let StudentSchema = new Schema({

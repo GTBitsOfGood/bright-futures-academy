@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
+import './css/PayPalConnect.css'
 
 /**
  * This is the PayPal connection component for the second page of the account payment portal.
@@ -35,14 +36,21 @@ class PayPalConnect extends Component {
      */
     render() {
         return (
-            <div>
-                <div>
+            <div className="center">
+                <div className="left">
                     <span>
                         <p>Total Fee: </p> {"$" + this.state.totalFee}
                     </span>
-                    <p>Tax: </p> {"$" + this.state.tax}
-                    <h5>Payment Total: </h5> {"$" + this.state.paymentTotal}
+                    <br/>
+                    <span>
+                        <p>Tax: </p> {"$" + this.state.tax}
+                    </span>
+                    <br/>
+                    <span>
+                        <h5>Payment Total: </h5> {"$" + this.state.paymentTotal}
+                    </span>
                 </div>
+                <br/>
                 <Button
                     variant="primary"
                     as="input"
