@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import ChargesList from './ChargesList';
 import Confirmation from './Confirmation';
+import MemoTotal from './MemoTotal';
+import Receipt from './Receipt';
+import PayPalConnect from './PayPalConnect';
 
 /**
  * Container for payment page content. Each page's content will be different, but switched here.
@@ -14,17 +17,31 @@ class PaymentPageContent extends Component {
   // TODO: Add more cases to switch between content of different pages
   // TODO: Add styling
   render() {
-    switch (this.props.currentPage) {
+    const { activities, currentPage, onClickNextPage } = this.props;
+    switch (currentPage) {
       case 1:
         return (
           <div>
-            <ChargesList activities={this.props.activities}/>
+            <ChargesList activities={activities} />
+            <MemoTotal onClickNextPage={onClickNextPage} />
+          </div>
+        );
+      case 2:
+        return (
+          <div>
+            <PayPalConnect onClickNextPage={onClickNextPage} />
           </div>
         );
       case 3:
         return (
           <div>
-            <Confirmation />
+            <Confirmation onClickNextPage={onClickNextPage} />
+          </div>
+        )
+      case 4: 
+        return (
+          <div>
+            <Receipt />
           </div>
         )
     }

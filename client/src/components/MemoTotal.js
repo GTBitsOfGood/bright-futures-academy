@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 class MemoTotal extends Component {
     constructor(props) {
         super(props)
-        
+
         this.state = {
             memoText: "",
             totalFee: 0.0, // TODO: replace these values with money values.
@@ -23,21 +23,21 @@ class MemoTotal extends Component {
 
     /**
      * Changes the state of memoText.
-     * @param {} event 
+     * @param {} event
      */
     handleChange(event) {
         this.setState({
             memoText: event.target.memoText
         });
     }
-    
+
     /**
      * Handles confirmation of the payment and will (eventually) route to new page.
-     * @param {} event 
+     * @param {} event
      */
     handleSubmit(event) {
         alert('Confirmed total and fees: ' + this.state.memoText);
-
+        this.props.onClickNextPage();
         // TODO: logic to handle submission.
     }
 
@@ -48,16 +48,16 @@ class MemoTotal extends Component {
         return (
           <form onSubmit={this.handleSubmit}>
             <label>
-              Memo: 
+              Memo:
               <input type="text" value={this.state.memoText} onChange={this.handleChange} />
             </label>
             <div>
-                <p>Total Fee: </p> {"$" + this.state.totalFee}
-                <p>Tax: </p> {"$" +this.state.tax}
+                <p>Total Fee: {"$" + this.state.totalFee}</p> 
+                <p>Tax: {"$" +this.state.tax}</p> 
             </div>
             <hr></hr>
             <div>
-                <p>Payment Total: </p> {"$" +this.state.paymentTotal}
+                <p>Payment Total: {"$" +this.state.paymentTotal}</p> 
             </div>
             <input type="submit" value="Choose Payment Method" />
           </form>

@@ -17,7 +17,8 @@ class Confirmation extends Component {
      * @param {} event
      */
     handleSubmit(event) {
-        // TODO: logic to go to next page.
+      this.props.onClickNextPage();
+      // TODO: logic to go to next page.
     }
 
     /**

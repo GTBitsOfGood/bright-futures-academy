@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 var express = require('express');
+let Activity = require('../models/activity')
 var router = express.Router();
 //Testing Paypal API
 
@@ -9,6 +10,9 @@ let paypal = require('paypal-rest-sdk')
 
 //We may have to store USER_ID for name to prevent the creation of new profiles
 //To prevent the possibility for an error thrown in the creation of one
+/**
+ * TODO: Make sure that we can eventually start getting previously made web-profiles or just one
+ */
 const web_profile = {
     "name": profile_name,
     "presentation": {
@@ -36,36 +40,42 @@ paypal.configure({
 router.get('/', (req, res) => {
     res.send("Welcome to payment route")
 })
-
-router.post('/payment', (req, res) => {
+/**
+ * params: amount, studentid
+ * POST: Creates a web profile and paypal payment
+ */
+router.post('/payment/:amount/:studentId', (req, res) => {
     let create_payment_json = {
         "intent": "sale",
         "payer": {
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "http://localhost:5000/pay/success",
-            "cancel_url": "http://localhost:5000/pay/cancel"
+            /**
+             * TODO: Replace links with proper links for deployment
+             */
+            "return_url": `http://localhost:5000/pay/success/?studentid=${req.params.studentId}`, //TODO: replace route with route after successful payment
+            "cancel_url": `http://localhost:5000/pay/cancel/?studentid=${req.params.studentId}` //TODO: replace route with route after a failed payment
         },
         "transactions": [{
             "amount": {
                 "currency": "USD",
-                "total": "1.00"
+                "total": req.params.amount
             },
             "description": "This is the payment description."
         }]
     }
     paypal.webProfile.create(web_profile, function (error, profile) {
         if (error) {
+            console.log("Webprofile create error:", error.response)
             throw error;
         }
         else {
-            console.log('Made profile')
-            console.log(profile)
             var experience_profile_id = profile.id;
             create_payment_json.experience_profile_id = experience_profile_id;
             paypal.payment.create(create_payment_json, (error, payment) => {
                 if (error) {
+                    console.log("Payment create error:", error.response)
                     throw error;
                 }
                 else {
@@ -82,30 +92,62 @@ router.post('/payment', (req, res) => {
 })
 
 
+/**
+ * GET: Gets success page when payment is successful
+ * TODO: Make sure these will render the proper pages
+ */
 
 router.get('/success', (req, res) => {
     const payerId = req.query.PayerID;
     const paymentId = req.query.paymentId;
-
-    const execute_payment_json = {
-        "payer_id": payerId,
-        "transactions": [{
-            "amount": {
-                "currency": "USD",
-                "total": "1.00"
-            }
-        }]
-    }
-    paypal.payment.execute(paymentId, execute_payment_json, (error, payment) => {
+    let amount = 0
+    paypal.payment.get(paymentId, (error, payment) => {
         if (error) {
+            console.log("Payment Get error:", error.response)
+
             throw error;
         }
         else {
-            res.send("Success")
+            console.log("Got amount")
+            amount = payment.transactions[0].amount
+            console.log("Amount currency is", amount.currency)
+            console.log("Amount total is", amount.total)
+            let execute_payment_json = {
+                "payer_id": payerId,
+                "transactions": [{
+                    "amount": {
+                        "total": amount.total,
+                        "currency": amount.currency
+                    },
+                    "description": "This is the payment description."
+                }]
+            }
+            paypal.payment.execute(paymentId, execute_payment_json, (error, payment) => {
+                if (error) {
+                    console.log("Execute error:", error.response)
+                    throw error;
+                }
+                else {
+                    let activity = new Activity({ date: new Date(), amount: amount.total, name: "Associated_account" })
+                    activity.save().catch((err) => {
+                        console.log(err)
+                        throw err
+                    })
+                    // TODO: Change to redirect to specified page
+                    res.send("Success")
+                }
+            })
+
+
         }
     })
+
 })
 
+/**
+ * GET: Gets cancel page when payment is no sucessful
+ * TODO: Make sure these will render the proper pages
+ */
 router.get('/cancel', (req, res) => {
     res.send("Cancelled")
 })

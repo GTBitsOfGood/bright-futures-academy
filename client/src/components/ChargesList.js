@@ -16,7 +16,7 @@ class ChargesList extends Component {
   ActivityList() {
     const activities = this.props.activities;
     const listItems = activities.map((activity) =>
-      <p>{activity.name} - ${activity.price}</p>
+      <p>{activity.name} :  <span>${activity.price}</span></p>
     );
     return (
       <div id="ActivityList">
