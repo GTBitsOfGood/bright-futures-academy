@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-let student = require('student.js')
+let student = require('./student')
 let Schema = mongoose.Schema;
 
 let HouseHoldSchema = new Schema({
