@@ -1,9 +1,9 @@
 let mongoose = require('mongoose');
-<<<<<<< HEAD
+
 let student = require('./student')
-=======
-let student = require('./student').schema;
->>>>>>> ee6d13ad04c1fd2acc7acb6f2cff33e3d7fb8882
+
+let student = require('./student')
+
 let Schema = mongoose.Schema;
 
 let HouseHoldSchema = new Schema({
