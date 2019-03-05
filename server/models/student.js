@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
-const Activity = require('./activity').schema;
+const Activity = require('./activity')
 const Schema = mongoose.Schema;
 require('mongoose-type-url');
+let Activity = require('./activity')
+let Schema = mongoose.Schema;
 
 let StudentSchema = new Schema({
     studentId: {
@@ -13,8 +15,13 @@ let StudentSchema = new Schema({
         required: true,
         default: 0
     },
-    activities: [Activity],
-    imgUrl: {
+    /**
+     * TODO: Fix the type for the activities array
+     */
+    activities: [
+        Object
+    ],
+    img_url: {
         type: mongoose.SchemaTypes.Url
     },
     name: {
