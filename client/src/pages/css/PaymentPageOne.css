@@ -1,0 +1,31 @@
+/* 
+TODO: Add color schemes
+TODO: Style the progress bar to look more professional
+*/
+.PaymentPageContent > div > div {
+    position: relative;
+    margin:60px 50px 0 10%;
+    float:left;
+}
+
+.ProgressBar{
+    width:75%;
+    margin-left: 13%;
+    margin-top: 5%;
+}
+
+.PaymentPageContent > div > form {
+    position: relative;
+    margin:60px 10% 0 0;
+    float: right;
+}
+
+.PaymentPageContent > div > form  > div > p {
+    text-align: right;
+}
+
+#ActivityList > div > p > span {
+    float: right;
+}
+
+

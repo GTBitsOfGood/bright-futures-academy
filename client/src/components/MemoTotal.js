@@ -52,12 +52,12 @@ class MemoTotal extends Component {
               <input type="text" value={this.state.memoText} onChange={this.handleChange} />
             </label>
             <div>
-                <p>Total Fee: </p> {"$" + this.state.totalFee}
-                <p>Tax: </p> {"$" +this.state.tax}
+                <p>Total Fee: {"$" + this.state.totalFee}</p> 
+                <p>Tax: {"$" +this.state.tax}</p> 
             </div>
             <hr></hr>
             <div>
-                <p>Payment Total: </p> {"$" +this.state.paymentTotal}
+                <p>Payment Total: {"$" +this.state.paymentTotal}</p> 
             </div>
             <input type="submit" value="Choose Payment Method" />
           </form>

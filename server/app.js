@@ -2,10 +2,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require('dotenv').config();
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-require('dotenv').config();
+var householdRouter = require('./routes/householdRouter');
+var studentRouter = require('./routes/studentRouter');
+var activityRouter = require('./routes/activityRouter');
 
 var app = express();
 
@@ -14,8 +16,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/household', householdRouter);
+app.use('/api/student', studentRouter);
+app.use('/api/activity', activityRouter);
+app.use('/api', indexRouter);
 
 // Render React page (keep this at the bottom of the file)
 app.use(express.static(path.join(__dirname, "../client/build/")));

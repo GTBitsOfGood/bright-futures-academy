@@ -1,0 +1,62 @@
+.receipt {
+    width: 80%;
+
+}
+
+.border {
+    border: 5px solid black;
+    width: 100%;
+    padding: 2%;
+    overflow: hidden;
+}
+
+div > div > span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.address {
+    padding-left: 3%;
+}
+
+.leftWithFloat {
+    float: left;
+    text-align: left;
+}
+
+.rightWithFloat {
+    float: right;
+    text-align: right;
+}
+
+#brightFuturesLogo {
+    padding-right: 5%;
+}
+
+.blueBackground {
+    background-color: #95BCF2
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center
+}
+
+.chargesList {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    justify-content: center;
+}
+
+.rightWithFloat.wrap {
+    display: inline-flex;
+}

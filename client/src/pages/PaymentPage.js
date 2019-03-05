@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PrimaryNavbar from './../components/Navbar';
+import "./css/PaymentPageOne.css";
 
 // TODO: make an index.js that exports all of these
 import PaymentPageContent from '../components/PaymentPageContent';
@@ -20,6 +22,8 @@ class PaymentPage extends Component {
         currentPage: 1, // will be used to determine what page user is on. We start at page 1, end on numPages
         activities: [],
     }
+
+    this.onClickNextPage = this.onClickNextPage.bind(this);
   }
 
   componentDidMount() {
@@ -31,18 +35,21 @@ class PaymentPage extends Component {
   render() {
     const { activities, currentPage } = this.state;
     return (
-      <div>
+      <>
+      <PrimaryNavbar />
+      <div className="container">
         <h2>Account Payment</h2>
-        <PaymentPageProgress currentPage={currentPage} numPages={NUM_PAGES} />
-        <PaymentPageContent currentPage={currentPage} activities={activities} onClickNextPage={this.onClickNextPage}/>
+        <div className="ProgressBar"><PaymentPageProgress currentPage={currentPage} numPages={NUM_PAGES} /></div>
+        <div className="PaymentPageContent"><PaymentPageContent currentPage={currentPage} activities={activities} onClickNextPage={this.onClickNextPage}/></div>
       </div>
+      </>
     );
   }
 
   onClickNextPage() {
     // TODO: create a Model.js file which holds an array of all possible pages, among other things
     // TODO: use pages array from Model.js to robustly update currentPage
-    this.state.currentPage++;
+    this.setState({currentPage: this.state.currentPage + 1});
   }
 }
 

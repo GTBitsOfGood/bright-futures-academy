@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ChargesList from './ChargesList';
 import Confirmation from './Confirmation';
-import MemoTotal from './MemoTotal'
+import MemoTotal from './MemoTotal';
+import Receipt from './Receipt';
+import PayPalConnect from './PayPalConnect';
 
 /**
  * Container for payment page content. Each page's content will be different, but switched here.
@@ -24,10 +26,22 @@ class PaymentPageContent extends Component {
             <MemoTotal onClickNextPage={onClickNextPage} />
           </div>
         );
+      case 2:
+        return (
+          <div>
+            <PayPalConnect onClickNextPage={onClickNextPage} />
+          </div>
+        );
       case 3:
         return (
           <div>
-            <Confirmation />
+            <Confirmation onClickNextPage={onClickNextPage} />
+          </div>
+        )
+      case 4: 
+        return (
+          <div>
+            <Receipt />
           </div>
         )
     }
