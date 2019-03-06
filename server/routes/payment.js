@@ -5,7 +5,6 @@ var express = require('express');
 
 let Activity = require('../models/activity')
 let Student = require('../models/student')
-
 var router = express.Router();
 
 //Testing Paypal API
