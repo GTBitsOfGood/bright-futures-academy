@@ -4,6 +4,9 @@ import StudentCard from './../components/StudentCard';
 import AnnouncementList from './../components/Announcements';
 import {Button} from 'reactstrap';
 import './css/ParentPortal.css';
+
+const API_STUDENT_DEV = "http://localhost:3001/api/student/";
+const API_STUDENT_PROD = "";
 /**
  * Parent class for Parent portal. Placeholder cards for student information
  */
@@ -13,12 +16,25 @@ class PaymentPortal extends Component {
     super(props);
     
     this.state = {
-      announcements: this.props.announcements
+      announcements: this.props.announcements,
+      students: ""
     }
+
+    this.ReactIsInDevelomentMode = this.ReactIsInDevelomentMode.bind(this);
+  }
+
+  ReactIsInDevelomentMode(){ 
+    return '_self' in React.createElement('div');
   }
 
   getStudentInfo(){
     //TODO: Make an API call to fetch all students of the households
+    if (this.ReactIsInDevelomentMode()){
+      let urlToFetch = API_STUDENT_DEV + this.props.houseHoldID;
+      fetch(urlToFetch)
+      .then(response => response.json())
+      .then(data => this.parseData())
+    }
   }
 
   //TODO: ADD KEYS FOR ANNOUNCEMENTS. 
