@@ -5,10 +5,6 @@ var express = require('express');
 
 let Activity = require('../models/activity')
 let Student = require('../models/student')
-<<<<<<< HEAD
-
-=======
->>>>>>> 12967dfd4471836c53b65660a7cb670e6101dcbe
 var router = express.Router();
 
 //Testing Paypal API
@@ -111,10 +107,6 @@ router.get('/success/:studentId', (req, res) => {
     const paymentId = req.query.paymentId;
     const studentId = req.params.studentId
     console.log(studentId)
-<<<<<<< HEAD
-=======
-
->>>>>>> 12967dfd4471836c53b65660a7cb670e6101dcbe
     let amount = 0
     paypal.payment.get(paymentId, (error, payment) => {
         if (error) {
