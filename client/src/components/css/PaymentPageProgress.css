@@ -1,0 +1,24 @@
+.progressHeader {
+    margin-left: 2px;
+    border: 1px solid black;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    background: #C0C0C0;
+    margin-bottom: 45px;
+}
+
+.circle.completed {
+    background: #66BB6A;
+}
+
+.circle.inProgress {
+    background: #ffaf49;
+}
