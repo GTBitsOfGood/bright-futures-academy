@@ -10,15 +10,11 @@ let Schema = mongoose.Schema;
 let SchoolInfoSchema = new Schema({
     address: {
         type: String,
-        default: function() {
-            return "1300 Joseph E. Boone Blvd NW #1000, Atlanta, GA 30314"
-        }
+        default: "1300 Joseph E. Boone Blvd NW #1000, Atlanta, GA 30314"
     },
     announcements: [{
         type: String,
-        default: function() {
-            return "This is an announcement"
-        }
+        default: "This is an announcement"
     }]
 })
 

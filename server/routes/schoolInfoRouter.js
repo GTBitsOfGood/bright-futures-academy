@@ -8,40 +8,25 @@ const schoolInfoRouter = express.Router();
 */
 schoolInfoRouter.route('/')
     .get((req, res) => {
-        schoolInfo.find({}, (err, stuff) => {
-            console.log(stuff)
-            if (err) {
-                return res.status(500).json(err);
-            }
-            res.json(stuff);
-        })
+        res.status(201).json(schoolInfo.schema.obj);
+        console.log(res);
     })
 
 /**
-* GET: get the school's address
+* GET: get the school's address. Returns default address.
 */
 schoolInfoRouter.route('/address')
     .get((req, res) => {
-        schoolInfo.find({}, 'address', (err, schoolInfo) => {
-            if (err) {
-                return res.status(500).json(err)
-            }
-            res.json(schoolInfo)
-        })
+        res.status(201).json(schoolInfo.schema.obj.address);
     })
 
 /**
 * TODO: We'll probably want to make this route let you get announcements from a certain time period.
-* GET: get the school's announcements
+* GET: get the school's announcements, defaults "this is an announcement"
 */
 schoolInfoRouter.route('/announcements')
     .get((req, res) => {
-        schoolInfo.find({}, 'announcements', (err, household) => {
-            if (err) {
-                return res.status(500).json(err)
-            }
-            res.json(household)
-        })
+        res.status(201).json(schoolInfo.schema.obj.announcements);
     })
 
 module.exports = schoolInfoRouter;
