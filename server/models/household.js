@@ -8,6 +8,14 @@ let HouseHoldSchema = new Schema({
     ],
     paypal_id: {
         type: String
+    },
+    householdId: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
     }
 })
 
