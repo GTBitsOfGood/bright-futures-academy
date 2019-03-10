@@ -11,6 +11,7 @@ var householdRouter = require('./routes/householdRouter');
 var studentRouter = require('./routes/studentRouter');
 var activityRouter = require('./routes/activityRouter');
 var schoolInfoRouter = require('./routes/schoolInfoRouter');
+var paymentRouter = require('./routes/payment');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/api/student', studentRouter);
 app.use('/api/activity', activityRouter);
 app.use('/api/schoolInfo', schoolInfoRouter);
 app.use('/api', indexRouter);
+app.use('/api/payment',paymentRouter);
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(() => {
