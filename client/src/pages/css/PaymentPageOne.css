@@ -28,4 +28,6 @@ TODO: Style the progress bar to look more professional
     float: right;
 }
 
-
+.container {
+    margin-top: 25px
+}
