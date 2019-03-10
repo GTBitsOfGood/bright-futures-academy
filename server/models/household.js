@@ -7,11 +7,17 @@ let student = require('./student')
 let Schema = mongoose.Schema;
 
 let HouseHoldSchema = new Schema({
-    students: [
-        student
-    ],
+    students: [Student],
     paypal_id: {
         type: String
+    },
+    householdId: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
     }
 })
 

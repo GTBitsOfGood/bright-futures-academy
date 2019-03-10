@@ -107,6 +107,10 @@ router.get('/success/:studentId', (req, res) => {
     const paymentId = req.query.paymentId;
     const studentId = req.params.studentId
     console.log(studentId)
+<<<<<<< HEAD
+=======
+
+>>>>>>> debfb3a3c5f489c84c93d5827699debe7f77a4ce
     let amount = 0
     paypal.payment.get(paymentId, (error, payment) => {
         if (error) {
