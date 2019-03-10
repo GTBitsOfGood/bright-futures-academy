@@ -37,13 +37,13 @@ class PaymentPortal extends Component {
     if (this.ReactIsInDevelomentMode()){
       console.log("React is in dev mode...")
       //Fetch the student list
-      let urlToFetch = API_HOUSEHOLD_DEV + '5c82c92f79971d22f1ce85f0';
+      let urlToFetch = API_HOUSEHOLD_DEV + '5c8583cb68fcb116a254474d';
       fetch(urlToFetch)
       .then(response => response.json())
       .then(data => this.setState({students: data.students}))
     } else {
       console.log("React is in production mode...")
-      let urlToFetch = API_HOUSEHOLD_PROD + '5c82c92f79971d22f1ce85f0';
+      let urlToFetch = API_HOUSEHOLD_PROD + '5c8583cb68fcb116a254474d';
       fetch(urlToFetch)
       .then(response => response.json())
       .then(data => this.setState({students: data.students}))
@@ -59,7 +59,7 @@ class PaymentPortal extends Component {
           {this.state.students.map(function(d, id) {
             return <StudentCard key= {d.id} studentName={d.name.first + " " + d.name.last} studentID = {d.id} studentBalance={d.amount_due} />
           })}
-      <AnnouncementList announcements={}/>
+      <AnnouncementList announcements={this.state.announcements}/>
       </div>
       <Button>Make Payment</Button>
       </div>

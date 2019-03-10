@@ -17,17 +17,19 @@ var app = express();
 // our dev server and client run on 2 different ports 
 // so we need to whitelist the client address
 if (app.get('env') === 'development') {
-  const whitelist = ['localhost:3000']
+  // The first one is client, the second is the api
+  const whitelist = ['http://localhost:3001']
   const corsOptions = {
     origin: function (origin, callback) {
-      if (whitelist.indexOf(origin) !== -1) {
+      if (whitelist.indexOf(origin) !== -1 || !origin) {
         callback(null, true)
       } else {
+        console.log(origin);
         callback(new Error('Not allowed by CORS'))
       }
     }
   }
-  // app.use(cors(corsOptions));
+  app.use(cors(corsOptions));
 }
 
 app.use(logger('dev'));
