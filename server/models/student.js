@@ -12,7 +12,11 @@ let StudentSchema = new Schema({
         type: Number,
         required: true
     },
+<<<<<<< HEAD
     activities: [Activity],
+=======
+    activities: [Object],
+>>>>>>> Fix embedded schema types
     img_url: {
         type: mongoose.SchemaTypes.Url
     },
