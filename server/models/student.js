@@ -34,9 +34,6 @@ let StudentSchema = new Schema({
         },
         middle: String
     }
-
-
-
 })
 
 module.exports = mongoose.model('Student', StudentSchema);
