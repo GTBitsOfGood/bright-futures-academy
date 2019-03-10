@@ -27,10 +27,12 @@ app.use('/api/student', studentRouter);
 app.use('/api/activity', activityRouter);
 app.use('/api', indexRouter);
 
+// Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(() => {
   console.log("Connected to MongoDB")
  });
  
+ // Start server to serve endpoints
  console.log('Express started. Listening on port', process.env.PORT || 5000);
  app.listen(process.env.PORT || 5000);
 
