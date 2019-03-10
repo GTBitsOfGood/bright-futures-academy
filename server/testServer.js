@@ -1,10 +1,9 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var logger = require('morgan');
 
+//This is strictly for testing purposes
+const express = require('express');
+require('dotenv').config()
+const mongoose = require('mongoose')
+const app = express();
 var indexRouter = require('./routes/index');
 var householdRouter = require('./routes/householdRouter');
 var studentRouter = require('./routes/studentRouter');

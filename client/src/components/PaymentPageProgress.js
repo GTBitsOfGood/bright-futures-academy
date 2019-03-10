@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'react-step-progress-bar/styles.css';
 import { ProgressBar, Step } from 'react-step-progress-bar';
+import './css/PaymentPageProgress.css';
 
 /**
  * The bubbles o(≧∇≦o) that show the user how many of the pages they have completed.
@@ -32,11 +33,19 @@ class PaymentPageProgress extends Component {
   makeSteps() {
     var steps = [...Array(this.state.numPages + 1)].map((_,i) => i); // creating an array from 0 to num pages
     steps.shift();  // removing first index since we want an array from 1 to num pages
+    const currentPage = this.props.currentPage;
     return steps.map(function(d, id) {
+      var className = 'circle'; // all progress steps will have the circle class  
+      if (d === currentPage && currentPage != steps.length) {
+        className += ' inProgress'; // if we're currently on the page
+      } else if (currentPage > d || currentPage === steps.length) {  // if we've already completed this page
+        className += ' completed';
+      }
+
       return (
-        <Step transition="scale" index={d}>
+        <Step transition="scale" index={d} key={id}>
           {({ accomplished }) => (
-            <p>{d}</p>
+            <p className={className}>{d}</p>
           )}
         </Step>
       );
