@@ -30,7 +30,7 @@ studentRouter.route('/:householdId/')
             if (err) {
                 return res.status(500).json(err)
             }
-            household.students.insertOne(student)
+            household.students.push(student)
             res.status(201).json(student)
         })
     })
@@ -54,7 +54,7 @@ studentRouter.route('/:householdId/:studentId')
             if (err) {
                 return res.status(404).send("could not find household")
             }
-            let student = household.students.findOne({ _id: req.studentId })
+            var student = household.students.find((student) => student.id === req.studentId);
             if (student === undefined) {
                 return res.status(404).send("could not find student")
             }
