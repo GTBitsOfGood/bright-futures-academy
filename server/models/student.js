@@ -1,9 +1,7 @@
 let mongoose = require('mongoose');
-require('mongoose-type-url');
-
-let Activity = require('./activity')
-
+let Activity = require('./activity').schema;
 let Schema = mongoose.Schema;
+require('mongoose-type-url');
 
 let StudentSchema = new Schema({
     id: {
@@ -14,12 +12,7 @@ let StudentSchema = new Schema({
         type: Number,
         required: true
     },
-    /**
-     * TODO: Fix the type for the activities array
-     */
-    activities: [
-        Object
-    ],
+    activities: [Object],
     img_url: {
         type: mongoose.SchemaTypes.Url
     },
@@ -34,9 +27,6 @@ let StudentSchema = new Schema({
         },
         middle: String
     }
-
-
-
 })
 
 module.exports = mongoose.model('Student', StudentSchema);
