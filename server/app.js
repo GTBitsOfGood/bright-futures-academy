@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var householdRouter = require('./routes/householdRouter');
 var studentRouter = require('./routes/studentRouter');
 var activityRouter = require('./routes/activityRouter');
+var paymentRouter = require('./routes/payment')
 
 var app = express();
 
@@ -20,6 +21,7 @@ app.use('/api/household', householdRouter);
 app.use('/api/student', studentRouter);
 app.use('/api/activity', activityRouter);
 app.use('/api', indexRouter);
+app.use('/api/payment', paymentRouter)
 
 // Render React page (keep this at the bottom of the file)
 app.use(express.static(path.join(__dirname, "../client/build/")));
