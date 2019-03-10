@@ -3,6 +3,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var cors = require('cors');
 require('dotenv').config();
 
 var indexRouter = require('./routes/index');
@@ -12,6 +13,22 @@ var activityRouter = require('./routes/activityRouter');
 var schoolInfoRouter = require('./routes/schoolInfoRouter');
 
 var app = express();
+
+// our dev server and client run on 2 different ports 
+// so we need to whitelist the client address
+if (app.get('env') === 'development') {
+  const whitelist = ['localhost:3000']
+  const corsOptions = {
+    origin: function (origin, callback) {
+      if (whitelist.indexOf(origin) !== -1) {
+        callback(null, true)
+      } else {
+        callback(new Error('Not allowed by CORS'))
+      }
+    }
+  }
+  // app.use(cors(corsOptions));
+}
 
 app.use(logger('dev'));
 app.use(express.json());
