@@ -31,11 +31,8 @@ studentRouter.route('/:householdId/')
                 return res.status(500).json(err)
             }
             household.students.push(student)
-<<<<<<< HEAD
             //Save the modified household
             household.save()
-=======
->>>>>>> 721c613b3c70c85bd66208cdd28434c55790e616
             res.status(201).json(student)
         })
     })

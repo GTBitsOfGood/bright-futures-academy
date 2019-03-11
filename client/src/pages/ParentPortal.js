@@ -26,7 +26,7 @@ class PaymentPortal extends Component {
   }
 
   /**
-   * Makes a fetch request to either dev or prod
+   * Makes a GET request to either dev or prod and fetches the student list
    * as soon as the component mounts and updates the state
    */
   componentDidMount(){

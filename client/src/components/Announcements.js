@@ -21,7 +21,7 @@ class AnnouncementList extends Component {
     }
 
     /**
-     * Makes a fetch request to either dev or prod
+     * Makes a GET request to either dev or prod and fetches the announcement list
      * as soon as the component loads and updates the state
      * TODO: Add Validation for output
      * TODO: Once finished, remove debugging statements
