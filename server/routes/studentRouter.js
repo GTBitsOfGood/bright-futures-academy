@@ -41,7 +41,6 @@ studentRouter.route('/:householdId/')
             if (err) {
                 return res.status(500).json(err)
             }
-            console.log(household.students)
             res.status(201).json(household.students)
         })
     })
