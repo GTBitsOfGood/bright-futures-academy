@@ -63,11 +63,7 @@ class PaymentPortal extends Component {
           {this.state.students.map(function(d, id) {
             return <StudentCard key= {d.id} studentName={d.name.first + " " + d.name.last} studentID = {d.id} studentBalance={d.amount_due} />
           })}
-<<<<<<< HEAD
       <AnnouncementList />
-=======
-      <AnnouncementList announcements={this.state.announcements}/>
->>>>>>> 721c613b3c70c85bd66208cdd28434c55790e616
       </div>
       <Button>Make Payment</Button>
       </div>
