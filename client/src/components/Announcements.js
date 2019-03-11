@@ -4,7 +4,7 @@ import './css/Announcements.css'
 
 //TODO: Determine the Production url for the api
 const API_ANNOUNCEMENTS_DEV = "http://localhost:5000/api/schoolInfo/announcements"
-const API_HOUSEHOLD_PROD = "";
+const API_ANNOUNCEMENTS_PROD = "";
 
 /**
  * Container class for Announcents for the parent portal page.
@@ -28,17 +28,14 @@ class AnnouncementList extends Component {
      * TODO: Once finished, remove debugging statements
      */
     componentDidMount() {
+        let urlToFetch = API_ANNOUNCEMENTS_PROD;
         if (this.ReactIsInDevelomentMode()) {
-            let urlToFetch = API_ANNOUNCEMENTS_DEV;
-            fetch(urlToFetch)
-            .then(response => response.json())
-            .then(data =>  this.setState({announcements:this.parseAnnouncements(data)}))
-          } else {
-            let urlToFetch = API_ANNOUNCEMENTS_DEV;
-            fetch(urlToFetch)
-            .then(response => response.json())
-            .then(data =>  this.setState({announcements:this.parseAnnouncements(data)}))
-          }
+            urlToFetch = API_ANNOUNCEMENTS_DEV;
+        }
+        fetch(urlToFetch)
+        .then(response => response.json())
+        .then(data =>  this.setState({announcements:this.parseAnnouncements(data)}))
+          
     }
 
     /**
@@ -68,8 +65,6 @@ class AnnouncementList extends Component {
 
     //TODO: Add KEY FOR ANNOUNCEMENT
     render() {
-        console.log("Announcements got", this.state.announcements)
-
         return(
             <div>
                 <br></br>
