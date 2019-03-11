@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Announcement from './Announcement'
 import './css/Announcements.css'
 
+//TODO: Determine the Production url for the api
 const API_ANNOUNCEMENTS_DEV = "http://localhost:5000/api/schoolInfo/announcements"
 const API_HOUSEHOLD_PROD = "";
 
