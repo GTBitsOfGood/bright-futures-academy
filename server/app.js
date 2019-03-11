@@ -17,8 +17,7 @@ var app = express();
 // our dev server and client run on 2 different ports 
 // so we need to whitelist the client address
 if (app.get('env') === 'development') {
-  // The first one is client, the second is the api
-  const whitelist = ['http://localhost:3001']
+  const whitelist = ['http://localhost:3000']
   const corsOptions = {
     origin: function (origin, callback) {
       if (whitelist.indexOf(origin) !== -1 || !origin) {
