@@ -31,6 +31,8 @@ studentRouter.route('/:householdId/')
                 return res.status(500).json(err)
             }
             household.students.push(student)
+            //Save the modified household
+            household.save()
             res.status(201).json(student)
         })
     })
@@ -39,7 +41,6 @@ studentRouter.route('/:householdId/')
             if (err) {
                 return res.status(500).json(err)
             }
-            console.log(household.students)
             res.status(201).json(household.students)
         })
     })

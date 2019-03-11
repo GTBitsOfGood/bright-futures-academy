@@ -6,11 +6,9 @@ import {Button} from 'reactstrap';
 import './css/ParentPortal.css';
 
 
-//TODO: Figure out he correct URL's
-const API_HOUSEHOLD_DEV = "http://localhost:5000/api/household/";
+//TODO: Figure out he correct URL's for Production
 const API_STUDENT_DEV = "http://localhost:5000/api/student/"
 const API_STUDENT_PROD = "";
-const API_HOUSEHOLD_PROD = "";
 /**
  * Parent class for Parent portal. Placeholder cards for student information
  */
@@ -20,38 +18,44 @@ class PaymentPortal extends Component {
     super(props);
     
     this.state = {
-      announcements: this.props.announcements,
-      students: [{id: 1234, name : {first: "Name_first", last:"name_last"}, amount_due:2000}]
+      students: []
     }
 
     this.ReactIsInDevelomentMode = this.ReactIsInDevelomentMode.bind(this);
-    this.getStudentInfo()
+    
   }
 
-  ReactIsInDevelomentMode(){ 
-    return '_self' in React.createElement('div');
-  }
-
-  getStudentInfo(){
+  /**
+   * Makes a fetch request to either dev or prod
+   * as soon as the component mounts and updates the state
+   */
+  componentDidMount(){
     //TODO: Figure out how it is being passed later : this.props.houseHoldID
+    //TODO: Add logic for retrieving householdID
     if (this.ReactIsInDevelomentMode()){
-      console.log("React is in dev mode...")
       //Fetch the student list
-      let urlToFetch = API_HOUSEHOLD_DEV + '5c8583cb68fcb116a254474d';
+      let urlToFetch = API_STUDENT_DEV + '5c8680ffad46ec4f26e7b46f';
       fetch(urlToFetch)
       .then(response => response.json())
-      .then(data => this.setState({students: data.students}))
+      .then(data => this.setState({students: data}))
     } else {
-      console.log("React is in production mode...")
-      let urlToFetch = API_HOUSEHOLD_PROD + '5c8583cb68fcb116a254474d';
+      let urlToFetch = API_STUDENT_PROD + '5c8680ffad46ec4f26e7b46f';
       fetch(urlToFetch)
       .then(response => response.json())
       .then(data => this.setState({students: data.students}))
     }
+  }
+
+  /**
+  * Return whether React is in dev or production
+  */
+  ReactIsInDevelomentMode(){ 
+    return '_self' in React.createElement('div');
   }
  
   //TODO: Add logic for making payment
   render() {
+    console.log("Rendering")
     return (
     <div id='parent-portal-container'>
       <PrimaryNavBar />
@@ -59,7 +63,7 @@ class PaymentPortal extends Component {
           {this.state.students.map(function(d, id) {
             return <StudentCard key= {d.id} studentName={d.name.first + " " + d.name.last} studentID = {d.id} studentBalance={d.amount_due} />
           })}
-      <AnnouncementList announcements={this.state.announcements}/>
+      <AnnouncementList />
       </div>
       <Button>Make Payment</Button>
       </div>
