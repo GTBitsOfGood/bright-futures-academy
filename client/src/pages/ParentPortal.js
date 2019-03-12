@@ -43,13 +43,6 @@ class PaymentPortal extends Component {
     .then(data => this.setState({students: data}))
     
   }
-
-  /**
-  * Return whether React is in dev or production
-  */
-  ReactIsInDevelomentMode(){ 
-    return '_self' in React.createElement('div');
-  }
  
   //TODO: Add logic for making payment
   render() {
