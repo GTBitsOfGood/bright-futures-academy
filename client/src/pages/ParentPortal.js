@@ -4,6 +4,7 @@ import StudentCard from './../components/StudentCard';
 import AnnouncementList from './../components/Announcements';
 import {Button} from 'reactstrap';
 import './css/ParentPortal.css';
+import {ReactIsInDevelomentMode} from './../components/Utils';
 
 
 //TODO: Figure out he correct URL's for Production
@@ -20,8 +21,6 @@ class PaymentPortal extends Component {
     this.state = {
       students: []
     }
-
-    this.ReactIsInDevelomentMode = this.ReactIsInDevelomentMode.bind(this);
     
   }
 
@@ -32,18 +31,17 @@ class PaymentPortal extends Component {
   componentDidMount(){
     //TODO: Figure out how it is being passed later : this.props.houseHoldID
     //TODO: Add logic for retrieving householdID
-    if (this.ReactIsInDevelomentMode()){
+    //TODO: Replact 5c8680ffad46ec4f26e7b46f with householdID from redux
+    let urlToFetch = API_STUDENT_PROD+ '5c8680ffad46ec4f26e7b46f';
+    if (ReactIsInDevelomentMode()){
       //Fetch the student list
-      let urlToFetch = API_STUDENT_DEV + '5c8680ffad46ec4f26e7b46f';
-      fetch(urlToFetch)
-      .then(response => response.json())
-      .then(data => this.setState({students: data}))
-    } else {
-      let urlToFetch = API_STUDENT_PROD + '5c8680ffad46ec4f26e7b46f';
-      fetch(urlToFetch)
-      .then(response => response.json())
-      .then(data => this.setState({students: data.students}))
-    }
+      urlToFetch = API_STUDENT_DEV + '5c8680ffad46ec4f26e7b46f';
+
+    } 
+    fetch(urlToFetch)
+    .then(response => response.json())
+    .then(data => this.setState({students: data}))
+    
   }
 
   /**
@@ -55,7 +53,6 @@ class PaymentPortal extends Component {
  
   //TODO: Add logic for making payment
   render() {
-    console.log("Rendering")
     return (
     <div id='parent-portal-container'>
       <PrimaryNavBar />

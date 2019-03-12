@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Announcement from './Announcement'
 import './css/Announcements.css'
+import {ReactIsInDevelomentMode} from './Utils';
 
 //TODO: Determine the Production url for the api
 const API_ANNOUNCEMENTS_DEV = "http://localhost:5000/api/schoolInfo/announcements"
@@ -29,7 +30,7 @@ class AnnouncementList extends Component {
      */
     componentDidMount() {
         let urlToFetch = API_ANNOUNCEMENTS_PROD;
-        if (this.ReactIsInDevelomentMode()) {
+        if (ReactIsInDevelomentMode()) {
             urlToFetch = API_ANNOUNCEMENTS_DEV;
         }
         fetch(urlToFetch)
@@ -45,23 +46,17 @@ class AnnouncementList extends Component {
      * Returns formatted data to be stored in the state
      */
     parseAnnouncements(data) {
-        if (data[0].default !== undefined) {
-          return [data[0].default]
-        } else {
+        if (data.announcements !== undefined) {
             var toBeReturned = []
             for (let i =0; i < data.length(); i++) {
                 toBeReturned.push(data[i].announcement)
             }
           return toBeReturned;
+          
+        } else {
+            return [data[0].default]
         }
       } 
-
-      /**
-       * Return whether React is in dev or production
-       */
-    ReactIsInDevelomentMode(){ 
-        return '_self' in React.createElement('div');
-      }
 
     //TODO: Add KEY FOR ANNOUNCEMENT
     render() {
