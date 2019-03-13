@@ -8,7 +8,7 @@
     "classnames": "^2.2.6",
     "fsevents": "^1.2.7",
     "is-empty": "^1.2.0",
-    "jquery": "^1.9.1",
+    "jquery": ">=3.0.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
     "react": "^16.8.1",
