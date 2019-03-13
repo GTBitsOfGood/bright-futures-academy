@@ -66,7 +66,4 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(() => 
   console.log("Connected to MongoDB")
 });
 
-console.log('Express started. Listening on port', process.env.PORT || 5000);
-app.listen(process.env.PORT || 5000);
-
 module.exports = app;
