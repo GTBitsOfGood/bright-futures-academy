@@ -12,7 +12,7 @@ let StudentSchema = new Schema({
         type: Number,
         required: true
     },
-    activities: [Object],
+    activities: [Activity],
     img_url: {
         type: mongoose.SchemaTypes.Url
     },
