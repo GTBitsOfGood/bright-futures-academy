@@ -21,6 +21,7 @@
     "react-step-progress-bar": "^1.0.3",
     "reactstrap": "^7.1.0",
     "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
@@ -38,7 +39,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {
-    "redux-devtools-extension": "^2.13.8"
-  }
+  "devDependencies": {}
 }
