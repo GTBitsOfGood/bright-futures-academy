@@ -27,7 +27,7 @@ class Footer extends Component {
                             </div>
                         </p>
                         <p className="contentText" id="BFAtext">
-                            At dolore ipsum amet est est aliquyam. Magna sed justo clita magna sanctus sanctus duo. Sed duo vero accusam et.. Stet sit lorem stet kasd ut sit. Dolor nonumy vero nonumy rebum sit vero rebum. Ut ipsum no sea eirmod ut vero eirmod, consetetur kasd dolore ipsum est diam consetetur ea no ipsum. Amet eos ipsum aliquyam et sanctus ut et et, clita sea elitr sit rebum, diam et accusam.
+                            Bright Futures Academy focuses on helping youth of limited resources on Atlanta’s Westside by providing the spiritual, educational and familial support that helps them become productive members of society and role models to their peers.
                         </p>
                     </div>
                     <div className="right">
