@@ -6,22 +6,21 @@
 }
 
 .rectangleBackground {
-    height: 600px;
+    height: 50%;
     border: solid 1px #979797;
     background-color: #222222;
     display: inline-block;
     margin:auto;
     overflow:hidden;
     text-align:center;
-    width:100%;
-    text-align:center;
+    width: 100%;
 }
 
 .rectangleBackground > div {
     display: inline-block;
     margin: 2%;
     padding: 20px;
-    width: 46%; /* because margin is 2%, we have 2 divs, so (100% - 2*2%)/2 = 46% */
+    max-width: 46%; /* because margin is 2%, we have 2 divs, so (100% - 2*2%)/2 = 46% */
 }
 
 /* Import Roboto font */
@@ -46,6 +45,8 @@
     line-height: 1.69;
     letter-spacing: normal;
     color: #ffffff;
+    max-width: 350px;
+    overflow: hidden;
 }
 
 .moreAboutUs {
@@ -65,5 +66,7 @@
     text-align: left;
     line-height: 20%;
     display: inline-block;
-    max-width: 400px
+    max-width: 400px;
+    overflow: hidden;
+    clear: both;
 }
