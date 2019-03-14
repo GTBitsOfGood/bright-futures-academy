@@ -6,19 +6,25 @@
 }
 
 .rectangleBackground {
-    width: 1440px;
-    height: 557px;
+    height: 600px;
     border: solid 1px #979797;
     background-color: #222222;
     display: inline-block;
     margin:auto;
     overflow:hidden;
     text-align:center;
+    width:100%;
+    text-align:center;
+}
+
+.rectangleBackground > div {
+    display: inline-block;
+    margin: 2%;
+    padding: 20px;
+    width: 46%; /* because margin is 2%, we have 2 divs, so (100% - 2*2%)/2 = 46% */
 }
 
 .headingText {
-    width: 336px;
-    height: 28px;
     font-family: Roboto;
     font-size: 24px;
     font-weight: bold;
@@ -30,8 +36,6 @@
 }
 
 .contentText {
-    width: 360px;
-    height: 108px;
     font-family: Roboto;
     font-size: 16px;
     font-weight: 300;
@@ -54,4 +58,12 @@
     letter-spacing: normal;
     text-align: center;
     color: #ffffff;
+}
+
+.textContent {
+    vertical-align: middle;
+    text-align: left;
+    line-height: 20%;
+    display: inline-block;
+    max-width: 400px
 }

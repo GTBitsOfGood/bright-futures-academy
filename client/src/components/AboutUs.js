@@ -24,14 +24,14 @@ class AboutUs extends Component {
         return (
             <div className="rectangleBackground">
                 <div>
-                    <img alt="Brand" src={logoImage[0]} className="rectangleImage"/>
+                    <img alt="#" src={logoImage[0]} className="rectangleImage"/>
                 </div>
-                <div>
+                <div className="textContent">
                     <p className="headingText">
                         Explore Bright Futures Academy
                     </p>
                     <p className="contentText">
-                        Lorem no diam dolore stet clita gubergren eirmod est diam est. Duo at sed eirmod dolor at. Et erat takimata.
+                        No ipsum tempor dolore gubergren duo, sanctus diam dolore sadipscing dolores sadipscing, erat ipsum eirmod aliquyam lorem vero sit tempor. Eos stet lorem takimata eos rebum kasd diam duo dolor. Amet sed consetetur aliquyam et..
                     </p>
                     <div id="moreAboutUs" className="moreAboutUs" onClick={this.onClickMoreAboutUs}>
                         More About Us >
