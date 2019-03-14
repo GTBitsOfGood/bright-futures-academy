@@ -24,6 +24,8 @@
     width: 46%; /* because margin is 2%, we have 2 divs, so (100% - 2*2%)/2 = 46% */
 }
 
+/* Import Roboto font */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 .headingText {
     font-family: Roboto;
     font-size: 24px;
@@ -36,8 +38,8 @@
 }
 
 .contentText {
-    font-family: Roboto;
-    font-size: 16px;
+    font-family: Roboto-light, sans-serif;
+    font-size: 14px;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
@@ -47,8 +49,6 @@
 }
 
 .moreAboutUs {
-    width: 165px;
-    height: 29px;
     font-family: Roboto;
     font-size: 22px;
     font-weight: 500;
@@ -56,7 +56,7 @@
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
-    text-align: center;
+    text-align: left;
     color: #ffffff;
 }
 
