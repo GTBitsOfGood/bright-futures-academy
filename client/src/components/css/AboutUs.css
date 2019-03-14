@@ -1,0 +1,57 @@
+.rectangleImage {
+    width: 652px;
+    height: 367px;
+    border: solid 1px #979797;
+    background-color: #d8d8d8;
+}
+
+.rectangleBackground {
+    width: 1440px;
+    height: 557px;
+    border: solid 1px #979797;
+    background-color: #222222;
+    display: inline-block;
+    margin:auto;
+    overflow:hidden;
+    text-align:center;
+}
+
+.headingText {
+    width: 336px;
+    height: 28px;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.contentText {
+    width: 360px;
+    height: 108px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.69;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.moreAboutUs {
+    width: 165px;
+    height: 29px;
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}
