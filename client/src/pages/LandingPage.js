@@ -5,7 +5,7 @@ import LandingPageNavbar from './../components/LandingPageNavbar';
 import AboutUs from '../components/AboutUs';
 import Teachers from '../components/Teachers';
 import Spotlight from '../components/Spotlight';
-
+import LandingPageNews from '../components/LandingPageNews';
 
 /**
  * Our Landing Page! This is what the parent will see before they sign in.
@@ -25,6 +25,7 @@ class LandingPage extends Component {
       <div>
         <LandingPageHeader />
         <LandingPageNavbar />
+        <LandingPageNews />
         <AboutUs />
         <Spotlight />
         <Teachers />
