@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PrimaryNavbar from './../components/Navbar';
+import LandingPageHeader from './../components/LandingPageNavbar';
 
 /**
  * Our Landing Page! This is what the parent will see before they sign in.
@@ -15,7 +15,7 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <PrimaryNavbar />
+      <LandingPageHeader />
     );
   }
 }
