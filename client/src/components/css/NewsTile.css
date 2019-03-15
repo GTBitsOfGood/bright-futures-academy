@@ -1,0 +1,24 @@
+.newsImage {
+    height: 75px;
+    width: 75px;
+    background-color: #e4e4e5;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border: 1px solid red;
+}
+
+.newsTileText {
+    max-width: 350px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.69;
+    letter-spacing: normal;
+    color: #5e6a6e;
+}
