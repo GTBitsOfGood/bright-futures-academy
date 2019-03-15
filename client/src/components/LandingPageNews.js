@@ -46,8 +46,9 @@ class LandingPageNews extends Component {
                     </div>
                 </span>
                 <span>
-                    <NewsTile />
-                    {this.getNews}
+                    <NewsTile header="Step One" caption="What a lovely pattern we got here in this image which is encapsulted in a figure element. Oh dear, look how long this caption is!"/>
+                    <NewsTile header="Step Two" caption="What a lovely pattern we got here in this image which is encapsulted in a figure element. Oh dear, look how long this caption is!"/>
+                    <NewsTile header="Step Three" caption="What a lovely pattern we got here in this image which is encapsulted in a figure element. Oh dear, look how long this caption is!"/>
                 </span>
             </div>
         );

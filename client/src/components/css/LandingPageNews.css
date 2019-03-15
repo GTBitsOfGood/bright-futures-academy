@@ -37,3 +37,9 @@
 .right {
     float: right;
 }
+
+.newsPageCards {
+    overflow: hidden; 
+    text-align: center;
+    display: inline-block;
+}

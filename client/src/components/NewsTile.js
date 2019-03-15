@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/LandingPageNews.css';
+import './css/NewsTile.css';
 import logoImage from '../images';
 
 class NewsTile extends Component {
@@ -8,22 +8,19 @@ class NewsTile extends Component {
         super(props);
 
         this.state = {
-
         }
     }
 
     render() {
+        const { header, caption } = this.props;
         return (
-            <div>
+            <figure>
                 <div className="newsImage">
-                    <img alt="#" src={logoImage[0]}  width="15%" height="10%"/>
+                    <img className="newsImage" alt="#" src={logoImage[0]}  width="90%" height="90%"/>
                 </div>
-                <div className="newsTileText">
-                    <p>
-                        Stet sit amet eirmod ipsum rebum elitr clita. Et sea invidunt invidunt sea sanctus erat et. Consetetur duo amet et lorem sadipscing tempor gubergren, erat est consetetur sit vero sit labore. Ea sed sea dolor.
-                    </p>
-                </div>
-            </div>
+                <figcaption className="newsTileHeader">{header}</figcaption>
+                <figcaption className="newsTileParagraph">{caption}</figcaption>
+            </figure>
         );
     }
 }
