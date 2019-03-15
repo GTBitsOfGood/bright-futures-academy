@@ -63,6 +63,7 @@
   width: 20%;
   height: 275px;
   background-color: rgba(254, 67, 73, 0.54);
+  background-image: url('./../../images/logo.png')
 }
 
 .Teacher-Name {
