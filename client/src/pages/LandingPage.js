@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Footer from './../components/Footer';
 import LandingPageHeader from '../components/LandingPageHeader';
 
 /**
@@ -15,7 +16,10 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <LandingPageHeader />
+        <div>
+          <LandingPageHeader />
+          <Footer />
+        </div>
     );
   }
 }
