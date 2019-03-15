@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LandingPageHeader from './../components/LandingPageNavbar';
+import LandingPageHeader from '../components/LandingPageHeader';
 
 /**
  * Our Landing Page! This is what the parent will see before they sign in.

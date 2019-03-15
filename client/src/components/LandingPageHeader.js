@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './css/LandingPageHeader.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import logoImage from './../images';
+import logoImage from '../images';
 
 /**
  * Landing Page Header before a parent signs in. https://github.com/GTBitsOfGood/bright-futures-academy/issues/104
