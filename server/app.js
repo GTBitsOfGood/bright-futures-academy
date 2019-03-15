@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongoose = require('mongoose');
+var mongoose = require('mongoose').set('debug', true);
 var cors = require('cors');
 const passport = require("passport");
 require('dotenv').config();
@@ -60,10 +60,6 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(() => 
 app.use(express.static(path.join(__dirname, "../client/build/")));
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
-
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(() => {
-  console.log("Connected to MongoDB")
 });
 
 module.exports = app;

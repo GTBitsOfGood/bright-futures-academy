@@ -24,15 +24,20 @@ studentRouter.route('/')
 */
 studentRouter.route('/:householdId/')
     .post((req, res) => {
-        let student = new Student(req.body);
-        student.save();
         Household.findById((req.params.householdId), (err, household) => {
             if (err) {
-                return res.status(500).json(err)
+                // return res.status(500).json(err)
             }
+            let student = new Student(req.body);
             household.students.push(student)
-            //Save the modified household
-            household.save()
+            // save() called on a parent schema will call its childrens' save() as well
+            household.save((err) => {
+                if (err) {
+                    res.status(500).json(err);
+                    return;
+                }
+            })
+            console.log(household)
             res.status(201).json(student)
         })
     })
@@ -54,11 +59,11 @@ studentRouter.route('/:householdId/:studentId')
     .get((req, res) => {
         Household.findById((req.params.householdId), (err, household) => {
             if (err) {
-                return res.status(404).send("could not find household")
+                return res.status(404).send("Could not find household.")
             }
-            var student = household.students.find((student) => student.id === req.studentId);
-            if (student === undefined) {
-                return res.status(404).send("could not find student")
+            var student = household.students.id(req.studentId)
+            if (student === null) {
+                return res.status(404).send("Could not find student.")
             }
             res.json(student)
         })
@@ -66,12 +71,20 @@ studentRouter.route('/:householdId/:studentId')
     .delete((req, res) => {
         Household.findById((req.params.householdId), (err, household) => {
             if (err) {
-                return res.status(404).send("could not find household")
+                return res.status(404).send("Could not find household.")
             }
-            var deletedCount = household.students.deleteOne({ _id: req.params.studentId }).deletedCount
-            if (deletedCount == 0) {
-                return res.status(404)
+            var student = household.students.id(req.params.studentId)
+            if (student === null) {
+                console.log("we're deleting")
+                return res.status(404).send("Could not find student.")
             }
+            student.remove()
+            household.save((err) => {
+                if (err) {
+                    return res.status(500).json(new Error("Could not delete student."))
+                }
+            })
+            console.log("what is happening")
             res.status(200)
         })
     })
