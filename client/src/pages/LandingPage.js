@@ -16,8 +16,10 @@ class LandingPage extends Component {
 
   render() {
     return (
-        <LandingPageHeader />
-        <Footer />
+        <div>
+          <LandingPageHeader />
+          <Footer />
+        </div>
     );
   }
 }
