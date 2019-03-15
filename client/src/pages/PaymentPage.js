@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import PrimaryNavbar from './../components/Navbar';
+import { PrimaryNavBar, PaymentPageContent, PaymentPageProgress } from './../components';
 import "./css/PaymentPageOne.css";
 
-// TODO: make an index.js that exports all of these
-import PaymentPageContent from '../components/PaymentPageContent';
-import PaymentPageProgress from '../components/PaymentPageProgress'; 
 
 // TODO: get this value from new Model.js file described below
 const NUM_PAGES = 4;
@@ -36,7 +33,7 @@ class PaymentPage extends Component {
     const { activities, currentPage } = this.state;
     return (
       <>
-      <PrimaryNavbar />
+      <PrimaryNavBar />
       <div className="container">
         <h2>Account Payment</h2>
         <div className="ProgressBar"><PaymentPageProgress currentPage={currentPage} numPages={NUM_PAGES} /></div>

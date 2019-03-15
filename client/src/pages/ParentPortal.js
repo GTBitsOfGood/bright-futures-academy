@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import PrimaryNavBar from './../components/Navbar';
-import StudentCard from './../components/StudentCard';
-import AnnouncementList from './../components/Announcements';
+import { PrimaryNavBar, StudentCard, AnnouncementList } from './../components';
 import {Button} from 'reactstrap';
 import './css/ParentPortal.css';
 /**
@@ -11,7 +9,7 @@ class PaymentPortal extends Component {
 
   constructor(props) {
     super(props);
-    
+
     this.state = {
       announcements: this.props.announcements
     }
@@ -21,14 +19,14 @@ class PaymentPortal extends Component {
     //TODO: Make an API call to fetch all students of the households
   }
 
-  //TODO: ADD KEYS FOR ANNOUNCEMENTS. 
-  //TODO: Add logic for page changing. 
+  //TODO: ADD KEYS FOR ANNOUNCEMENTS.
+  //TODO: Add logic for page changing.
   //TODO: Add logic for making payment
   render() {
     return (
     <div id='parent-portal-container'>
       <PrimaryNavBar />
-      <div className="container"> 
+      <div className="container">
       <StudentCard studentName={"Name1"} studentID={1} studentBalance={1234}/>
           <StudentCard studentName={"Name2"} studentID={2} studentBalance={123}/>
           <StudentCard studentName={"Name2"} studentID={2} studentBalance={123}/>
