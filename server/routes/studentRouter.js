@@ -75,7 +75,7 @@ studentRouter.route('/:householdId/:studentId')
             }
             const student = household.students.id(req.studentId)
             if (student === null) {
-                return res.status(404).send("Could not find student.")
+                return res.status(404).send(new Error("Could not find student."))
             }
             res.status(200).json(student)
         })

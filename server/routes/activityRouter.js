@@ -42,7 +42,7 @@ activityRouter.route('/:householdId/:studentId')
             }
             const student = household.students.id(req.studentId);
             if (student === null) {
-                return res.status(404).send("Could not find student.")
+                return res.status(404).send(new Error("Could not find student."))
             }
             const activity = new Activity(req.body)
             student.amount_due += activity.amount
@@ -58,11 +58,11 @@ activityRouter.route('/:householdId/:studentId')
     .get((req, res) => {
         Household.findById((req.params.householdId), (err, household) => {
             if (err) {
-                return res.status(404).json("could not find household")
+                return res.status(404).json(new Error("Could not find household"))
             }
             var student = household.students.id(req.studentId);
             if (student === null) {
-                return res.status(404).json("could not find student")
+                return res.status(404).json(new Error("could not find student"))
             }
             res.status(200).json(student.activities)
         })
@@ -77,15 +77,15 @@ activityRouter.route('/:householdId/:studentId/:activityId')
     .get((req, res) => {
         Household.findById((req.params.householdId), (err, household) => {
             if (err) {
-                return res.status(404).send("could not find household")
+                return res.status(404).json(new Error("Could not find household."))
             }
             var student = household.students.id(req.studentId);
             if (student === null) {
-                return res.status(404).send("could not find student")
+                return res.status(404).json(new Error("Could not find student"))
             }
             var activity = student.activities.id(req.activityId);
             if (activity === null) {
-                return res.status(404).send("could not find activity")
+                return res.status(404).json(new Error("Could not find activity"))
             }
             res.status(200).json(activity)
         })
@@ -93,15 +93,15 @@ activityRouter.route('/:householdId/:studentId/:activityId')
     .delete((req, res) => {
         Household.findById((req.params.householdId), (err, household) => {
             if (err) {
-                return res.status(404).send("could not find household")
+                return res.status(404).json(new Error("Could not find household"))
             }
             var student = household.students.id(req.studentId);
             if (student === null) {
-                return res.status(404).send("could not find student")
+                return res.status(404).json(new Error("Could not find student"))
             }
             var activity = student.activities.id(req.activityId);
             if (activity === null) {
-                return res.status(404).send("could not find activity")
+                return res.status(404).json(new Error("Could not find activity"))
             }
             student.amount_due -= activity.amount
             activity.delete()
