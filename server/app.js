@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongoose = require('mongoose').set('debug', true);
+var mongoose = require('mongoose');
 var cors = require('cors');
 const passport = require("passport");
 require('dotenv').config();
