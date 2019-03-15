@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Footer from './../components/Footer';
 import LandingPageHeader from '../components/LandingPageHeader';
+import LandingPageNavbar from './../components/LandingPageNavbar';
 import AboutUs from '../components/AboutUs';
+
 
 /**
  * Our Landing Page! This is what the parent will see before they sign in.
@@ -17,11 +19,13 @@ class LandingPage extends Component {
 
   render() {
     return (
-        <div>
-          <LandingPageHeader />
-          <AboutUs />
-          <Footer />
-        </div>
+
+      <div>
+        <LandingPageHeader />
+        <LandingPageNavbar />
+        <AboutUs />
+        <Footer />
+      </div>
     );
   }
 }
