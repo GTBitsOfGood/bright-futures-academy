@@ -17,6 +17,9 @@ class LandingPageHeader extends Component {
         }
     }
 
+    /**
+     * TODO: Add links for social media links
+     */
     render() {
         return (
                 <div className="icons">
