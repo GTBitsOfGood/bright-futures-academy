@@ -18,8 +18,8 @@ class LandingPageNavbar extends Component {
      */
     render() {
         return (
-            <div className="background uppercase">
-                <span className="pageLinks">
+            <div className="backgroundNavbar uppercaseNavbar">
+                <span className="pageLinksNavbar">
                     <p>
                         Home
                     </p>
@@ -38,8 +38,8 @@ class LandingPageNavbar extends Component {
                     <p>
                         Contact
                     </p>
-                    <div className="right">
-                        <button className="button">Parent Sign in</button>
+                    <div className="rightNavbar">
+                        <button className="buttonNavbar">Parent Sign in</button>
                     </div>
                 </span>
             </div>

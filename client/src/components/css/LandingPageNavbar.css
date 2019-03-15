@@ -1,7 +1,7 @@
 /* Import Roboto font */
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-.uppercase * {
+.uppercaseNavbar * {
     text-transform: uppercase;
     font-family: Roboto;
     font-size: 14px;
@@ -14,22 +14,22 @@
     color: #ffffff;
 }
 
-.background {
+.backgroundNavbar {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.87);
     padding-left: 5%;
 }
 
-.pageLinks {
+.pageLinksNavbar {
     text-align: left;
 }
 
-.pageLinks > p {
+.pageLinksNavbar > p {
     padding: 2%;
     padding-bottom: 1%;
 }
 
-.button {
+.buttonNavbar {
     color: #ffffff;
     background-color: transparent;
     padding: 20px;
@@ -55,7 +55,7 @@
     vertical-align: baseline;
 }
 
-.pageLinks > div {
+.pageLinksNavbar > div {
     float: right;
     padding-right: 10%;
     padding-top: 1.5%;
