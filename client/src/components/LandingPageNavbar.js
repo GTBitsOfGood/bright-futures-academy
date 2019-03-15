@@ -21,7 +21,7 @@ class LandingPageHeader extends Component {
         return (
                 <div className="icons">
                     <div className="logo">
-                        <img className="image" alt="#" src={logoImage[0]} height="75px" />
+                        <img alt="#" src={logoImage[0]} height="75px" />
                     </div>
                     <div className="phoneNumber">
                         <span className="phoneSpace">
