@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Footer from './../components/Footer';
 import LandingPageHeader from '../components/LandingPageHeader';
-import AboutUs from './../components/AboutUs';
+import AboutUs from '../components/AboutUs';
 
 /**
  * Our Landing Page! This is what the parent will see before they sign in.

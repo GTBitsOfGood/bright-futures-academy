@@ -1,31 +1,40 @@
-.rectangleImage {
-    width: 652px;
-    height: 367px;
+.rectangleImageAbout {
+    width: 600px;
+    height: 350px;
     border: solid 1px #979797;
     background-color: #d8d8d8;
 }
 
-.rectangleBackground {
+.rectangleBackgroundAbout {
     height: 50%;
     border: solid 1px #979797;
     background-color: #222222;
-    display: inline-block;
     margin:auto;
     overflow:hidden;
     text-align:center;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.rectangleBackground > div {
-    display: inline-block;
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.rectangleBackgroundAbout > div {
     margin: 2%;
     padding: 20px;
-    max-width: 46%; /* because margin is 2%, we have 2 divs, so (100% - 2*2%)/2 = 46% */
+    max-width: 40%; /* because margin is 2%, we have 2 divs, so (100% - 2*2%)/2 = 46% */
 }
 
 /* Import Roboto font */
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-.headingText {
+.headingTextAbout {
     font-family: Roboto;
     font-size: 24px;
     font-weight: bold;
@@ -36,7 +45,7 @@
     color: #ffffff;
 }
 
-.contentText {
+.contentTextAbout {
     font-family: Roboto-light, sans-serif;
     font-size: 14px;
     font-weight: 300;
@@ -61,12 +70,12 @@
     color: #ffffff;
 }
 
-.textContent {
-    vertical-align: middle;
+.textContentAbout {
     text-align: left;
-    line-height: 20%;
     display: inline-block;
     max-width: 400px;
     overflow: hidden;
-    clear: both;
+    justify-content: center;
+    position: relative;
+    left: 5%;
 }
