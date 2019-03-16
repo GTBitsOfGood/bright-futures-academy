@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
 import check from './../images/check.svg';
 import './css/Confirmation.css';
 
@@ -27,12 +28,12 @@ class Confirmation extends Component {
      */
     render() {
         return (
-          <form onSubmit={this.handleSubmit} className="center">
+          <form className="center">
 
             <p>Thank you!</p>
             <img src={check} />
             <p>We have confirmed your payment.</p>
-            <input type="submit" value="See Receipt Details" />
+            <Button onClick={this.handleSubmit} outline color="primary">See Receipt Details</Button>
             
           </form>
         );
