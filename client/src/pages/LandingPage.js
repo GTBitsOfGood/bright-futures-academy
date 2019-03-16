@@ -4,6 +4,7 @@ import LandingPageHeader from '../components/LandingPageHeader';
 import LandingPageNavbar from './../components/LandingPageNavbar';
 import AboutUs from '../components/AboutUs';
 import Teachers from '../components/Teachers';
+import Spotlight from '../components/Spotlight';
 
 
 /**
@@ -25,6 +26,7 @@ class LandingPage extends Component {
         <LandingPageHeader />
         <LandingPageNavbar />
         <AboutUs />
+        <Spotlight />
         <Teachers />
         <Footer />
       </div>
