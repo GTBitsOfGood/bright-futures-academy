@@ -26,7 +26,8 @@
   width: 160px;
   height: 1px;
   border: solid 2px #fe4349;
-  margin-bottom: 30px;
+  margin-top: 5px;
+  margin-bottom: 50px;
 }
 
 .impact-underline {
@@ -34,7 +35,8 @@
   width: 125px;
   height: 1px;
   border: solid 2px #fe4349;
-  margin-bottom: 30px;
+  margin-top: 5px;
+  margin-bottom: 50px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto);
