@@ -26,15 +26,15 @@
   width: 160px;
   height: 1px;
   border: solid 2px #fe4349;
-  margin-bottom: 20%;
+  margin-bottom: 30px;
 }
 
 .impact-underline {
-  display: none;
+  display: flex;
   width: 125px;
   height: 1px;
   border: solid 2px #fe4349;
-  margin-bottom: 20%;
+  margin-bottom: 30px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto);
@@ -54,6 +54,14 @@
 .spotlight-features-container {
   display: flex;
   justify-content: space-around;
+}
+.impact-features-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hidden {
+  display: none;
 }
 
 .feature {
@@ -81,7 +89,3 @@
   color: #4a4a4a;
 }
 
-.impact-features-container {
-  display: none;
-  justify-content: space-around;
-}
