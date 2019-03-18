@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
 import logoImage from './../images';
 import { ChargesList } from './'
 import './css/Receipt.css';
@@ -83,7 +84,7 @@ class Receipt extends Component {
           </div>
         </div>
           <form onSubmit={this.onClickGetPDF} className="center">
-          <input type="submit" value="Download PDF" />
+          <Button outline type="submit" color="primary">Download PDF</Button>
           </form>
       </div>
     );

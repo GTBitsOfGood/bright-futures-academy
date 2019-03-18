@@ -24,7 +24,7 @@ activityRouter.route('/:householdId/:studentId')
             if (err) {
                 return res.status(404).send("could not find household")
             }
-            var student = household.students.findOne({ _id: req.studentId })
+            var student = household.students.find((student) => student.id === req.studentId);
             if (student === undefined) {
                 return res.status(404).send("could not find student")
             }
@@ -40,7 +40,7 @@ activityRouter.route('/:householdId/:studentId')
             if (err) {
                 return res.status(404).json("could not find household")
             }
-            var student = household.students.findOne({ _id: req.studentId })
+            var student = household.students.find((student) => student.id === req.studentId);
             if (student === undefined) {
                 return res.status(404).json("could not find student")
             }
@@ -59,11 +59,11 @@ activityRouter.route('/:householdId/:studentId/:activityId')
             if (err) {
                 return res.status(404).send("could not find household")
             }
-            var student = household.students.findOne({ _id: req.studentId })
+            var student = household.students.find((student) => student.id === req.studentId);
             if (student === undefined) {
                 return res.status(404).send("could not find student")
             }
-            var activity = student.activities.findOne({ _id: req.params.activityId })
+            var activity = student.activities.find((activity) => activity._id === req.activityId);
             if (activity === undefined) {
                 return res.status(404).send("could not find activity")
             }
@@ -75,11 +75,11 @@ activityRouter.route('/:householdId/:studentId/:activityId')
             if (err) {
                 return res.status(404).send("could not find household")
             }
-            var student = household.students.findOne({ _id: req.studentId })
+            var student = household.students.find((student) => student.id === req.studentId);
             if (student === undefined) {
                 return res.status(404).send("could not find student")
             }
-            var activity = student.activities.findOne({ _id: req.params.activityId })
+            var activity = student.activities.find((activity) => activity._id === req.activityId);
             if (activity === undefined) {
                 return res.status(404).send("could not find activity")
             }

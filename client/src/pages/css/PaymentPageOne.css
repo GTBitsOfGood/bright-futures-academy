@@ -31,3 +31,7 @@ TODO: Style the progress bar to look more professional
 #ActivityList > div > p > span {
     float: right;
 }
+
+.container {
+    margin-top: 25px
+}

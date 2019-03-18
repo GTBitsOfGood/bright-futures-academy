@@ -1,8 +1,12 @@
 require('dotenv').config()
 
 var express = require('express');
+
+
 let Activity = require('../models/activity')
+let Student = require('../models/student')
 var router = express.Router();
+
 //Testing Paypal API
 
 let profile_name = Math.random().toString(36).substring(7);
@@ -45,6 +49,7 @@ router.get('/', (req, res) => {
  * POST: Creates a web profile and paypal payment
  */
 router.post('/payment/:amount/:studentId', (req, res) => {
+    const studentId = req.params.studentId
     let create_payment_json = {
         "intent": "sale",
         "payer": {
@@ -54,8 +59,8 @@ router.post('/payment/:amount/:studentId', (req, res) => {
             /**
              * TODO: Replace links with proper links for deployment
              */
-            "return_url": `http://localhost:5000/pay/success/?studentid=${req.params.studentId}`, //TODO: replace route with route after successful payment
-            "cancel_url": `http://localhost:5000/pay/cancel/?studentid=${req.params.studentId}` //TODO: replace route with route after a failed payment
+            "return_url": `http://localhost:5000/pay/success/${studentId}`, //TODO: replace route with route after successful payment
+            "cancel_url": `http://localhost:5000/pay/cancel/${studentId}` //TODO: replace route with route after a failed payment
         },
         "transactions": [{
             "amount": {
@@ -97,9 +102,12 @@ router.post('/payment/:amount/:studentId', (req, res) => {
  * TODO: Make sure these will render the proper pages
  */
 
-router.get('/success', (req, res) => {
+router.get('/success/:studentId', (req, res) => {
     const payerId = req.query.PayerID;
     const paymentId = req.query.paymentId;
+    const studentId = req.params.studentId
+    console.log(studentId)
+
     let amount = 0
     paypal.payment.get(paymentId, (error, payment) => {
         if (error) {
@@ -129,9 +137,26 @@ router.get('/success', (req, res) => {
                 }
                 else {
                     let activity = new Activity({ date: new Date(), amount: amount.total, name: "Associated_account" })
-                    activity.save().catch((err) => {
-                        console.log(err)
-                        throw err
+                    /*  activity.save().catch((err) => {
+                         console.log(err)
+                         throw err
+                     }) */
+                    /**
+                     * Gets a student by ID and adds the activity to the student's activity list
+                     */
+                    Student.findOne({ id: studentId }, (err, results) => {
+                        if (err) {
+                            console.log(err.response);
+                            throw err;
+                        }
+                        else if (results === null) {
+                            console.log("Results are null: No students found")
+                        }
+                        else {
+                            console.log(results)
+                            results.activites.push(activity);
+                            return results.save()
+                        }
                     })
                     // TODO: Change to redirect to specified page
                     res.send("Success")
