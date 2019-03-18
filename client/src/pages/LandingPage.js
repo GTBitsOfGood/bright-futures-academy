@@ -4,6 +4,7 @@ import LandingPageHeader from '../components/LandingPageHeader';
 import LandingPageNavbar from './../components/LandingPageNavbar';
 import AboutUs from '../components/AboutUs';
 import Teachers from '../components/Teachers';
+import Infographic from "../components/Infographic";
 
 
 /**
@@ -25,6 +26,7 @@ class LandingPage extends Component {
         <LandingPageHeader />
         <LandingPageNavbar />
         <AboutUs />
+        <Infographic />
         <Teachers />
         <Footer />
       </div>
