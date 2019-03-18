@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
-require('mongoose-type-url');
-let activity = require('./activity').schema;
+let Activity = require('./activity').schema;
 let Schema = mongoose.Schema;
+require('mongoose-type-url');
 
 let StudentSchema = new Schema({
     id: {
@@ -12,9 +12,7 @@ let StudentSchema = new Schema({
         type: Number,
         required: true
     },
-    activities: [
-        activity
-    ],
+    activities: [Activity],
     img_url: {
         type: mongoose.SchemaTypes.Url
     },
@@ -29,9 +27,6 @@ let StudentSchema = new Schema({
         },
         middle: String
     }
-
-
-
 })
 
 module.exports = mongoose.model('Student', StudentSchema);
