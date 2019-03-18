@@ -5,7 +5,6 @@ const activityRouter = express.Router();
 
 /**
  * GET: get all activities over all students
- * DELETE: !!!DANGER!!! delete all students
  */
 activityRouter.route('/')
     .get((req, res) => {
@@ -16,14 +15,6 @@ activityRouter.route('/')
                 return res.status(404).json(new Error("Could not find household"))
             }
             res.status(200).json(activities)
-        })
-    })
-    .delete((req, res) => {
-        Activity.remove({}, (err) => {
-            if (err) {
-                return res.status(500).json(err)
-            }
-            res.status(204).send("Deleted all activities")
         })
     })
 

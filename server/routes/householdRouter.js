@@ -64,7 +64,6 @@ householdRouter.post("/login", (req, res) => {
 /**
 * GET: get all households
 * POST: create a new household
-* DELETE: !!!DANGER!!! delete all households
 */
 householdRouter.route('/')
     .get((req, res) => {
@@ -79,14 +78,6 @@ householdRouter.route('/')
         let household = new Household(req.body)
         household.save()
         res.status(201).json(household)
-    })
-    .delete((req, res) => {
-        Household.remove({}, (err) => {
-            if (err) {
-                return res.status(500).json(err)
-            }
-            res.status(204).send("Deleted all households")
-        })
     })
 
 /**

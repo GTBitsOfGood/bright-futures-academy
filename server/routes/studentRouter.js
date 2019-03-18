@@ -6,7 +6,6 @@ const studentRouter = express.Router();
 
 /**
 * GET: get all students across all households
-* DELETE: !!!DANGER!!! delete all students
 */
 studentRouter.route('/')
     .get((req, res) => {
@@ -15,14 +14,6 @@ studentRouter.route('/')
                 return res.status(500).json(err)
             }
             res.status(200).json(students)
-        })
-    })
-    .delete((req, res) => {
-        Student.remove({}, (err) => {
-            if (err) {
-                return res.status(500).json(err)
-            }
-            res.status(204).send("Deleted all students.")
         })
     })
 
