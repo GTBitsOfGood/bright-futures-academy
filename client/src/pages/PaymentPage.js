@@ -33,7 +33,7 @@ class PaymentPage extends Component {
     const { activities, currentPage } = this.state;
     return (
       <div>
-        <PrimaryNavbar />
+        <PrimaryNavBar />
         <div className="container">
           <h2>Account Payment</h2>
           <div className="ProgressBar"><PaymentPageProgress currentPage={currentPage} numPages={NUM_PAGES} /></div>
