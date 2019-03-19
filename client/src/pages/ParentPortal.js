@@ -19,7 +19,7 @@ class PaymentPortal extends Component {
     this.state = {
       students: []
     }
-    
+
   }
 
   /**
@@ -35,19 +35,20 @@ class PaymentPortal extends Component {
       //Fetch the student list
       urlToFetch = API_STUDENT_DEV + '5c8680ffad46ec4f26e7b46f';
 
-    } 
+    }
     fetch(urlToFetch)
     .then(response => response.json())
     .then(data => this.setState({students: data}))
-    
+
   }
+
  
   //TODO: Add logic for making payment
   render() {
     return (
     <div id='parent-portal-container'>
       <PrimaryNavBar />
-      <div className="container"> 
+      <div className="container">
           {this.state.students.map(function(d, id) {
             return <StudentCard key= {d.id} studentName={d.name.first + " " + d.name.last} studentID = {d.id} studentBalance={d.amount_due} />
           })}
