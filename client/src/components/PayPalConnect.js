@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'reactstrap';
 import './css/PayPalConnect.css'
 
 /**
@@ -51,12 +51,7 @@ class PayPalConnect extends Component {
                     </span>
                 </div>
                 <br/>
-                <Button
-                    variant="primary"
-                    as="input"
-                    onClick={this.handleSubmit}
-                    value="Connect to PayPal"
-                ></Button>
+                <Button outline onClick={this.handleSubmit} color="primary">Connect to PayPal</Button>
             </div>
         );
     }
