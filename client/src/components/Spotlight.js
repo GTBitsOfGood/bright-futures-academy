@@ -10,10 +10,15 @@ class Spotlight extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          currentTab: 0
+          currentTab: 0,
+          spotlightStyle: "hidden", 
+          impactStyle: "hidden", 
+          spotlightContainer: "hidden", 
+          impactContainer: "hidden"
         }
         this.onClickItem = this.onClickItem.bind(this);
         this.setTab = this.setTab.bind(this);
+        this.setStyles = this.setStyles.bind(this);
     }
 
     onClickItem(position) {
@@ -25,21 +30,28 @@ class Spotlight extends Component {
       this.setState({currentTab: tab});
     }
 
-    render() {
-        const { currentTab } = this.state;
+    setStyles() {
+      var {currentTab, spotlightStyle, impactStyle, spotlightContainer, impactContainer} = this.state;
+      if (currentTab === 0) {
+        spotlightStyle = "spotlight-underline";
+        impactStyle = "hidden";
+        spotlightContainer = "spotlight-features-container";
+        impactContainer = "hidden";
+      } else if (currentTab === 1) {
+        spotlightStyle = "hidden";
+        impactStyle = "impact-underline";
+        spotlightContainer = "hidden";
+        impactContainer = "impact-features-container";
+      } 
+      return [spotlightStyle, impactStyle, spotlightContainer, impactContainer];
+    }
 
-        var spotlightStyle, impactStyle, spotlightContainer, impactContainer = "hidden";
-        if (currentTab === 0) {
-          spotlightStyle = "spotlight-underline";
-          impactStyle = "hidden";
-          spotlightContainer = "spotlight-features-container";
-          impactContainer = "hidden";
-        } else if (currentTab === 1) {
-          spotlightStyle = "hidden";
-          impactStyle = "impact-underline";
-          spotlightContainer = "hidden";
-          impactContainer = "impact-features-container";
-        }
+    render() {
+        var styles = this.setStyles();
+        var spotlightStyle = styles[0];
+        var impactStyle = styles[1];
+        var spotlightContainer = styles[2];
+        var impactContainer = styles[3];
 
         return (
           <div className="card-container">
