@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import logoImage from './../images';
-import ChargesList from './ChargesList';
+import { ChargesList } from './'
 import './css/Receipt.css';
 
 /**
@@ -24,14 +24,14 @@ class Receipt extends Component {
     // TODO: activities, total, and payment info are placeholders, to be replaced with an API call
     const activities = [{name:"Activity Fee", price:"400"}, {name:"Uniform Fee", price:"40"}, {name:"Transportation Fee", price:"40"}, {name:"Textbook Fee", price:"40"}];
     const paymentInfo = {
-      billFromName:"Bright Futures Academy", 
+      billFromName:"Bright Futures Academy",
       billFromAddressLine1: "123 Ferst Drive",
       billFromAddressLine2: "Atlanta, GA 30314",
-      billToName: "User ID", 
+      billToName: "User ID",
       billToAddressLine1: "321 Techwood Drive",
       billToAddressLine2: "Buckhead, GA 30305",
-      invoiceNum: 123456789, 
-      invoiceDate: "00/00/00", 
+      invoiceNum: 123456789,
+      invoiceDate: "00/00/00",
       total: 0.00,
       subtotal: 0.00,
       tax: 0.00
@@ -50,10 +50,10 @@ class Receipt extends Component {
             <span>
               <img id="brightFuturesLogo" className="rightWithFloat" src={logoImage} height="150" alt="Bright Futures Academy Logo"/>
               <div className="leftWithFloat">
-                Bill From: 
+                Bill From:
                 <br /> {paymentInfo.billFromName}
                 <br /> {paymentInfo.billFromAddressLine1}
-                <br /> {paymentInfo.billFromAddressLine2} 
+                <br /> {paymentInfo.billFromAddressLine2}
               </div>
             </span>
           </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Announcement from './Announcement'
+import { Announcement } from './'
 import './css/Announcements.css'
 import {ReactIsInDevelomentMode} from './Utils';
 
@@ -63,7 +63,7 @@ class AnnouncementList extends Component {
         return(
             <div>
                 <br></br>
-                
+
                 <ul id="Announcements">
                 <h2>Announcements</h2>
                     {
@@ -71,7 +71,7 @@ class AnnouncementList extends Component {
                             return <Announcement announcement={d}/>
                         })
                     }
-                    
+
                 </ul>
             </div>
         )
