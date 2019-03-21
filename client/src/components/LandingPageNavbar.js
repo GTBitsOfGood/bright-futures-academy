@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './css/LandingPageNavbar.css';
+import { Link } from 'react-router-dom';
 
 /**
  * Landing Page Navbar before parent sign in. 
@@ -39,7 +40,11 @@ class LandingPageNavbar extends Component {
                         Contact
                     </p>
                     <div className="rightNavbar">
-                        <button className="buttonNavbar">Parent Sign in</button>
+                        <form action="">
+                            <Link to='/login'>
+                                <input type="button" className="buttonNavbar" value="Parent Sign In"/>
+                            </Link>
+                        </form>
                     </div>
                 </span>
             </div>
