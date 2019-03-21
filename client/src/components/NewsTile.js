@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './css/NewsTile.css';
 import logoImage from '../images';
 
+/**
+ * News tile component that will be used for populating the news landing page component.
+ */
 class NewsTile extends Component {
 
     constructor(props) {

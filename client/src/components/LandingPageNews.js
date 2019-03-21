@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import NewsTile from './NewsTile';
 import './css/LandingPageNews.css';
 
+/**
+ * This is the component for where our news will be on the landing page.
+ */
 class LandingPageNews extends Component {
 
     constructor(props) {
