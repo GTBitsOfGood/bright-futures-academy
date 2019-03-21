@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import { logoImage } from './../images';
-import ChargesList from './ChargesList';
+import { ChargesList } from './'
 import './css/Receipt.css';
 
 /**
