@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './css/StudentCard.css';
 import { Card, CardText, CardBody,
     CardTitle, CardSubtitle, Button} from 'reactstrap';
-import logoImage from './../images'
+import { logoImage } from './../images'
 import {Link} from 'react-router-dom';
 /**
  * Container class for cards on parent portal page
@@ -19,7 +19,7 @@ class StudentCard extends Component {
 
 
     render() {
-     return( 
+     return(
       <Card>
         <img width="150px" position="absolute" src={logoImage} alt="Student" />
         <CardBody>
@@ -31,7 +31,7 @@ class StudentCard extends Component {
           <Button tag={Link} to="/paymentPage">Make a Payment</Button>
           </div>
         </CardBody>
-          
+
       </Card>
     );
 }

@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import Footer from './../components/Footer';
-import LandingPageHeader from '../components/LandingPageHeader';
-import LandingPageNavbar from './../components/LandingPageNavbar';
-import AboutUs from '../components/AboutUs';
-import Teachers from '../components/Teachers';
-import Spotlight from '../components/Spotlight';
+import { Footer, LandingPageHeader, LandingPageNavbar, AboutUs, Teachers, Infographic, Spotlight } from './../components';
 
 
 /**
@@ -27,6 +22,7 @@ class LandingPage extends Component {
         <LandingPageNavbar />
         <AboutUs />
         <Spotlight />
+        <Infographic />
         <Teachers />
         <Footer />
       </div>

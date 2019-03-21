@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
-import logoImage from './../images';
+import { logoImage } from './../images';
 import { ChargesList } from './'
 import './css/Receipt.css';
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logoImage from './../images'
+import { logoImage } from './../images'
 import './css/Spotlight.css';
 
 /**
@@ -11,9 +11,9 @@ class Spotlight extends Component {
         super(props);
         this.state = {
           currentTab: 0,
-          spotlightStyle: "hidden", 
-          impactStyle: "hidden", 
-          spotlightContainer: "hidden", 
+          spotlightStyle: "hidden",
+          impactStyle: "hidden",
+          spotlightContainer: "hidden",
           impactContainer: "hidden"
         }
         this.onClickItem = this.onClickItem.bind(this);
@@ -42,7 +42,7 @@ class Spotlight extends Component {
         impactStyle = "impact-underline";
         spotlightContainer = "hidden";
         impactContainer = "impact-features-container";
-      } 
+      }
       return [spotlightStyle, impactStyle, spotlightContainer, impactContainer];
     }
 
