@@ -45,11 +45,17 @@ class LandingPageNews extends Component {
                         </p>
                     </div>
                 </span>
-                <span>
-                    <NewsTile header="Step One" caption="What a lovely pattern we got here in this image which is encapsulted in a figure element. Oh dear, look how long this caption is!"/>
-                    <NewsTile header="Step Two" caption="What a lovely pattern we got here in this image which is encapsulted in a figure element. Oh dear, look how long this caption is!"/>
-                    <NewsTile header="Step Three" caption="What a lovely pattern we got here in this image which is encapsulted in a figure element. Oh dear, look how long this caption is!"/>
-                </span>
+                <table>
+                    <tr>
+                        <NewsTile header="Step One" caption="What a lovely pattern we got here in this image which is encapsulted in a figure element. Oh dear, look how long this caption is!"/>
+                    </tr>
+                    <tr>
+                        <NewsTile header="Step Two" caption="What a lovely pattern we got here in this image which is encapsulted in a figure element. Oh dear, look how long this caption is!"/>
+                    </tr>  
+                    <tr>
+                        <NewsTile header="Step Three" caption="What a lovely pattern we got here in this image which is encapsulted in a figure element. Oh dear, look how long this caption is!"/>
+                    </tr>                
+                </table>
             </div>
         );
     }

@@ -18,11 +18,10 @@
 
 figure {
     width: -webkit-min-content;
-    width: 25%;
+    width: 75%;
     margin: 1em auto;
     background: rgb(255, 255, 255);
     padding: 1em;
-    border: 1px solid red;
     justify-content: center;
 }
   
@@ -42,8 +41,6 @@ figure {
     letter-spacing: normal;
     color: #4a4a4a;
 }
-
-
 
 .newsTileParagraph {
     font-family: Roboto;
