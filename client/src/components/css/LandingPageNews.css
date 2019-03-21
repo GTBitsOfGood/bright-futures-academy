@@ -28,6 +28,7 @@
     letter-spacing: normal;
     color: #5e6a6e;
     text-align: right;
+    cursor: pointer;
 }
 
 .newsPageCards {
