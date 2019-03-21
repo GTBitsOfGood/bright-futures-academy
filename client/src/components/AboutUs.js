@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logoImage from './../images'
+import { logoImage } from './../images'
 import './css/AboutUs.css';
 
 /**
@@ -11,7 +11,7 @@ class AboutUs extends Component {
         super(props);
         this.state = {
         }
-        
+
         this.onClickMoreAboutUs = this.onClickMoreAboutUs.bind(this);
     }
 
@@ -24,7 +24,7 @@ class AboutUs extends Component {
         return (
             <div className="rectangleBackgroundAbout">
                     <div className="left">
-                        <img alt="#" src={logoImage[0]} className="rectangleImageAbout"/>
+                        <img alt="#" src={logoImage} className="rectangleImageAbout"/>
                     </div>
                     <div className="textContentAbout right">
                         <p className="headingTextAbout">

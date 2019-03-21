@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './css/LandingPageHeader.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import logoImage from '../images';
+import { logoImage } from './../images';
 
 /**
  * Landing Page Header before a parent signs in. https://github.com/GTBitsOfGood/bright-futures-academy/issues/104
@@ -24,7 +24,7 @@ class LandingPageHeader extends Component {
         return (
                 <div className="icons">
                     <div className="logo">
-                        <img alt="#" src={logoImage[0]} height="75px" />
+                        <img alt="#" src={logoImage} height="75px" />
                     </div>
                     <div className="phoneNumber">
                         <span className="phoneSpace">
