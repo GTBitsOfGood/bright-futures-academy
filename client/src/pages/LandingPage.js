@@ -15,7 +15,6 @@ class LandingPage extends Component {
 
   render() {
     return (
-
       <div>
         <LandingPageHeader />
         <LandingPageNavbar />
