@@ -68,30 +68,30 @@ class Spotlight extends Component {
 
             <div className={spotlightContainer}>
               <div className="feature" onClick={() => this.onClickItem(0)} >
-                <img alt="#" src={logoImage[0]} className="feature-image"/>
+                <img alt="#" src={logoImage} className="feature-image"/>
                 <p className="feature-text">The Arts</p>
               </div>
               <div className="feature" onClick={() => this.onClickItem(1)} >
-                <img alt="#" src={logoImage[0]} className="feature-image"/>
+                <img alt="#" src={logoImage} className="feature-image"/>
                 <p className="feature-text">Diversity</p>
               </div>
               <div className="feature" onClick={() => this.onClickItem(2)} >
-                <img alt="#" src={logoImage[0]} className="feature-image"/>
+                <img alt="#" src={logoImage} className="feature-image"/>
                 <p className="feature-text">Free Expression</p>
               </div>
             </div>
 
             <div className={impactContainer}>
               <div className="feature" onClick={() => this.onClickItem(0)} >
-                <img alt="#" src={logoImage[0]} className="feature-image"/>
+                <img alt="#" src={logoImage} className="feature-image"/>
                 <p className="feature-text">PreK-12</p>
               </div>
               <div className="feature" onClick={() => this.onClickItem(1)} >
-                <img alt="#" src={logoImage[0]} className="feature-image"/>
+                <img alt="#" src={logoImage} className="feature-image"/>
                 <p className="feature-text">Urban</p>
               </div>
               <div className="feature" onClick={() => this.onClickItem(2)} >
-                <img alt="#" src={logoImage[0]} className="feature-image"/>
+                <img alt="#" src={logoImage} className="feature-image"/>
                 <p className="feature-text">Innovation</p>
               </div>
             </div>

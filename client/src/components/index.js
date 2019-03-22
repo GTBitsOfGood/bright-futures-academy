@@ -16,3 +16,4 @@ export { default as Spotlight } from './Spotlight';
 export { default as Teachers } from './Teachers';
 export { default as AboutUs } from './AboutUs';
 export { default as Footer } from './Footer';
+export { default as LandingPageNews } from './LandingPageNews';
