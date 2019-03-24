@@ -22,8 +22,27 @@ class Spotlight extends Component {
     }
 
     onClickItem(position) {
-        // TODO: Show detailed information about chosen icon
-        alert("See more information about feature " + position);
+        // TODO: Add link to our website
+        switch(position) {
+            case 0:
+                alert("Load BFA page");
+                break;
+            case 1:
+                window.location.href = 'http://brightfuturesatl.org/the-program/summer-camp/';
+                break;
+            case 2:
+                window.location.href = 'http://brightfuturesatl.org/the-program/after-school/';
+                break;
+            case 3:
+                alert("Load Academics page");
+                break;
+            case 4:
+                alert("Load Community page");
+                break;
+            default:
+                alert("Error loading page");
+                break;
+        }
     }
 
     setTab(tab) {
@@ -69,30 +88,26 @@ class Spotlight extends Component {
             <div className={spotlightContainer}>
               <div className="feature" onClick={() => this.onClickItem(0)} >
                 <img alt="#" src={logoImage} className="feature-image"/>
-                <p className="feature-text">The Arts</p>
+                <p className="feature-text">Academy</p>
               </div>
               <div className="feature" onClick={() => this.onClickItem(1)} >
                 <img alt="#" src={logoImage} className="feature-image"/>
-                <p className="feature-text">Diversity</p>
+                <p className="feature-text">Summer</p>
               </div>
               <div className="feature" onClick={() => this.onClickItem(2)} >
                 <img alt="#" src={logoImage} className="feature-image"/>
-                <p className="feature-text">Free Expression</p>
+                <p className="feature-text">After School</p>
               </div>
             </div>
 
             <div className={impactContainer}>
-              <div className="feature" onClick={() => this.onClickItem(0)} >
+              <div className="feature" onClick={() => this.onClickItem(3)} >
                 <img alt="#" src={logoImage} className="feature-image"/>
-                <p className="feature-text">PreK-12</p>
+                <p className="feature-text">6-12</p>
               </div>
-              <div className="feature" onClick={() => this.onClickItem(1)} >
+              <div className="feature" onClick={() => this.onClickItem(4)} >
                 <img alt="#" src={logoImage} className="feature-image"/>
-                <p className="feature-text">Urban</p>
-              </div>
-              <div className="feature" onClick={() => this.onClickItem(2)} >
-                <img alt="#" src={logoImage} className="feature-image"/>
-                <p className="feature-text">Innovation</p>
+                <p className="feature-text">The Community</p>
               </div>
             </div>
           </div>

@@ -20,7 +20,6 @@ class LandingPage extends Component {
         <LandingPageNavbar />
         <LandingPageNews />
         <AboutUs />
-        <Infographic />
         <Spotlight />
         <Infographic />
         <Teachers />
