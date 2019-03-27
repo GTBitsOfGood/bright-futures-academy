@@ -1,4 +1,4 @@
-/* 
+/*
 TODO: Add color schemes
 TODO: Style the progress bar to look more professional
 */
@@ -18,16 +18,24 @@ TODO: Style the progress bar to look more professional
     position: relative;
     margin:60px 10% 0 0;
     float: right;
+    color: black;
 }
 
 .PaymentPageContent > div > form  > div > p {
     text-align: right;
+    color: black;
 }
 
-#ActivityList > div > p > span {
-    float: right;
+#ActivityList > div > p  {
+    /* float: right; */
+    color: black;
+    text-align: right;
+}
+
+.ChargesList  {
+    color: black;
 }
 
 .container {
-    margin-top: 25px
+    margin-top: 25px;
 }
