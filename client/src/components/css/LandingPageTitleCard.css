@@ -1,0 +1,19 @@
+.backgroundImage {
+    /* TODO: This url should be replaced with an API call */
+    background-size: 100% 100%;
+    object-fit: contain;
+    width: 100%;
+    height: 40em;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    vertical-align: middle;
+    text-align: center;
+    mix-blend-mode: luminosity;
+    /* background-image: linear-gradient(to top, #1de0cf, #14ada0), linear-gradient(to bottom, rgba(14, 14, 14, 0), rgba(0, 0, 0, 0.5)); */
+    /* color: rgba(254, 67, 73, 10); */
+}
+
+.imageOverlay {
+    background-image: linear-gradient(to top, #1de0cf, #14ada0), linear-gradient(to bottom, rgba(14, 14, 14, 0), rgba(0, 0, 0, 0.5));
+}
