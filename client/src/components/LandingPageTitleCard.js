@@ -39,16 +39,16 @@ class LandingPageTitleCard extends Component {
             <div className="imageOverlay">
                 <Carousel
                     activeIndex={index}
-                    direction={direction}
+                    // direction={direction}
                     onSelect={this.handleSelect}
-                    interval={50}
+                    interval={20}
                     controls={true}
-                    pauseOnHover={true}
                 >
                     <Carousel.Item>
                         <img
                             className="backgroundImage"
                             src={infographic}
+                            alt={"#"}
                         />
                         <Carousel.Caption>
                             <h3>First slide label</h3>
