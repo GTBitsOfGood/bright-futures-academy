@@ -1,8 +1,3 @@
-.progressHeader {
-    margin-left: 2px;
-    border: 1px solid black;
-}
-
 .circle {
     width: 30px;
     height: 30px;
@@ -12,7 +7,7 @@
     line-height: 30px;
     text-align: center;
     background: #C0C0C0;
-    margin-bottom: 45px;
+    margin-bottom: 0px;
 }
 
 .circle.completed {

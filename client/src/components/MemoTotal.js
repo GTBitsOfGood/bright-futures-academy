@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, Input } from 'reactstrap';
 
 
 /**
@@ -47,10 +48,11 @@ class MemoTotal extends Component {
     render() {
         return (
           <form onSubmit={this.handleSubmit}>
-            <label>
-              Memo:
-              <input type="text" value={this.state.memoText} onChange={this.handleChange} />
-            </label>
+            <p>
+              Memo: <br />
+              <Input type="textarea" placeholder="Student ID" value={this.state.memoText} onChange={this.handleChange} />
+              {/* <Input></Input> type="textarea" value={this.state.memoText} onChange={this.handleChange} /> */}
+            </p>
             <div>
                 <p>Total Fee: {"$" + this.state.totalFee}</p> 
                 <p>Tax: {"$" +this.state.tax}</p> 
@@ -59,7 +61,8 @@ class MemoTotal extends Component {
             <div>
                 <p>Payment Total: {"$" +this.state.paymentTotal}</p> 
             </div>
-            <input type="submit" value="Choose Payment Method" />
+            {/* <input type="submit" value="Choose Payment Method" /> */}
+            <Button outline type="submit" color="primary">Choose Payment Method</Button>
           </form>
         );
     }

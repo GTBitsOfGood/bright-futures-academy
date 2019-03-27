@@ -1,14 +1,13 @@
 let mongoose = require('mongoose');
 
-let student = require('./student')
+let Student = require('./student')
 
-let student = require('./student')
 
 let Schema = mongoose.Schema;
 
-let HouseHoldSchema = new Schema({
+let HouseholdSchema = new Schema({
     students: [Student],
-    paypal_id: {
+    paypalId: {
         type: String
     },
     householdId: {
@@ -21,4 +20,4 @@ let HouseHoldSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model('Household', HouseHoldSchema)
+module.exports = mongoose.model('Household', HouseholdSchema)

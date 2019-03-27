@@ -71,7 +71,7 @@ householdRouter.route('/')
             if (err) {
                 return res.status(500).json(err)
             }
-            res.json(households)
+            res.status(200).json(households)
         })
     })
     .post((req, res) => {
@@ -90,8 +90,9 @@ householdRouter.route('/:householdId')
             if (err) {
                 return res.status(500).json(err)
             }
-            res.json(household)
+            res.status(200).json(household)
         })
     })
+
 
 module.exports = householdRouter;

@@ -1,3 +1,43 @@
-#ActivityList{
-  text-align: left;
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+#ActivityList > div > p{
+    color: black;
+    text-align: right;
+    font-size: 1.5em;
+}
+* {
+    font-family: Roboto;
+}
+.PaymentPageContent > div > div > div > span > p {
+    color: black;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 1em;
+    /* border: 1px solid red; */
+}
+
+.PaymentPageContent > div > div > div > div > p {
+    color: black;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 1em;
+    /* border: 1px solid red; */
+}
+
+.PaymentPageContent > div > div > div > div > span > div > p {
+    /* color: black; */
+    text-align: right;
+    font-family: Roboto;
+    font-size: 1.25em;
+    /* border: 1px solid red; */
+}
+
+.PaymentPageContent > div > form >  p {
+    color: black;
+    font-size: 1.75em;
+    /* text-align: right; */
+    /* border: 1px solid red; */
+}
+
+.ChargesList {
+    color: black;
 }

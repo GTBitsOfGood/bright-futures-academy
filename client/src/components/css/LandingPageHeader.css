@@ -1,0 +1,46 @@
+.icons {
+    padding: 2%;
+    display: flex;
+}
+
+.child {
+    padding: 10px;
+}
+
+.phoneNumber {
+    font-family: Roboto-Light;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.69;
+    letter-spacing: normal;
+    color: #5e6a6e;
+    width: 100%;
+    padding-top: 1%;
+    text-align: right;
+    padding-right: 1%;
+}
+
+.phoneSpace {
+    display:inline-block;
+    width: 16%;
+}
+
+.phoneSpace > p {
+    padding-left: 3%;
+}
+
+.businessIcons {
+    min-width: 12%;
+    padding-top: 1%;
+    text-align: left;
+}
+
+.businessIcons * {
+    margin-right: 5%;
+}
+
+.logo {
+    justify-content: left;
+}

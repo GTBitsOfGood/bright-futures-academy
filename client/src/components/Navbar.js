@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logoImage from './../images'
+import { logoImage } from './../images'
 import {
   Collapse,
   Navbar,
@@ -14,7 +14,7 @@ import {
   DropdownItem, Button } from 'reactstrap';
 
 /**
- * Container for the navbar component. 
+ * Container for the navbar component.
  * Currently shows a basic navbar with dummy links since there are no pages.
  */
 class PrimaryNavBar extends Component {
@@ -26,10 +26,10 @@ class PrimaryNavBar extends Component {
     this.dropdownOneToggle = this.dropdownOneToggle.bind(this);
     this.dropdownTwoToggle = this.dropdownTwoToggle.bind(this);
     this.dummyToggle = this.dummyToggle.bind(this)
-    
+
     this.state = {
-      isOpen: false, 
-      isDropdownOneOpen: false, 
+      isOpen: false,
+      isDropdownOneOpen: false,
       isDropdownTwoOpen: false
     };
   }
@@ -54,7 +54,7 @@ class PrimaryNavBar extends Component {
         isDropdownOneOpen : !this.state.isDropdownOneOpen
       });
   }
-  
+
   /**
    * Function controlling the Payment dropdown
    */
@@ -77,7 +77,7 @@ class PrimaryNavBar extends Component {
            * Temporary logo
            */
         }
-          <NavbarBrand href="/"><img alt="Brand" src={logoImage[0]} height="80px"/></NavbarBrand>
+          <NavbarBrand href="/"><img alt="Brand" src={logoImage} height="80px"/></NavbarBrand>
           {
             /**
              * Allows toggling the navbar for small(mobile) screens
@@ -129,7 +129,7 @@ class PrimaryNavBar extends Component {
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
-          
+
               <NavItem>
                 <NavLink href="/help">Help</NavLink>
               </NavItem>

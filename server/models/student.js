@@ -7,13 +7,14 @@ let Schema = mongoose.Schema;
 require('mongoose-type-url');
 
 let StudentSchema = new Schema({
-    id: {
+    studentId: {
         type: Number,
         required: true
     },
-    amount_due: {
+    amountDue: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
     /**
      * TODO: Fix the type for the activities array
