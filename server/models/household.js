@@ -6,7 +6,7 @@ let Student = require('./student')
 let Schema = mongoose.Schema;
 
 let HouseholdSchema = new Schema({
-    students: [Student],
+    students: [Object],
     paypalId: {
         type: String
     },
