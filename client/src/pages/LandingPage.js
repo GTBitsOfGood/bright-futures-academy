@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Footer, LandingPageHeader, LandingPageNews, LandingPageNavbar, AboutUs, Teachers, Infographic, Spotlight } from './../components';
+import { Footer, LandingPageTitleCard, LandingPageHeader, LandingPageNews, LandingPageNavbar, AboutUs, Teachers, Infographic, Spotlight } from './../components';
 
 /**
  * Our Landing Page! This is what the parent will see before they sign in.
@@ -18,9 +18,9 @@ class LandingPage extends Component {
       <div>
         <LandingPageHeader />
         <LandingPageNavbar />
+        <LandingPageTitleCard />
         <LandingPageNews />
         <AboutUs />
-        <Infographic />
         <Spotlight />
         <Infographic />
         <Teachers />
