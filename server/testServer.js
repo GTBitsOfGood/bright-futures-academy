@@ -2,11 +2,13 @@
 const express = require('express');
 require('dotenv').config()
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 const app = express();
 var indexRouter = require('./routes/index');
 var householdRouter = require('./routes/householdRouter');
 var studentRouter = require('./routes/studentRouter');
 var activityRouter = require('./routes/activityRouter');
+var paymentRouter = require('./routes/paymentRouter')
 var schoolInfoRouter = require('./routes/schoolInfoRouter');
 
 require('dotenv').config();
@@ -20,6 +22,7 @@ app.use('/api/student', studentRouter);
 app.use('/api/activity', activityRouter);
 app.use('/api/schoolInfo', schoolInfoRouter);
 app.use('/api', indexRouter);
+app.use('/api/payment', paymentRouter)
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(() => {
     console.log("Connected to MongoDB")
