@@ -16,13 +16,10 @@
     "jquery": ">=3.0.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
-    "moment": "^2.24.0",
     "npm": "^6.9.0",
     "react": "^16.8.1",
-    "react-big-calendar": "^0.20.4",
     "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.1",
-    "react-google-calendar-api": "^1.0.10",
     "react-gtm-module": "^2.0.4",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
@@ -48,7 +45,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {
-    "superagent": "^4.1.0"
-  }
+  "devDependencies": {}
 }
