@@ -1,5 +1,4 @@
 var Student = require('../models/student');
-var Household = require('../models/household');
 var util = require('../utils/routerHelpers');
 var express = require('express');
 

@@ -1,5 +1,4 @@
 var util = require('../utils/routerHelpers');
-var Household = require('../models/household');
 var Activity = require('../models/activity');
 var express = require('express');
 

@@ -1,7 +1,5 @@
 const Household = require('../models/household')
 
-// TODO: fill in functions to be called from routers, addressing repeated code
-
 function getHousehold(householdId, callback) {
     Household.findById(householdId, (err, household) => {
         if (err) {
