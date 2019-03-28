@@ -1,5 +1,6 @@
 var Student = require('../models/student');
 var Household = require('../models/household');
+var util = require('../utils/routerHelpers');
 var express = require('express');
 
 const studentRouter = express.Router();
@@ -8,10 +9,10 @@ const studentRouter = express.Router();
 * GET: get all students across all households
 */
 studentRouter.route('/')
-    .get((req, res) => {
+    .get((req, res, next) => {
         Student.find({}, (err, students) => {
             if (err) {
-                return res.status(500).json(err)
+                return next(err)
             }
             res.status(200).json(students)
         })
@@ -23,31 +24,29 @@ studentRouter.route('/')
 * GET: get all students in the given household
 */
 studentRouter.route('/:householdId/')
-    .post((req, res) => {
-        Household.findById((req.params.householdId), (err, household) => {
+    .post((req, res, next) => {
+        const { householdId } = req.params
+        util.getHousehold(householdId, (err, household, saveFunction) => {
             if (err) {
-                return res.status(500).json(err)
-            } else if (!household) {
-                return res.status(404).json(new Error("Could not find household"))
+                return next(err)
             }
-            const student = new Student(req.body);
+            const student = new Student(req.body)
             household.students.push(student)
-            household.save((err) => {
+            saveFunction((err) => {
                 if (err) {
-                    return res.status(500).json(err)
+                    return next(err)
                 }
                 res.status(201).json(student)
             })
         })
     })
-    .get((req, res) => {
-        Household.findById((req.params.householdId), (err, household) => {
+    .get((req, res, next) => {
+        const { householdId } = req.params
+        util.getHousehold(householdId, (err, household) => {
             if (err) {
-                return res.status(500).json(err)
-            } else if (!household) {
-                return res.status(404).json(new Error("Could not find household."))
+                return next(err)
             }
-            res.status(201).json(household.students)
+            res.status(200).json(household.students)
         })
     })
 
@@ -57,35 +56,25 @@ studentRouter.route('/:householdId/')
 * DELETE: delete the student corresponding to the given student id
 */
 studentRouter.route('/:householdId/:studentId')
-    .get((req, res) => {
-        Household.findById((req.params.householdId), (err, household) => {
+    .get((req, res, next) => {
+        const { householdId, studentId } = req.params
+        util.getStudent(householdId, studentId, (err, student) => {
             if (err) {
-                return res.status(500).send(err)
-            } else if (!household) {
-                return res.status(404).json(new Error("Could not find household."))
-            }
-            const student = household.students.id(req.studentId)
-            if (student === null) {
-                return res.status(404).send(new Error("Could not find student."))
+                return next(err)
             }
             res.status(200).json(student)
         })
     })
-    .delete((req, res) => {
-        Household.findById((req.params.householdId), (err, household) => {
+    .delete((req, res, next) => {
+        const { householdId, studentId } = req.params
+        util.getStudent(householdId, studentId, (err, student, saveFunction) => {
             if (err) {
-                return res.status(500).json(err)
-            } else if (!household) {
-                return res.status(404).json(new Error("Could not find household."))
-            }
-            const student = household.students.id(req.params.studentId)
-            if (student === null) {
-                return res.status(404).json(new Error("Could not find student."))
+                return next(err)
             }
             student.remove()
-            household.save((err) => {
+            saveFunction((err) => {
                 if (err) {
-                    return res.status(500).json(err)
+                    return next(err)
                 }
                 res.status(200).json(student)
             })
