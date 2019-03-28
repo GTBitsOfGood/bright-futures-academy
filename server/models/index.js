@@ -1,4 +1,11 @@
-export { default as Household } from './household';
-export { default as Student } from './student';
-export { default as Activity } from './activity';
-export { default as SchoolInfo } from './schoolInfo';
+const Household = require('./household')
+const Student = require('./student')
+const Activity = require('./activity')
+const SchoolInfo = require('./schoolInfo')
+
+module.exports = {
+    Household,
+    Student,
+    Activity,
+    SchoolInfo
+}
