@@ -3,7 +3,7 @@ import './css/About.css';
 import { logoImage } from './../images'
 
 /**
- * About component for the about us page
+ * About component for the about us page.
  */
 class About extends Component {
 
