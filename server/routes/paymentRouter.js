@@ -42,8 +42,9 @@ router.get('/', (req, res) => {
  * params: amount, studentid
  * POST: Creates a web profile and paypal payment
  */
-router.post('/:amount/:studentId', (req, res) => {
+router.post('/:amount/:householdId/:studentId', (req, res) => {
     studentId = req.params.studentId
+    let householdId = req.params.householdId
     web_profile.name = Math.random().toString(36).substring(7);
 
     let create_payment_json = {
