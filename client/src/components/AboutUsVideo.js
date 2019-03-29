@@ -18,7 +18,17 @@ class AboutUsVideo extends Component {
                     - videos -
                 </p>
                 {/* TODO fetch video URLs from backend dynamically */}
-                <iframe width="560" height="315" src="https://www.youtube.com/watch?v=cmJlF666ttc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div className="aboutUsMainVideo">
+                    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=cmJlF666ttc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <div>
+                        <p className="aboutUsVideoHeaderText">
+                            Bright Futures Academy
+                        </p>
+                        <p className="aboutUsVideoDescriptionText">
+                            Here's a promotional trailer for additional information and insight into Bright Futures Atlanta and what they're doing for the students, community and families involved! Enjoy!
+                        </p>
+                    </div>
+                </div>
             </div>
         );
     }
