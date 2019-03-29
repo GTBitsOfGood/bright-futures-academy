@@ -22,22 +22,42 @@ class LandingPageNavbar extends Component {
             <div className="backgroundNavbar uppercaseNavbar">
                 <span className="pageLinksNavbar">
                     <p>
-                        Home
+                        <form action="">
+                            <Link to='/landingPage'>
+                                <input type="button" className="navbarButton" value="Home"/>
+                            </Link>
+                        </form>
                     </p>
                     <p>
-                        About Us
+                        <form action="">
+                            <Link to='/aboutUs'>
+                                <input type="button" className="navbarButton" value="About Us"/>
+                            </Link>
+                        </form>
                     </p>
                     <p>
-                        Academics
+                        <form action="">
+                            <Link to='/academics'>
+                                <input type="button" className="navbarButton" value="Academics"/>
+                            </Link>
+                        </form>
                     </p>
                     <p>
-                        Admissions
+                        <form action="">
+                            <Link to='/admissions'>
+                                <input type="button" className="navbarButton" value="Admissions"/>
+                            </Link>
+                        </form>
                     </p>
                     <p>
-                        Events
+                        <form action="">
+                            <Link to='/events'>
+                                <input type="button" className="navbarButton" value="Events"/>
+                            </Link>
+                        </form>
                     </p>
                     <p>
-                        Contact
+                        <a className="noStyle" href="mailto:bfinfo@bfatl.org">Contact</a>
                     </p>
                     <div className="rightNavbar">
                         <form action="">

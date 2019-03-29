@@ -31,7 +31,7 @@ class Footer extends Component {
                         </p>
                     </div>
                     <div className="right">
-                        <table cellpadding="7">
+                        <table cellPadding="7">
                             <tr className="headingText uppercase small">
                                 <th>Useful Links</th>
                                 <th>Support</th>
