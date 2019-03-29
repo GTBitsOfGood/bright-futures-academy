@@ -2,13 +2,9 @@ require('dotenv').config()
 
 var express = require('express');
 
-
-/* let Activity = require('../models/activity')
-let Student = require('../models/student') */
 var util = require('../utils/routerHelpers');
 var router = express.Router();
 
-//Testing Paypal API
 
 let profile_name = Math.random().toString(36).substring(7);
 let paypal = require('paypal-rest-sdk')
@@ -72,7 +68,6 @@ router.post('/:amount/:studentId', (req, res) => {
     }
     paypal.webProfile.create(web_profile, function (error, profile) {
         if (error) {
-            // console.log("Webprofile create error:", error.response)
             throw error;
         }
         else {
@@ -80,18 +75,11 @@ router.post('/:amount/:studentId', (req, res) => {
             create_payment_json.experience_profile_id = experience_profile_id;
             paypal.payment.create(create_payment_json, (error, payment) => {
                 if (error) {
-                    //console.log("Payment create error:", error.response)
                     throw error;
                 }
                 else {
-                    //console.log("Create Payment Response")
                     for (let i = 0; i < payment.links.length; i++) {
                         if (payment.links[i].rel === "approval_url") {
-                            console.log(payment)
-
-                            /**
-                             * Instead of redirecting to the approval_url, why not start with login then back to the previous page to continue
-                             */
                             res.send(payment.links[i].href)
 
                         }
@@ -118,15 +106,12 @@ router.get('/success/:householdId/:studentId', (req, res) => {
     let amount = 0
     paypal.payment.get(paymentId, (error, payment) => {
         if (error) {
-            //console.log("Payment Get error:", error.response)
 
             throw error;
         }
         else {
             //console.log("Got amount")
             amount = payment.transactions[0].amount
-            //console.log("Amount currency is", amount.currency)
-            //console.log("Amount total is", amount.total)
             let execute_payment_json = {
                 "payer_id": payerId,
                 "transactions": [{
@@ -139,7 +124,6 @@ router.get('/success/:householdId/:studentId', (req, res) => {
             }
             paypal.payment.execute(paymentId, execute_payment_json, (error, payment) => {
                 if (error) {
-                    // console.log("Execute error:", error.response)
                     throw error;
                 }
                 else {
@@ -159,28 +143,7 @@ router.get('/success/:householdId/:studentId', (req, res) => {
 
 
                     })
-                    //let activity = new Activity({ date: new Date(), amount: amount.total, name: "Associated_account" })
-                    /*  activity.save().catch((err) => {
-                         console.log(err)
-                         throw err
-                     }) */
-                    /**
-                     * Gets a student by ID and adds the activity to the student's activity list
-                     */
-                    /*  Student.findOne({ id: studentId }, (err, results) => {
-                         if (err) {
-                             // console.log(err.response);
-                             throw err;
-                         }
-                         else if (results === null) {
-                             // console.log("Results are null: No students found")
-                         }
-                         else {
-                             // console.log(results)
-                             results.activites.push(activity);
-                             return results.save()
-                         }
-                     }) */
+
                     // TODO: Change to redirect to specified page
                     res.send("Success")
                 }
