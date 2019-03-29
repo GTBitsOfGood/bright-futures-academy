@@ -42,7 +42,7 @@ class PaymentPortal extends Component {
     } else {
       return []
     }})
-    .then(data => this.setState({students: data || []}))
+    .then(data => this.setState({students: data}))
 
   }
 
