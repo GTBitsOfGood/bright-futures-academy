@@ -4,7 +4,8 @@ let Schema = mongoose.Schema;
 activitySchema = new Schema({
     date: {
         type: Date,
-        required: true
+        required: true,
+        default: new Date()
     },
     amount: {
         type: Number,
