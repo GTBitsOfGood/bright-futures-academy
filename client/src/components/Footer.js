@@ -32,25 +32,33 @@ class Footer extends Component {
                     </div>
                     <div className="right">
                         <table cellPadding="7">
-                            <tr className="headingText uppercase small">
-                                <th>Useful Links</th>
-                                <th>Support</th>
-                                <th>Contact</th>
-                            </tr>
-                            <tr className="contentText">
-                                <th>About Us</th>
-                                <th>Blog</th>
-                                <th><a className="noStyle" href="mailto:bfinfo@bfatl.org">bfinfo@bfatl.org</a></th> {/* TODO: replace this with the right email */}
-                            </tr>
-                            <tr className="contentText">
-                                <th>Academics</th>
-                                <th>Help</th>
-                                <th>404-799-1249</th>
-                            </tr>
-                            <tr className="contentText">
-                                <th>Contact Us</th>
-                                <th>FAQ</th>
-                            </tr>
+                            <tbody>
+                                <tr className="headingText uppercase small">
+                                    <th>Useful Links</th>
+                                    <th>Support</th>
+                                    <th>Contact</th>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr className="contentText">
+                                    <th>About Us</th>
+                                    <th>Blog</th>
+                                    <th><a className="noStyle" href="mailto:bfinfo@bfatl.org">bfinfo@bfatl.org</a></th> {/* TODO: replace this with the right email */}
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr className="contentText">
+                                    <th>Academics</th>
+                                    <th>Help</th>
+                                    <th>404-799-1249</th>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr className="contentText">
+                                    <th>Contact Us</th>
+                                    <th>FAQ</th>
+                                </tr>
+                            </tbody>
                         </table>           
                     </div>   
                 </div>
