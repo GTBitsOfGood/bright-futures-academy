@@ -28,9 +28,9 @@ transporter.verify((err, success) => {
 emailRouter.route("/")
     .post((req, res) => {
         //sender name
-        var name = req.body.name;
+        var sendersName = req.body.sendersName;
         //sending to
-        var toName = req.body.toName;
+        var recipientEmail = req.body.recipientEmail;
         //message
         //TODO: Change the message
         var message = req.body.message;
@@ -40,8 +40,8 @@ emailRouter.route("/")
 
         //TODO: Change Name, Subject, and Content
         var mail = {
-            from : name,
-            to: toName,
+            from : sendersName,
+            to: recipientEmail,
             subject: subject,
             text: message
         }
