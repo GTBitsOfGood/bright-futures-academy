@@ -13,6 +13,7 @@ var studentRouter = require('./routes/studentRouter');
 var activityRouter = require('./routes/activityRouter');
 var schoolInfoRouter = require('./routes/schoolInfoRouter');
 var emailRouter = require('./routes/emailRouter')
+var paymentRouter = require('./routes/paymentRouter')
 
 var app = express();
 
@@ -45,6 +46,15 @@ app.use('/api/schoolInfo', schoolInfoRouter);
 app.use('/api/email', emailRouter)
 app.use('/api', indexRouter);
 app.use('/api/payment', paymentRouter)
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(() => {
+  console.log("Connected to MongoDB")
+});
+
+// Start server to serve endpoints
+console.log('Express started. Listening on port', process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000);
 
 // Render React page (keep this at the bottom of the file)
 app.use(express.static(path.join(__dirname, "../client/build/")));

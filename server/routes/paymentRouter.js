@@ -55,8 +55,8 @@ router.post('/:amount/:studentId', (req, res) => {
             /**
              * TODO: Replace links with proper links for deployment
              */
-            "return_url": `http://localhost:5000/api/payment/success/${studentId}`, //TODO: replace route with route after successful payment
-            "cancel_url": `http://localhost:5000/api/payment/cancel/${studentId}` //TODO: replace route with route after a failed payment
+            "return_url": `http://localhost:5000/api/payment/success/${studentId}`, //TODO: replace route with route after successful payment AND add householdID
+            "cancel_url": `http://localhost:5000/api/payment/cancel/${studentId}` //TODO: replace route with route after a failed payment AND add householdID
         },
         "transactions": [{
             "amount": {
@@ -143,7 +143,6 @@ router.get('/success/:householdId/:studentId', (req, res) => {
 
 
                     })
-
                     // TODO: Change to redirect to specified page
                     res.send("Success")
                 }
@@ -161,5 +160,9 @@ router.get('/success/:householdId/:studentId', (req, res) => {
  */
 router.get('/cancel', (req, res) => {
     res.send("Cancelled")
+})
+
+router.get('/*', (req, res) => {
+    res.send("Invalid route")
 })
 module.exports = router;
