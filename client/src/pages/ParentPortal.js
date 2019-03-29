@@ -37,8 +37,12 @@ class PaymentPortal extends Component {
 
     }
     fetch(urlToFetch)
-    .then(response => response.json())
-    .then(data => this.setState({students: data}))
+    .then(response => {if (response.status !== 404) {
+      return response.json();
+    } else {
+      return []
+    }})
+    .then(data => this.setState({students: data || []}))
 
   }
 
