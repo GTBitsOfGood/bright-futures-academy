@@ -18,7 +18,7 @@ class PaymentPageContent extends Component {
       case 1:
         return (
           <div>
-            <ChargesList activities={activities} />
+            <ChargesList className="ChargesList" activities={activities} />
             <MemoTotal onClickNextPage={onClickNextPage} />
           </div>
         );

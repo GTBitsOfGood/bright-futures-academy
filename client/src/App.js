@@ -1,11 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
-import PaymentPortal from './pages/ParentPortal';
-import Login from './pages/Login';
-import PaymentPage from './pages/PaymentPage';
-import NoMatch from './pages/NoMatch';
-import LandingPage from './pages/LandingPage';
+import { PaymentPortal, AboutUs, Login, PaymentPage, NoMatch, LandingPage, EventsPage} from './pages';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -26,7 +22,9 @@ const App = () => (
       <Route path="/login" component={Login} />
       <Route path="/makePayment" component={PaymentPortal} />
       <Route path="/paymentPage" component={PaymentPage} />
-      <Route path="/landingPage" component={LandingPage}/>
+      <Route path="/landingPage" component={LandingPage} />
+      <Route path="/events" component={EventsPage} />
+      <Route path="/aboutUs" component={AboutUs} />
       <Route component={NoMatch} />
       </Switch>
     </Router>
