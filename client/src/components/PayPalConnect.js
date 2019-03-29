@@ -25,7 +25,7 @@ class PayPalConnect extends Component {
      */
     handleSubmit(event) {
         alert('Connect to PayPal!');
-
+        fetch()
         this.props.onClickNextPage();
         // TODO: Add logic to handle connecting to paypal and call back.
     }
