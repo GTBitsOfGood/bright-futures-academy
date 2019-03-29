@@ -29,5 +29,8 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(() => 
     console.log("Connected to MongoDB")
 });
 
+app.get("/*", (req, res) => {
+    res.send("This should be the index page");
+});
 console.log('Express started. Listening on port', process.env.PORT || 5000);
 app.listen(process.env.PORT || 5000);
