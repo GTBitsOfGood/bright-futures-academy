@@ -3,8 +3,9 @@ require('dotenv').config()
 var express = require('express');
 
 
-let Activity = require('../models/activity')
-let Student = require('../models/student')
+/* let Activity = require('../models/activity')
+let Student = require('../models/student') */
+var util = require('../utils/routerHelpers');
 var router = express.Router();
 
 //Testing Paypal API
@@ -46,7 +47,7 @@ router.get('/', (req, res) => {
  * POST: Creates a web profile and paypal payment
  */
 router.post('/:amount/:studentId', (req, res) => {
-    const studentId = req.params.studentId
+    studentId = req.params.studentId
     web_profile.name = Math.random().toString(36).substring(7);
 
     let create_payment_json = {
@@ -86,8 +87,13 @@ router.post('/:amount/:studentId', (req, res) => {
                     //console.log("Create Payment Response")
                     for (let i = 0; i < payment.links.length; i++) {
                         if (payment.links[i].rel === "approval_url") {
-                            console.log(payment.links)
-                            res.redirect(payment.links[i].href)
+                            console.log(payment)
+
+                            /**
+                             * Instead of redirecting to the approval_url, why not start with login then back to the previous page to continue
+                             */
+                            res.send(payment.links[i].href)
+
                         }
                     }
                 }
@@ -103,10 +109,11 @@ router.post('/:amount/:studentId', (req, res) => {
  * TODO: Make sure these will render the proper pages
  */
 
-router.get('/success/:studentId', (req, res) => {
+router.get('/success/:householdId/:studentId', (req, res) => {
     const payerId = req.query.PayerID;
     const paymentId = req.query.paymentId;
-    const studentId = req.params.studentId
+    const studentId = req.params.studentId;
+    const householdId = req.params.householdId
     // console.log(studentId)
     let amount = 0
     paypal.payment.get(paymentId, (error, payment) => {
@@ -136,7 +143,23 @@ router.get('/success/:studentId', (req, res) => {
                     throw error;
                 }
                 else {
-                    let activity = new Activity({ date: new Date(), amount: amount.total, name: "Associated_account" })
+                    util.getStudent(householdId, studentId, (err, student, saveFunction) => {
+                        if (err) {
+                            return next(err)
+                        }
+                        const activity = new Activity(req.body)
+                        student.amountDue += activity.amount
+                        student.activities.push(activity)
+                        saveFunction((err) => {
+                            if (err) {
+                                return next(err)
+                            }
+                            res.status(201).json(activity)
+                        })
+
+
+                    })
+                    //let activity = new Activity({ date: new Date(), amount: amount.total, name: "Associated_account" })
                     /*  activity.save().catch((err) => {
                          console.log(err)
                          throw err
@@ -144,20 +167,20 @@ router.get('/success/:studentId', (req, res) => {
                     /**
                      * Gets a student by ID and adds the activity to the student's activity list
                      */
-                    Student.findOne({ id: studentId }, (err, results) => {
-                        if (err) {
-                            // console.log(err.response);
-                            throw err;
-                        }
-                        else if (results === null) {
-                            // console.log("Results are null: No students found")
-                        }
-                        else {
-                            // console.log(results)
-                            results.activites.push(activity);
-                            return results.save()
-                        }
-                    })
+                    /*  Student.findOne({ id: studentId }, (err, results) => {
+                         if (err) {
+                             // console.log(err.response);
+                             throw err;
+                         }
+                         else if (results === null) {
+                             // console.log("Results are null: No students found")
+                         }
+                         else {
+                             // console.log(results)
+                             results.activites.push(activity);
+                             return results.save()
+                         }
+                     }) */
                     // TODO: Change to redirect to specified page
                     res.send("Success")
                 }

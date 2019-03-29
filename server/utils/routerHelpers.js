@@ -4,7 +4,7 @@ function getHousehold(householdId, callback) {
     Household.findById(householdId, (err, household) => {
         if (err) {
             err.statusCode = 500
-            return callback(err, null)            
+            return callback(err, null)
         } else if (!household) {
             err = new Error(`Could not find household with id ${householdId}`)
             err.statusCode = 404
@@ -18,12 +18,12 @@ function getHousehold(householdId, callback) {
 function getStudent(householdId, studentId, callback) {
     getHousehold(householdId, (err, household, saveFunction) => {
         if (err) {
-            return callback(err, null)            
+            return callback(err, null)
         }
         var student = household.students.id(studentId);
         if (!student) {
             err = new Error(`Could not find student with id ${studentId}`)
-            console.log(err.message) 
+            console.log(err.message)
             err.statusCode = 404
             return callback(err, null)
         }
@@ -34,7 +34,7 @@ function getStudent(householdId, studentId, callback) {
 function getActivity(householdId, studentId, activityId, callback) {
     getStudent(householdId, studentId, (err, student, saveFunction) => {
         if (err) {
-            return callback(err, null)            
+            return callback(err, null)
         }
         var activity = student.activities.id(activityId);
         if (!activity) {
