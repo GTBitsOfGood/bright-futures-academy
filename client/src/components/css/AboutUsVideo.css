@@ -23,3 +23,33 @@
     color: #ffffff;
     text-transform: uppercase;
 }
+
+.aboutUsMainVideo {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+.aboutUsVideoHeaderText {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.aboutUsVideoDescriptionText {
+    max-width: 20%;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.69;
+    letter-spacing: normal;
+    color: #ffffff;
+}
