@@ -50,7 +50,7 @@ class PaymentPortal extends Component {
       <PrimaryNavBar />
       <div className="container">
           {this.state.students.map(function(d, id) {
-            return <StudentCard key= {d.id} studentName={d.name.first + " " + d.name.last} studentID = {d.id} studentBalance={d.amount_due} />
+            return <StudentCard key= {d.id} studentName={d.name.first + " " + d.name.last} studentID = {d.id} studentBalance={d.amountDue} />
           })}
       <AnnouncementList />
       </div>

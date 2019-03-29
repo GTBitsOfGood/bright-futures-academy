@@ -62,4 +62,13 @@ app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
+
+function handleError(err, req, res, next) {
+  const statusCode = err.statusCode ? err.statusCode : 500
+  const message = err.message ? err.message : 'Something broke!'
+  console.error(err.stack)
+  res.status(statusCode).send(message)
+}
+app.use(handleError)
+
 module.exports = app;
