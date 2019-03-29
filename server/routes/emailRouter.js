@@ -9,7 +9,8 @@ var transporter = nodemailer.createTransport({
     service: "Gmail",
     auth : {
         user: emailCredentials.User,
-        pass: emailCredentials.Pass
+        pass: emailCredentials.Pass,
+
     }
 });
 
@@ -32,14 +33,16 @@ emailRouter.route("/")
         var toName = req.body.toName;
         //message
         //TODO: Change the message
-        var message = "TEST";
+        var message = req.body.message;
+        //The subject
+        var subject = req.body.subject;
 
 
         //TODO: Change Name, Subject, and Content
         var mail = {
             from : name,
             to: toName,
-            subject: "TEST",
+            subject: subject,
             text: message
         }
 
