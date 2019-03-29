@@ -19,8 +19,8 @@ class AboutUsVideo extends Component {
                 </p>
                 {/* TODO fetch video URLs from backend dynamically */}
                 <div className="aboutUsMainVideo">
-                    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=cmJlF666ttc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <div>
+                    <iframe className="aboutUsVideoContent" width="1000" height="400" src="https://www.youtube.com/watch?v=cmJlF666ttc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <div className="textContent">
                         <p className="aboutUsVideoHeaderText">
                             Bright Futures Academy
                         </p>
