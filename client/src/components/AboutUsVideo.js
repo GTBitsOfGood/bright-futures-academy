@@ -24,7 +24,7 @@ class AboutUsVideo extends Component {
     }
 
     getCarouselVideos() {
-        const { mainVideoURL,  carouselVideoURLs} = this.state;
+        const { carouselVideoURLs} = this.state;
         
         // TODO: We need to add logic to change the video url when a person clicks on it.
 
