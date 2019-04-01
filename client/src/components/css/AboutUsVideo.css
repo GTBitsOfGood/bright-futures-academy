@@ -55,6 +55,7 @@
     overflow: hidden;
     width: 40%;
     min-width: 145px;
+    text-align: left;
 }
 
 .textContent {
