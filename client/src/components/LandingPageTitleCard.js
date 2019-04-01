@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './css/LandingPageTitleCard.css';
 import Carousel from 'react-bootstrap/Carousel';
-import {infographic} from '../images/infographic.jpg';
+import {infographic} from '../images/';
 
 /**
  * Component for the Carousel on the landing page.
@@ -36,49 +36,54 @@ class LandingPageTitleCard extends Component {
         const { index, direction } = this.state;
 
         return (
-            <div className="imageOverlay">
                 <Carousel
                     activeIndex={index}
-                    // direction={direction}
+                    direction={direction}
                     onSelect={this.handleSelect}
-                    interval={20}
                     controls={true}
                 >
                     <Carousel.Item>
-                        <img
-                            className="backgroundImage"
-                            src={infographic}
-                            alt={"#"}
-                        />
+                        <div
+                                className="backgroundImage"
+                                src={infographic}
+                                alt={"#"}
+                            />
+                        <div className="imageOverlay">
+                        </div>
                         <Carousel.Caption>
-                            <h3>First slide label</h3>
+                            <h3>Bright Futures Academy</h3>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div
-                            className="backgroundImage"
-                        />
-
+                                className="backgroundImage"
+                                src={infographic}
+                                alt={"#"}
+                            />
+                        <div className="imageOverlay">
+                        </div>
                         <Carousel.Caption>
-                            <h3>Second slide label</h3>
+                            <h3>Bright Futures Academy</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div
-                            className="backgroundImage"
-                        />
-
+                                className="backgroundImage"
+                                src={infographic}
+                                alt={"#"}
+                            />
+                        <div className="imageOverlay">
+                        </div>
                         <Carousel.Caption>
-                            <h3>Third slide label</h3>
+                            <h3>Bright Futures Academy</h3>
                             <p>
                             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
                             </p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
-            </div>
         );
     }
 }
