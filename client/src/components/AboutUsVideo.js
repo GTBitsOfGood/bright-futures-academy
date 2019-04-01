@@ -61,14 +61,6 @@ class AboutUsVideo extends Component {
                     <div className="scrolling-wrapper-flexbox scrolling-wrapper">
                         {/* TODO get these videos from the back end */}
                         {this.getCarouselVideos()}
-                        {/* <iframe className="card" width="100" height="200" src="https://www.youtube.com/embed/cmJlF666ttc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <iframe className="card" width="100" height="200" src="https://www.youtube.com/embed/cmJlF666ttc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <iframe className="card" width="100" height="200" src="https://www.youtube.com/embed/cmJlF666ttc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <iframe className="card" width="100" height="200" src="https://www.youtube.com/embed/cmJlF666ttc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <iframe className="card" width="100" height="200" src="https://www.youtube.com/embed/cmJlF666ttc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <iframe className="card" width="100" height="200" src="https://www.youtube.com/embed/cmJlF666ttc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <iframe className="card" width="100" height="200" src="https://www.youtube.com/embed/cmJlF666ttc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <iframe className="card" width="100" height="200" src="https://www.youtube.com/embed/cmJlF666ttc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>                     */}
                     </div>
                 </div>
             </div>
