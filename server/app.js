@@ -13,6 +13,7 @@ var studentRouter = require('./routes/studentRouter');
 var activityRouter = require('./routes/activityRouter');
 var schoolInfoRouter = require('./routes/schoolInfoRouter');
 var paymentRouter = require('./routes/paymentRouter')
+var emailRouter = require('./routes/emailRouter')
 
 var app = express();
 
@@ -46,6 +47,7 @@ app.use('/api/household', householdRouter);
 app.use('/api/student', studentRouter);
 app.use('/api/activity', activityRouter);
 app.use('/api/schoolInfo', schoolInfoRouter);
+app.use('/api/email', emailRouter)
 app.use('/api', indexRouter);
 app.use('/api/payment', paymentRouter)
 
