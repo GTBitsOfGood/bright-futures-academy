@@ -19,3 +19,4 @@ export { default as Footer } from './Footer';
 export { default as LandingPageNews } from './LandingPageNews';
 export { default as Calendar } from './Calendar';
 export { default as About } from './About';
+export { default as ContactUs } from './ContactUs';

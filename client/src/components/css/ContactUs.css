@@ -1,0 +1,62 @@
+/* Import Roboto font */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.contactUsHeaderText {
+    font-family: Roboto;
+    font-size: 48px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+}
+
+.contactUsDescriptionText {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.83;
+    letter-spacing: normal;
+    color: #4a4a4a;
+}
+
+.contactFormText {
+    height: 27px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.69;
+    letter-spacing: normal;
+    color: #5e6a6e;
+}
+
+.contactUsMessageBox {
+    width: 60vh;
+    height: 50vh;
+    text-align: left;
+}
+
+.contactUsContainer {
+    padding: 2%;
+    flex-direction: column;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactUsMain {
+    max-width: 40%;
+    margin: auto;
+}
+
+.contactUsInputBoxes {
+
+}
