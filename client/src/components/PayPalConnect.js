@@ -31,6 +31,7 @@ class PayPalConnect extends Component {
         let urlToFetch = API_PAYPAL_PROD;
         if (ReactIsInDevelomentMode()){
           //Fetch the student list
+          //TODO: Replace household ID with ID from a state
           urlToFetch = API_PAYPAL_DEV + '5c8680ffad46ec4f26e7b46f';
     }
     const{ amount, householdId, studentId } = this.state
