@@ -32,7 +32,7 @@ class ContactUs extends Component {
                     <p className="contactUsDescriptionText">
                         Contact us about anything related to our organization, programs and services. Please give us a few details and we’ll get back to you soon.
                     </p>
-                    <div>
+                    <div className="contactUsInputBoxes">
                         <p className="contactFormText">
                             Name *
                         </p>
