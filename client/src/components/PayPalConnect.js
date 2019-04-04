@@ -10,7 +10,7 @@ import './css/PayPalConnect.css'
 class PayPalConnect extends Component {
     constructor(props) {
         super(props)
-        
+
         this.state = {
             totalFee: 0.0, // TODO: replace these values with money values.
             tax: 0.0,
@@ -21,7 +21,7 @@ class PayPalConnect extends Component {
 
     /**
      * Handles confirmation of the payment and will (eventually) route to new page.
-     * @param {} event 
+     * @param {} event
      */
     handleSubmit(event) {
         alert('Connect to PayPal!');
@@ -41,16 +41,16 @@ class PayPalConnect extends Component {
                     <span>
                         <p>Total Fee: </p> {"$" + this.state.totalFee}
                     </span>
-                    <br/>
+                    <br />
                     <span>
                         <p>Tax: </p> {"$" + this.state.tax}
                     </span>
-                    <br/>
+                    <br />
                     <span>
                         <h5>Payment Total: </h5> {"$" + this.state.paymentTotal}
                     </span>
                 </div>
-                <br/>
+                <br />
                 <Button outline onClick={this.handleSubmit} color="primary">Connect to PayPal</Button>
             </div>
         );
