@@ -22,9 +22,9 @@ const App = () => (
       <Route path="/login" component={Login} />
       <Route path="/makePayment" component={PaymentPortal} />
       <Route path="/paymentPage" component={PaymentPage} />
-      <Route path="/landingPage" component={LandingPage} />
       <Route path="/events" component={EventsPage} />
       <Route path="/aboutUs" component={AboutUs} />
+      <Route path="/" component={LandingPage} />
       <Route component={NoMatch} />
       </Switch>
     </Router>
