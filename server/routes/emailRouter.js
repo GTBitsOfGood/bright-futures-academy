@@ -7,7 +7,7 @@ const emailRouter = express.Router();
 
 var transporter = nodemailer.createTransport({
     service: "Gmail",
-    auth : {
+    auth: {
         user: emailCredentials.User,
         pass: emailCredentials.Pass,
 
@@ -40,7 +40,7 @@ emailRouter.route("/")
 
         //TODO: Change Name, Subject, and Content
         var mail = {
-            from : sendersName,
+            from: sendersName,
             to: recipientEmail,
             subject: subject,
             text: message
@@ -48,9 +48,9 @@ emailRouter.route("/")
 
         transporter.sendMail(mail, (err, data) => {
             if (err) {
-                res.status(500).json({msg: 'fail'})
+                res.status(500).json({ msg: 'fail' })
             } else {
-                res.status(201).json({msg: "Success"})
+                res.status(201).json({ msg: "Success" })
                 console.log("Email sent")
             }
         })
