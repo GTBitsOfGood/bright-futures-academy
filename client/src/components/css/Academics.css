@@ -22,18 +22,6 @@
   text-align: left;
 }
 
-/* delete */
-.testText {
-  color: blue;
-  text-align: left;
-}
-
-.teacherColumn {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
-
 /* Clearfix (clear floats) */
 .teacherContainer::after {
   content: "";
@@ -41,8 +29,43 @@
   display: table;
 }
 
+.teacherItem:hover .teacherPicture {
+  opacity: 0.3; 
+}
+
+.teacherItem:hover .hover {
+  opacity: 1; 
+}
+
+.pictureWrapper {
+  height: fit-content;
+}
+
+.hover {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  height: 100%;
+  text-overflow: ellipsis;
+}
+
+.descriptionText {
+  color: black;
+  font-size: 12px;
+  overflow: auto;
+  text-overflow: ellipsis;
+  height: 100%;
+}
+
 .teacherPicture {
   width: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
 
 .teacherName {
@@ -61,4 +84,12 @@
   text-align: center;
   color: #4a4a4a;
   margin-bottom: 40px;
+}
+
+.teacherItem {
+  position: relative;
+  width: 50%;
+  float: left;
+  width: 33.33%;
+  padding: 5px;
 }

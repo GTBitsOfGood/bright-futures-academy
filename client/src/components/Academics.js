@@ -21,7 +21,7 @@ class Academics extends Component {
           teacherTitles: ["Principal", "Dean of Students", "Middle School English Teacher", "History Teacher", "Bible Teacher", 
                           "Administrative Assistant", "Middle School Math Teacher", "High School Science Teacher", "Middle School Science Teacher",
                           "High School Math Teacher"],
-          sampleDescrption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis justo non efficitur auctor. In elementum est interdum iaculis feugiat. Pellentesque convallis cursus tempor. Donec nibh ante, vulputate ac tellus sollicitudin, finibus mattis mi.",
+          sampleDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis justo non efficitur auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis justo non efficitur auctor.",
           teacherPictures: [teacher0, teacher1, teacher2, teacher3, teacher4, teacher5, teacher6, teacher7, teacher8, teacher9],
         }
     }
@@ -30,8 +30,13 @@ class Academics extends Component {
       const teacherName = this.state.teacherNames[teacherIndex];
       const teacherTitle = this.state.teacherTitles[teacherIndex];
       return (
-        <div className="teacherItem" className="teacherColumn">
-          <img className="teacherPicture" src={this.state.teacherPictures[teacherIndex]}></img>
+        <div className="teacherItem">
+          <div className="pictureWrapper">
+            <img className="teacherPicture" src={this.state.teacherPictures[teacherIndex]}></img>
+            <div class="hover">
+              <div class="descriptionText">{this.state.sampleDescription}</div>
+            </div>
+          </div>
           <p className="teacherName">{teacherName}</p>
           <p className="teacherPosition">{teacherTitle}</p>
         </div>
