@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './css/AboutUsVideo.css';
 
+/**
+ * This is the component where promotional videos are displayed on the about page.
+ */
 class AboutUsVideo extends Component {
 
     constructor(props) {
