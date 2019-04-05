@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import { PaymentPortal, Contact, AboutUs, Login, PaymentPage, NoMatch, LandingPage, EventsPage } from './pages';
+import { PaymentPortal, Contact, AboutUs, Login, PaymentPage, NoMatch, LandingPage, EventsPage, AcademicsPage } from './pages';
 import { PrivateRoute } from "./auth";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
@@ -49,6 +49,7 @@ const App = () => (
         <Route path="/events" component={EventsPage} />
         <Route path="/aboutUs" component={AboutUs} />
         <Route path="/contact" component={Contact} />
+        <Route path="/academics" component={AcademicsPage} />
 
         {/* Pages that should only be accessed by an authenticated user */}
         <PrivateRoute path="/makePayment" component={PaymentPortal} />
