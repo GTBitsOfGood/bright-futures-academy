@@ -52,7 +52,7 @@ div > div > span {
 
 .chargesList {
     width: 50%;
-    margin: 0 auto;
+    margin-left: 15%;
     padding: 10px;
     justify-content: center;
 }
