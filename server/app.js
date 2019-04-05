@@ -19,7 +19,7 @@ var app = express();
 // our dev server and client run on 2 different ports 
 // so we need to whitelist the client address
 if (app.get('env') === 'development') {
-  const whitelist = ['http://localhost:3000']
+  const whitelist = ['http://localhost:3000', 'https://bright-futures-academy-dev.herokuapp.com/']
   const corsOptions = {
     origin: function (origin, callback) {
       if (whitelist.indexOf(origin) !== -1 || !origin) {
