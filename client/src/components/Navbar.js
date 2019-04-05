@@ -12,6 +12,10 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem, Button } from 'reactstrap';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { logoutHousehold } from "../actions/authActions";
+
 
 /**
  * Container for the navbar component.
@@ -33,6 +37,11 @@ class PrimaryNavBar extends Component {
       isDropdownTwoOpen: false
     };
   }
+
+  onLogoutClick = e => {
+    e.preventDefault();
+    this.props.logoutHousehold();
+  };
 
   toggle() {
     this.setState({
@@ -122,7 +131,7 @@ class PrimaryNavBar extends Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                      <a href='/makepayment'>Make a payment</a>
+                      <a href='/makePayment'>Make a payment</a>
                   </DropdownItem>
                   <DropdownItem>
                       <a href='/paymenthistory'>Payment History</a>
@@ -135,7 +144,7 @@ class PrimaryNavBar extends Component {
               </NavItem>
 
               <NavItem>
-                    <Button>Sign out</Button>
+                    <Button onClick={this.onLogoutClick}>Sign out</Button>
                 </NavItem>
 
             </Nav>
@@ -146,4 +155,16 @@ class PrimaryNavBar extends Component {
   }
 }
 
-export default PrimaryNavBar;
+PrimaryNavBar.propTypes = {
+  logoutHousehold: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutHousehold }
+)(PrimaryNavBar);
