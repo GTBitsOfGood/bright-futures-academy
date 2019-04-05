@@ -21,7 +21,7 @@ export const loginHousehold = householdData => dispatch => {
   if (ReactIsInDevelomentMode()) {
     link = DEV_SERVER_LINK + '/login';
   } else {
-    link = STAGING_SERVER_LINK + '/login';
+    link = PRODUCTION_SERVER_LINK + '/login';
   }
 
   axios
