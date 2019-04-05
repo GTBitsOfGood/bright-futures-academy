@@ -11,7 +11,7 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      email: "",
+      householdId: "",
       password: "",
       errors: {},
 
@@ -47,13 +47,12 @@ class Login extends Component {
     // prevent page from reloading
     e.preventDefault();
     const householdData = {
-      email: this.state.email,
+      householdId: this.state.householdId,
       password: this.state.password
     };
     console.log(householdData);
     // TODO: call the api route for login
     this.props.loginHousehold(householdData);
-    // debugger;
   };
 
   render() {
@@ -74,12 +73,11 @@ class Login extends Component {
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
+                  value={this.state.householdId}
+                  error={errors.householdId}
+                  id="householdId"
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="householdId">householdId</label>
               </div>
               <div className="input-field col s12">
                 <input

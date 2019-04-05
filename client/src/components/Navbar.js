@@ -155,7 +155,7 @@ class PrimaryNavBar extends Component {
   }
 }
 
-Navbar.propTypes = {
+PrimaryNavBar.propTypes = {
   logoutHousehold: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 }
@@ -167,4 +167,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { logoutHousehold }
-)(Navbar);
+)(PrimaryNavBar);

@@ -7,12 +7,14 @@ import {
   HOUSEHOLD_LOADING
 } from "./types";
 
+const DEV_SERVER_LINK = "http://localhost:5000/api/household/"
+
 /**
  * Login - get household token
  */
 export const loginHousehold = householdData => dispatch => {
   axios
-    .post("/api/household/login", householdData)
+    .post(DEV_SERVER_LINK + "/login", householdData)
     .then(res => {
       // Save to localStorage
       // Set token to localStorage

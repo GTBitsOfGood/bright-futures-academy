@@ -4,8 +4,6 @@ import {Button} from 'reactstrap';
 import './css/ParentPortal.css';
 import {ReactIsInDevelomentMode} from './../components/Utils';
 
-import { connect } from "react-redux";
-
 //TODO: Figure out he correct URL's for Production
 const API_STUDENT_DEV = "http://localhost:5000/api/student/"
 const API_STUDENT_PROD = "";
@@ -50,8 +48,6 @@ class PaymentPortal extends Component {
  
   //TODO: Add logic for making payment
   render() {
-    const { user } = this.props.auth;
-
     return (
       <div id='parent-portal-container'>
         <PrimaryNavBar />
