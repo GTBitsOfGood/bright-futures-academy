@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';  
 import PropTypes from "prop-types";
 import { loginHousehold } from "../actions/authActions";
-import { debug } from "util";
 
 /**
  * Login page for parents
