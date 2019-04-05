@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
+import { PayPalButton } from 'react-paypal-button-v2';
 import './css/PayPalConnect.css'
-import {ReactIsInDevelomentMode} from './../components/Utils';
+import { ReactIsInDevelomentMode } from './../components/Utils';
 
 /**
  * This is the PayPal connection component for the second page of the account payment portal.
@@ -9,49 +9,61 @@ import {ReactIsInDevelomentMode} from './../components/Utils';
  * TODO: Add styling
  */
 
-const API_PAYPAL_DEV = "http://localhost:5000/api/pay/";
-const API_PAYPAL_PROD = "";
+const ACTIVITY_API_DEV = "http://localhost:5000/api/activity/";
+const ACTIVITY_API_PROD = "";
 
 class PayPalConnect extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            totalFee: 0.0, // TODO: replace these values with money values.
+            // TODO: get all of this information from Redux store
+            totalFee: 0.01,
             tax: 0.0,
-            paymentTotal: 0.0 , // TODO: Make a state for checking to see if the user is connected to paypal already
-            url: ""
+            paymentTotal: 0.01,
+            householdId: '5ca7802e6bf2281dd453bdd9',
+            studentId: '5ca7802e6bf2281dd453bdd9'
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-        
+    onSuccess = (info) => {
+        console.log(info)
+        const { householdId, studentId } = this.state
+        const { amount, id } = info.purchase_units[0]
+        const serverUrl = ReactIsInDevelomentMode()
+            ? ACTIVITY_API_DEV
+            : ACTIVITY_API_PROD
+        serverUrl += `${householdId}/${studentId}/`
 
-    componentDidMount() {
-        let urlToFetch = API_PAYPAL_PROD;
-        if (ReactIsInDevelomentMode()){
-          //Fetch the student list
-          //TODO: Replace household ID with ID from a state
-          urlToFetch = API_PAYPAL_DEV + '5c8680ffad46ec4f26e7b46f';
-    }
-    const{ amount, householdId, studentId } = this.state
-    fetch(urlToFetch, {
-        method: "post",
-        body: JSON.stringify({
-            amount,
-            householdId, 
-            studentId
+        fetch(serverUrl, {
+            method: "post",
+            body: JSON.stringify({
+                amount: -amount,
+                paypal_id: id,
+                name: 'PayPal Payment'
+            })
         })
-    })
-    .then(response => this.setState({url: response}))
+            .then(() => this.props.onClickNextPage())
     }
-    /**
-     * Handles confirmation of the payment and will (eventually) route to new page.
-     * @param {} event
-     */
-    handleSubmit(event) {
-        window.open(this.state.url);
-        this.setState({url: ""});
+
+    onError = (err) => {
+        alert("Sorry, we encountered an error while processing your payment. Please try again.")
+        console.log(err.message)
+    }
+
+    onCancel = (data) => {
+        alert("Payment canceled.")
+    }
+
+    createOrder = (data, actions) => {
+        const { totalFee } = this.state
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value: totalFee
+                }
+            }]
+        })
     }
 
     /**
@@ -59,23 +71,38 @@ class PayPalConnect extends Component {
      * TODO: replace divs with React.Fragment (https://getstream.io/blog/react-fragments/)
      */
     render() {
+        const { totalFee, tax, paymentTotal } = this.state;
+        const CLIENT_ID = ReactIsInDevelomentMode()
+            ? 'sb'
+            : process.env.REACT_APP_PAYPAL_PROD_CLIENT_ID
+        const options = {
+            currency: "USD",
+            clientId: CLIENT_ID
+        }
         return (
             <div className="center">
                 <div className="left">
                     <span>
-                        <p>Total Fee: </p> {"$" + this.state.totalFee}
+                        <p>Total Fee: </p> {"$" + totalFee}
                     </span>
                     <br />
                     <span>
-                        <p>Tax: </p> {"$" + this.state.tax}
+                        <p>Tax: </p> {"$" + tax}
                     </span>
                     <br />
                     <span>
-                        <h5>Payment Total: </h5> {"$" + this.state.paymentTotal}
+                        <h5>Payment Total: </h5> {"$" + paymentTotal}
                     </span>
                 </div>
                 <br />
-                <Button outline onClick={this.handleSubmit} color="primary">Connect to PayPal</Button>
+                <PayPalButton
+                    amount={totalFee}
+                    createOrder={this.createOrder}
+                    onCancel={this.onCancel}
+                    onError={this.onError}
+                    onSuccess={this.onSuccess}
+                    options={options}
+                />
             </div>
         );
     }
