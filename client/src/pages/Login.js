@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';  
+import PropTypes from "prop-types";
+import { loginHousehold } from "../actions/authActions";
 
 /**
  * Login page for parents
@@ -7,10 +10,32 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      email: "",
+      householdId: "",
       password: "",
-      errors: {}
+      errors: {},
+
     };
+  }
+
+  componentDidMount() {
+    // If logged in and user navigates to Login page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/makePayment");
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/makePayment"); // push user to dashboard when they login
+    } else {
+      this.props.history.push("/login"); // push user to dashboard when they login
+    }
+
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
   }
 
   onChange = e => {
@@ -21,11 +46,12 @@ class Login extends Component {
     // prevent page from reloading
     e.preventDefault();
     const householdData = {
-      email: this.state.email,
+      householdId: this.state.householdId,
       password: this.state.password
     };
     console.log(householdData);
     // TODO: call the api route for login
+    this.props.loginHousehold(householdData);
   };
 
   render() {
@@ -46,12 +72,11 @@ class Login extends Component {
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
+                  value={this.state.householdId}
+                  error={errors.householdId}
+                  id="householdId"
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="householdId">householdId</label>
               </div>
               <div className="input-field col s12">
                 <input
@@ -85,4 +110,18 @@ class Login extends Component {
   }
 }
 
-export default Login;
+Login.propTypes = {
+  loginHousehold: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  {loginHousehold}
+)(Login);
