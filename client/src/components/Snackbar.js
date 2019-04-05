@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './css/Snackbar.css';
 
+/**
+ * Snackbar is a little pop up that shows up and can be used for notifications on the page
+ */
 class SnackBar extends Component {
 
     constructor(props) {

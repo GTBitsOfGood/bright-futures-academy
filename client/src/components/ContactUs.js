@@ -3,6 +3,9 @@ import './css/ContactUs.css';
 
 import { Snackbar } from './';
 
+/**
+ * Contact Us component for contact page.
+ */
 class ContactUs extends Component {
 
     constructor(props) {
@@ -22,12 +25,19 @@ class ContactUs extends Component {
         }
     }
 
+    /**
+     * Updates state values for respective input box
+     * @param {*} e 
+     */
     onValueChange(e) {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
+    /**
+     * Logic for when a user submits a message.
+     */
     onSubmit() {
         // TODO: Add logic to submit/send email to BFA.
         // TODO: Add validation
@@ -44,6 +54,10 @@ class ContactUs extends Component {
         }, 3000);
     }
 
+    /**
+     * Message snackbar should display when the message sent was successful (or not).
+     * @param {*} messageSentSuccess 
+     */
     snackbarMessage(messageSentSuccess) {
         if (messageSentSuccess) {
             return "Message sent successfully";
