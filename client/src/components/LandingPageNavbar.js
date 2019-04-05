@@ -57,7 +57,11 @@ class LandingPageNavbar extends Component {
                         </form>
                     </p>
                     <p>
-                        <a className="noStyle" href="mailto:bfinfo@bfatl.org">Contact</a>
+                        <form action="">
+                            <Link to='/contact'>
+                                <input type="button" className="navbarButton" value="Contact"/>
+                            </Link>
+                        </form>
                     </p>
                     <div className="rightNavbar">
                         <form action="">
