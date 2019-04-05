@@ -56,8 +56,8 @@ router.post('/:amount/:householdId/:studentId', (req, res) => {
             /**
              * TODO: Replace links with proper links for deployment
              */
-            "return_url": `http://localhost:5000/api/payment/success/${studentId}`, //TODO: replace route with route after successful payment AND add householdID
-            "cancel_url": `http://localhost:5000/api/payment/cancel/${studentId}` //TODO: replace route with route after a failed payment AND add householdID
+            "return_url": `http://localhost:5000/api/payment/success/${householdId}/${studentId}`, //TODO: replace route with route after successful payment AND add householdID
+            "cancel_url": `http://localhost:5000/api/payment/cancel/${householdId}/${studentId}` //TODO: replace route with route after a failed payment AND add householdID
         },
         "transactions": [{
             "amount": {
