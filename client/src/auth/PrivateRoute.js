@@ -3,6 +3,10 @@ import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+/**
+ * Private Route is used when we want pages for only authenticated users to see. Otherwise they will be kicked back to the login page.
+ * @param {*} param0 
+ */
 const PrivateRoute = ({ component: Component, auth, ...rest }) => (
   <Route
     {...rest}
