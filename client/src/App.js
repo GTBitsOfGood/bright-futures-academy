@@ -1,7 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
+<<<<<<< HEAD
 import { PaymentPortal, Contact, AboutUs, Login, PaymentPage, NoMatch, LandingPage, EventsPage} from './pages';
+=======
+import { PaymentPortal, AboutUs, Login, PaymentPage, NoMatch, LandingPage, EventsPage, AcademicsPage} from './pages';
+>>>>>>> Template logo, name, title
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -24,7 +28,11 @@ const App = () => (
       <Route path="/paymentPage" component={PaymentPage} />
       <Route path="/events" component={EventsPage} />
       <Route path="/aboutUs" component={AboutUs} />
+<<<<<<< HEAD
       <Route path="/contact" component={Contact} />
+=======
+      <Route path="/academics" component={AcademicsPage} />
+>>>>>>> Template logo, name, title
       <Route path="/" component={LandingPage} />
       <Route component={NoMatch} />
       </Switch>
