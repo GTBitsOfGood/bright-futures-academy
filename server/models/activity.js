@@ -14,6 +14,9 @@ activitySchema = new Schema({
     name: {
         type: String,
         required: true
+    },
+    paypalId: {
+        type: String,
     }
 })
 
