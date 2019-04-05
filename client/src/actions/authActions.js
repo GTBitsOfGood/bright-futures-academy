@@ -57,7 +57,7 @@ export const setHouseholdLoading = () => {
 /**
  * Log household out
  */
-export const logouthousehold = () => dispatch => {
+export const logoutHousehold = () => dispatch => {
   // Remove token from local storage
   localStorage.removeItem("jwtToken");
 

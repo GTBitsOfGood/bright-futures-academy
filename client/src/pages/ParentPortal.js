@@ -4,6 +4,7 @@ import {Button} from 'reactstrap';
 import './css/ParentPortal.css';
 import {ReactIsInDevelomentMode} from './../components/Utils';
 
+import { connect } from "react-redux";
 
 //TODO: Figure out he correct URL's for Production
 const API_STUDENT_DEV = "http://localhost:5000/api/student/"
@@ -49,17 +50,19 @@ class PaymentPortal extends Component {
  
   //TODO: Add logic for making payment
   render() {
+    const { user } = this.props.auth;
+
     return (
-    <div id='parent-portal-container'>
-      <PrimaryNavBar />
-      <div className="container">
-          {this.state.students.map(function(d, id) {
-            return <StudentCard key= {d.id} studentName={d.name.first + " " + d.name.last} studentID = {d.id} studentBalance={d.amountDue} />
-          })}
-      <AnnouncementList />
-      </div>
-      <Button>Make Payment</Button>
-      </div>
+      <div id='parent-portal-container'>
+        <PrimaryNavBar />
+        <div className="container">
+            {this.state.students.map(function(d, id) {
+              return <StudentCard key= {d.id} studentName={d.name.first + " " + d.name.last} studentID = {d.id} studentBalance={d.amountDue} />
+            })}
+        <AnnouncementList />
+        </div>
+        <Button>Make Payment</Button>
+        </div>
     );
   }
 }

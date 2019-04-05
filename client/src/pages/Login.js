@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';  
+import PropTypes from "prop-types";
+import { loginHousehold } from "../actions/authActions";
+import { debug } from "util";
 
 /**
  * Login page for parents
@@ -9,8 +13,30 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      errors: {}
+      errors: {},
+
     };
+  }
+
+  componentDidMount() {
+    // If logged in and user navigates to Login page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/makePayment");
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/makePayment"); // push user to dashboard when they login
+    } else {
+      this.props.history.push("/login"); // push user to dashboard when they login
+    }
+
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
   }
 
   onChange = e => {
@@ -26,6 +52,8 @@ class Login extends Component {
     };
     console.log(householdData);
     // TODO: call the api route for login
+    this.props.loginHousehold(householdData);
+    // debugger;
   };
 
   render() {
@@ -85,4 +113,18 @@ class Login extends Component {
   }
 }
 
-export default Login;
+Login.propTypes = {
+  loginHousehold: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  {loginHousehold}
+)(Login);
