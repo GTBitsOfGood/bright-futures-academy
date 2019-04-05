@@ -1,0 +1,65 @@
+.academicContainer {
+  margin: 50px;
+  margin-left: 15%;
+  margin-right: 15%;
+  min-width: 70%;
+  justify-content: flex-start;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.title {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: bold;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+.bodyText {
+  font-family: Roboto;
+  font-size: 14px;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+/* delete */
+.testText {
+  color: blue;
+  text-align: left;
+}
+
+.teacherColumn {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.teacherContainer::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.teacherPicture {
+  width: 100%;
+  border: 1px solid red;
+}
+
+.teacherName {
+  font-family: Roboto;
+  font-size: 18px;
+  text-align: center;
+  color: #4a4a4a;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.teacherPosition {
+  font-family: Roboto;
+  font-size: 14px;
+  text-align: center;
+  color: #4a4a4a;
+  margin-bottom: 40px;
+}
