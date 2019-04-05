@@ -21,8 +21,12 @@ export { default as Calendar } from './Calendar';
 export { default as About } from './About';
 export { default as LandingPageTitleCard } from './LandingPageTitleCard';
 <<<<<<< HEAD
+<<<<<<< HEAD
 export { default as ContactUs } from './ContactUs';
 export { default as Snackbar } from './Snackbar';
 =======
 export { default as Academics } from './Academics';
 >>>>>>> Template logo, name, title
+=======
+export { default as Academics } from './Academics';
+>>>>>>> 1f3f7d4952be95934d5473a3d00b70911c4ed6bc
