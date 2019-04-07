@@ -12,6 +12,7 @@ var householdRouter = require('./routes/householdRouter');
 var studentRouter = require('./routes/studentRouter');
 var activityRouter = require('./routes/activityRouter');
 var schoolInfoRouter = require('./routes/schoolInfoRouter');
+var paymentRouter = require('./routes/paymentRouter')
 var emailRouter = require('./routes/emailRouter')
 var paymentRouter = require('./routes/paymentRouter')
 

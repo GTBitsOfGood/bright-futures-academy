@@ -20,7 +20,7 @@ class PayPalConnect extends Component {
             // TODO: get all of this information from Redux store
             totalFee: 0.01,
             tax: 0.0,
-            paymentTotal: 0.01, 
+            paymentTotal: 0.01,
             householdId: '5ca7802e6bf2281dd453bdd9',
             studentId: '5ca7802e6bf2281dd453bdd9'
         }
@@ -43,22 +43,12 @@ class PayPalConnect extends Component {
                 name: 'PayPal Payment'
             })
         })
-        .then(() => this.props.onClickNextPage())
+            .then(() => this.props.onClickNextPage())
     }
-<<<<<<< HEAD
-    /**
-     * Handles confirmation of the payment and will (eventually) route to new page.
-     * @param {} event
-     */
-    handleSubmit(event) {
-        window.open(this.state.url);
-        this.setState({url: ""});
-=======
-    
+
     onError = (err) => {
         alert("Sorry, we encountered an error while processing your payment. Please try again.")
         console.log(err.message)
->>>>>>> Add PayPal buttons and config
     }
 
     onCancel = (data) => {
@@ -74,7 +64,7 @@ class PayPalConnect extends Component {
                 }
             }]
         })
-      }
+    }
 
     /**
      * TODO: style.
@@ -104,12 +94,8 @@ class PayPalConnect extends Component {
                         <h5>Payment Total: </h5> {"$" + paymentTotal}
                     </span>
                 </div>
-<<<<<<< HEAD
                 <br />
-                <Button outline onClick={this.handleSubmit} color="primary">Connect to PayPal</Button>
-=======
-                <br/>
-                <PayPalButton 
+                <PayPalButton
                     amount={totalFee}
                     createOrder={this.createOrder}
                     onCancel={this.onCancel}
@@ -117,8 +103,7 @@ class PayPalConnect extends Component {
                     onSuccess={this.onSuccess}
                     options={options}
                 />
->>>>>>> Add PayPal buttons and config
-            </div>
+            </div >
         );
     }
 }
