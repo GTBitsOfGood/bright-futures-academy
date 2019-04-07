@@ -9,6 +9,7 @@
     line-height: normal;
     letter-spacing: normal;
     color: #4a4a4a;
+    text-align: left;
 }
 
 .contactUsDescriptionText {
@@ -20,6 +21,7 @@
     line-height: 1.83;
     letter-spacing: normal;
     color: #4a4a4a;
+    text-align: left;
 }
 
 .contactFormText {
@@ -47,21 +49,32 @@
     padding-right: 0.4em;
 }
 
+.contactUsPageContainer {
+    margin-top: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
 .contactUsContainer {
-    padding: 2%;
-    flex-direction: column;
+    /* padding: 2%; */
+    /* flex-direction: column; */
+    /* margin-top: 50px;
+    margin-left: 15%;
+    margin-right: 15%; */
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    justify-content: space-between;
 }
 
 .contactUsMain {
-    max-width: 40%;
+    width: 100%;
     margin: auto;
+    min-width: 60%;
+    align-self: flex-end;
 }
 
 input, textarea {
@@ -91,9 +104,38 @@ input#contactUsSubmitButton {
     margin: 0;
     min-width: 0;
     outline: 0;
-    padding: 5px 1.5rem 5px 1.5rem;
     vertical-align: baseline;
     width: 12vh;
     height: 5vh;
     border: 1px solid #fe4349;
+}
+
+.contactUsText {
+    padding-left: 1%;
+    padding-right: 1%;
+    color: black;
+    font-family: Roboto;
+    font-size: 16px;
+    /* font-weight: 300; */
+    margin-left: 10px;
+    /* width: 100%; */
+    width: fit-content;
+    color: #ff4252;
+    margin-bottom: 10px;
+}
+
+.contactUsTextContainer {
+    font-family: Roboto;
+    /* line-height: 1; */
+    width: 220px;
+    /* text-align: right; */
+    display: flex;
+    align-content: center;
+    height: fit-content;
+    padding: 1px;
+}
+
+.contactUsInfo {
+    margin-left: 40px;
+    margin-top: 80px;
 }

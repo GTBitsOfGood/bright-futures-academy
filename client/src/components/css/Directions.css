@@ -1,0 +1,46 @@
+.directionsContainer {
+  margin-top: 50px;
+  display: block;
+  margin-bottom: 100px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.locationTitleText {
+  text-align: left;
+  color: #4a4a4a;
+  font-size: 24px;
+  font: Roboto;
+  font-weight: bold;
+}
+
+.locationAddressText {
+  text-align: left;
+  color: #5e6a6e;
+  font-size: 16px;
+  margin-bottom: 5px;
+  font: Roboto;
+  font-weight: 100px;
+}
+
+.mapMarkerIcon {
+  font-size: 32px;
+  margin-left: 10px;
+}
+
+.directionsTitleContainer {
+  align-content: center;
+  width: fit-content;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.singleLocationContainer {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.allLocationsContainer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}

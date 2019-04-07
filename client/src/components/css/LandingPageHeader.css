@@ -22,13 +22,13 @@
     height: 75px;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 .phoneDigits {
-    padding-left: 1%;
-    padding-right: 1%;
+    padding-left: 2px;
+    padding-right: 2px;
     color: black;
-    font-family: Roboto-Light;
+    font-family: Roboto;
     font-size: 16px;
-    font-weight: 300;
     margin: 0px;
     width: 100%;
 }
