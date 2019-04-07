@@ -25,3 +25,4 @@ export { default as ContactUs } from './ContactUs';
 export { default as Snackbar } from './Snackbar';
 export { default as Academics } from './Academics';
 export { default as Leadership } from './Leadership';
+export { default as Directions } from './Directions';
