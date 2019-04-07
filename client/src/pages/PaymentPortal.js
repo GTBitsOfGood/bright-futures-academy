@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { PrimaryNavBar, StudentCard, AnnouncementList } from './../components';
+import { PrimaryNavBar, StudentCard, AnnouncementList } from '../components';
 import {Button} from 'reactstrap';
 import './css/ParentPortal.css';
 import { connect } from 'react-redux';  
 import PropTypes from "prop-types";
-import {ReactIsInDevelomentMode} from './../components/Utils';
+import {ReactIsInDevelomentMode} from '../components/Utils';
 
 //TODO: Figure out he correct URL's for Production
 const API_STUDENT_DEV = "http://localhost:5000/api/student/"
@@ -18,7 +18,8 @@ class PaymentPortal extends Component {
     super(props);
 
     this.state = {
-      students: []
+      students: [],
+      householdId: ''
     }
 
   }
@@ -30,15 +31,23 @@ class PaymentPortal extends Component {
   componentDidMount(){
     //TODO: Figure out how it is being passed later : this.props.houseHoldID
     //TODO: Add logic for retrieving householdID
-    //TODO: Replact 5c8680ffad46ec4f26e7b46f with householdID from redux
-    let urlToFetch = API_STUDENT_PROD+ '5ca780096bf2281dd453bdd8';
+    //TODO: Verify jwt with household id. Before demo day.
+
+    const householdId = this.props.auth.household.householdId;
+
+    this.setState({
+      householdId: householdId
+    })
+
+    let urlToFetch = API_STUDENT_PROD + householdId;
+    
     if (ReactIsInDevelomentMode()){
       //Fetch the student list
-      urlToFetch = API_STUDENT_DEV + '5ca780096bf2281dd453bdd8';
-
+      urlToFetch = API_STUDENT_DEV + householdId;
     }
     fetch(urlToFetch)
     .then(response => {if (response.status !== 404) {
+      // TODO: Fix this, it'll break our shit in the future.
       return response.json();
     } else {
       return []
@@ -66,12 +75,13 @@ class PaymentPortal extends Component {
 }
 
 PaymentPortal.propTypes = {
-  household: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  // auth: state.auth,
-  // errors: state.errors
+  auth: state.auth,
+  errors: state.errors
 });
 
 export default connect(

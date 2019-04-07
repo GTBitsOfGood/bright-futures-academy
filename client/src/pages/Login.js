@@ -52,7 +52,6 @@ class Login extends Component {
       householdId: this.state.householdId,
       password: this.state.password
     };
-    console.log(householdData);
     // TODO: call the api route for login
     this.props.loginHousehold(householdData);
   };

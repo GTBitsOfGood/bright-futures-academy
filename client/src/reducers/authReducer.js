@@ -15,7 +15,6 @@ const initialState = {
 export default function(state = initialState, action) {
     switch (action.type) {
         case SET_CURRENT_HOUSEHOLD: // setting household as authenticated
-            debugger;
             return {
                 ...state,
                 isAuthenticated: !isEmpty(action.payload),
