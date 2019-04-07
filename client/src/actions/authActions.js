@@ -37,7 +37,7 @@ export const loginHousehold = householdData => dispatch => {
       const decoded = jwt_decode(token);
 
       // Set current household
-      dispatch(setCurrentHousehold(decoded, householdData.householdId));
+      dispatch(setCurrentHousehold(decoded));
     })
     .catch(err =>
       dispatch({
@@ -50,10 +50,10 @@ export const loginHousehold = householdData => dispatch => {
 /**
  * Set logged in household
  */
-export const setCurrentHousehold = (decoded, householdId) => {
+export const setCurrentHousehold = (decoded) => {
   return {
     type: SET_CURRENT_HOUSEHOLD,
-    payload: decoded
+    payload: decoded,
   };
 };
 
