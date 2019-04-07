@@ -1,0 +1,114 @@
+.card-container {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 10%;
+}
+
+.title-text-container {
+  height: 50%;
+  /* border: solid 1px #979797; */
+  margin:auto;
+  overflow:hidden;
+  text-align:center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.Meet-Our-Teachers {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  align-items: center;
+  justify-content: left;
+  left: 50%;
+  padding-bottom: 2%
+}
+
+.See-More {
+  width: 112px;
+  height: 33px;
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  align-self: baseline;
+  letter-spacing: normal;
+  color: #5e6a6e;
+}
+
+.teacher-profile-container {
+  height: 50%;
+  margin:auto;
+  overflow:hidden;
+  text-align:center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.teacher-profile {
+  width: 20%;
+  height: 275px;
+  background-color: rgba(254, 67, 73, 0.54);
+  background-image: url('./../../images/logo.png')
+}
+
+.Teacher-Name {
+  position: relative;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Teacher-Role {
+  position: relative;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Teacher-Bio {
+  position: relative;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

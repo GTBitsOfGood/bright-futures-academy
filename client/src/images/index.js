@@ -1,3 +1,15 @@
-import logoImage from "./logo.png"
-
-export default [logoImage]
+export { default as logoImage }  from "./logo.png";
+export { default as infographic } from "./infographic.jpg";
+export { default as gradCap } from "./graduation.png";
+export { default as book } from "./language.png";
+export { default as trophy } from "./trophy.png";
+export { default as teacher0 } from './teacher0.jpg'
+export { default as teacher1 } from './teacher1.jpg'
+export { default as teacher2 } from './teacher2.jpg'
+export { default as teacher3 } from './teacher3.jpg'
+export { default as teacher4 } from './teacher4.jpg'
+export { default as teacher5 } from './teacher5.jpg'
+export { default as teacher6 } from './teacher6.jpg'
+export { default as teacher7 } from './teacher7.jpg'
+export { default as teacher8 } from './teacher8.jpg'
+export { default as teacher9 } from './teacher9.jpg'

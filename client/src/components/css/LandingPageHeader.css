@@ -1,0 +1,47 @@
+.icons {
+    padding-top: 2%;
+    padding-left: 2%;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.phoneNumber {
+    font-family: Roboto-Light;
+    line-height: 1;
+    width: 220px;
+    text-align: right;
+    align-items: flex-end;
+    display: flex;
+}
+
+.phoneSpace {
+    display:inline-block;
+    align-content: center;
+    height: 75px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.phoneDigits {
+    padding-left: 2px;
+    padding-right: 2px;
+    color: black;
+    font-family: Roboto;
+    font-size: 16px;
+    margin: 0px;
+    width: 100%;
+}
+
+.businessIcons {
+    width: 200px;
+    justify-content: space-between;
+}
+
+.businessIcons * {
+    margin-right: 5%;
+}
+
+.logo {
+    justify-content: left;
+}

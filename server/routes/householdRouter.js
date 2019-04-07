@@ -1,6 +1,7 @@
 // Load Household model
 var Household = require('../models/household');
 var express = require('express');
+const util = require('../utils/routerHelpers')
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../config/keys.js");
@@ -66,18 +67,23 @@ householdRouter.post("/login", (req, res) => {
 * POST: create a new household
 */
 householdRouter.route('/')
-    .get((req, res) => {
+    .get((req, res, next) => {
         Household.find({}, (err, households) => {
             if (err) {
-                return res.status(500).json(err)
+                return next(err)
             }
-            res.json(households)
+            res.status(200).json(households)
         })
     })
     .post((req, res) => {
         let household = new Household(req.body)
-        household.save()
-        res.status(201).json(household)
+        household.save((err) => {
+            if (err) {
+              return next(err)
+            }
+            res.status(201).json(household)
+
+        })
     })
 
 /**
@@ -85,13 +91,24 @@ householdRouter.route('/')
 * GET: get the household corresponding to the given id
 */
 householdRouter.route('/:householdId')
-    .get((req, res) => {
-        Household.findById(req.params.householdId, (err, household) => {
+    .get((req, res, next) => {
+        const { householdId } = req.params
+        util.getHousehold(householdId, (err, household) => {
             if (err) {
-                return res.status(500).json(err)
+                return next(err)
             }
-            res.json(household)
+            res.status(200).json(household)
         })
     })
+    .delete((req, res, next) => {
+        const { householdId } = req.params
+        Household.findOneAndDelete(householdId, (err, household) => {
+            if (err) {
+                return next(err)
+            }
+            res.status(200).json(household)
+        })
+    })
+
 
 module.exports = householdRouter;

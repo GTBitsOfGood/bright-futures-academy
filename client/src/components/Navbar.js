@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logoImage from './../images'
+import { logoImage } from './../images'
 import {
   Collapse,
   Navbar,
@@ -12,9 +12,13 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem, Button } from 'reactstrap';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { logoutHousehold } from "../actions/authActions";
+
 
 /**
- * Container for the navbar component. 
+ * Container for the navbar component.
  * Currently shows a basic navbar with dummy links since there are no pages.
  */
 class PrimaryNavBar extends Component {
@@ -26,13 +30,18 @@ class PrimaryNavBar extends Component {
     this.dropdownOneToggle = this.dropdownOneToggle.bind(this);
     this.dropdownTwoToggle = this.dropdownTwoToggle.bind(this);
     this.dummyToggle = this.dummyToggle.bind(this)
-    
+
     this.state = {
-      isOpen: false, 
-      isDropdownOneOpen: false, 
+      isOpen: false,
+      isDropdownOneOpen: false,
       isDropdownTwoOpen: false
     };
   }
+
+  onLogoutClick = e => {
+    e.preventDefault();
+    this.props.logoutHousehold();
+  };
 
   toggle() {
     this.setState({
@@ -54,7 +63,7 @@ class PrimaryNavBar extends Component {
         isDropdownOneOpen : !this.state.isDropdownOneOpen
       });
   }
-  
+
   /**
    * Function controlling the Payment dropdown
    */
@@ -77,7 +86,7 @@ class PrimaryNavBar extends Component {
            * Temporary logo
            */
         }
-          <NavbarBrand href="/"><img alt="Brand" src={logoImage[0]} height="80px"/></NavbarBrand>
+          <NavbarBrand href="/"><img alt="Brand" src={logoImage} height="80px"/></NavbarBrand>
           {
             /**
              * Allows toggling the navbar for small(mobile) screens
@@ -122,20 +131,20 @@ class PrimaryNavBar extends Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                      <a href='/makepayment'>Make a payment</a>
+                      <a href='/makePayment'>Make a payment</a>
                   </DropdownItem>
                   <DropdownItem>
                       <a href='/paymenthistory'>Payment History</a>
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
-          
+
               <NavItem>
                 <NavLink href="/help">Help</NavLink>
               </NavItem>
 
               <NavItem>
-                    <Button>Sign out</Button>
+                    <Button onClick={this.onLogoutClick}>Sign out</Button>
                 </NavItem>
 
             </Nav>
@@ -146,4 +155,16 @@ class PrimaryNavBar extends Component {
   }
 }
 
-export default PrimaryNavBar;
+PrimaryNavBar.propTypes = {
+  logoutHousehold: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutHousehold }
+)(PrimaryNavBar);
