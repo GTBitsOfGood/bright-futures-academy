@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { PrimaryNavBar, StudentCard, AnnouncementList } from './../components';
 import {Button} from 'reactstrap';
 import './css/ParentPortal.css';
+import { connect } from 'react-redux';  
+import PropTypes from "prop-types";
 import {ReactIsInDevelomentMode} from './../components/Utils';
 
 //TODO: Figure out he correct URL's for Production
 const API_STUDENT_DEV = "http://localhost:5000/api/student/"
-const API_STUDENT_PROD = "";
+const API_STUDENT_PROD = "https://bright-futures-academy-dev.herokuapp.com/";
 /**
  * Parent class for Parent portal. Placeholder cards for student information
  */
@@ -29,6 +31,7 @@ class PaymentPortal extends Component {
     //TODO: Figure out how it is being passed later : this.props.houseHoldID
     //TODO: Add logic for retrieving householdID
     //TODO: Replact 5c8680ffad46ec4f26e7b46f with householdID from redux
+    debugger;
     let urlToFetch = API_STUDENT_PROD+ '5c8680ffad46ec4f26e7b46f';
     if (ReactIsInDevelomentMode()){
       //Fetch the student list
@@ -63,4 +66,15 @@ class PaymentPortal extends Component {
   }
 }
 
-export default PaymentPortal;
+PaymentPortal.propTypes = {
+  household: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  // auth: state.auth,
+  // errors: state.errors
+});
+
+export default connect(
+  mapStateToProps
+)(PaymentPortal);

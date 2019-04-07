@@ -23,7 +23,6 @@ export const loginHousehold = householdData => dispatch => {
   } else {
     link = PRODUCTION_SERVER_LINK + '/login';
   }
-
   axios
     .post(link, householdData)
     .then(res => {
@@ -38,7 +37,7 @@ export const loginHousehold = householdData => dispatch => {
       const decoded = jwt_decode(token);
 
       // Set current household
-      dispatch(setCurrentHousehold(decoded));
+      dispatch(setCurrentHousehold(decoded, householdData.householdId));
     })
     .catch(err =>
       dispatch({
@@ -51,7 +50,7 @@ export const loginHousehold = householdData => dispatch => {
 /**
  * Set logged in household
  */
-export const setCurrentHousehold = decoded => {
+export const setCurrentHousehold = (decoded, householdId) => {
   return {
     type: SET_CURRENT_HOUSEHOLD,
     payload: decoded
