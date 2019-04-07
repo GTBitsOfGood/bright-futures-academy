@@ -18,9 +18,9 @@ class About extends Component {
     render() {
         return (
             <div className="aboutBackground">
-                <p className="aboutHeader">
+                <h1 className="aboutHeader">
                     - about -
-                </p>
+                </h1>
                 <p className="aboutDescription">
                     Bright Futures Atlanta focuses on helping youth of limited resources on Atlanta’s Westside by providing the spiritual, educational and familial support that helps them become productive members of society and role models to their peers. Bright Futures Atlanta was formed in 2002 in order to promote the spiritual, academic and physical growth of its youth participants and their families through year-round programs.
                 </p>

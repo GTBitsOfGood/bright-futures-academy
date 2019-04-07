@@ -13,3 +13,4 @@ export { default as teacher6 } from './teacher6.jpg'
 export { default as teacher7 } from './teacher7.jpg'
 export { default as teacher8 } from './teacher8.jpg'
 export { default as teacher9 } from './teacher9.jpg'
+export { default as founders } from "./founders.jpg";
