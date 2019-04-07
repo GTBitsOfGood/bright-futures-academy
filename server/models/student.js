@@ -6,9 +6,7 @@ let Activity = require('./activity')
 let Schema = mongoose.Schema;
 require('mongoose-type-url');
 
-let Activity = require('./activity')
 
-let Schema = mongoose.Schema;
 
 let StudentSchema = new Schema({
     studentId: {
