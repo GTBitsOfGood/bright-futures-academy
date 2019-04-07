@@ -1,0 +1,95 @@
+.academicContainer {
+  margin: 50px;
+  margin-left: 15%;
+  margin-right: 15%;
+  min-width: 70%;
+  justify-content: flex-start;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.title {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: bold;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+.bodyText {
+  font-family: Roboto;
+  font-size: 14px;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+/* Clearfix (clear floats) */
+.teacherContainer::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.teacherItem:hover .teacherPicture {
+  opacity: 0.3; 
+}
+
+.teacherItem:hover .hover {
+  opacity: 1; 
+}
+
+.pictureWrapper {
+  height: fit-content;
+}
+
+.hover {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  height: 100%;
+  text-overflow: ellipsis;
+}
+
+.descriptionText {
+  color: black;
+  font-size: 12px;
+  overflow: auto;
+  text-overflow: ellipsis;
+  height: 100%;
+}
+
+.teacherPicture {
+  width: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.teacherName {
+  font-family: Roboto;
+  font-size: 18px;
+  text-align: center;
+  color: #4a4a4a;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.teacherPosition {
+  font-family: Roboto;
+  font-size: 14px;
+  text-align: center;
+  color: #4a4a4a;
+  margin-bottom: 40px;
+}
+
+.teacherItem {
+  position: relative;
+  width: 50%;
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}

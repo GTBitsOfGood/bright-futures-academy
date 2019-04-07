@@ -7,12 +7,25 @@ import {
   HOUSEHOLD_LOADING
 } from "./types";
 
+import {ReactIsInDevelomentMode} from '../components/Utils';
+
+const DEV_SERVER_LINK = "http://localhost:5000/api/household/"
+const STAGING_SERVER_LINK = "https://bright-futures-academy-staging.herokuapp.com/api/household/"
+const PRODUCTION_SERVER_LINK = "https://bright-futures-academy-dev.herokuapp.com/api/household/"
+
 /**
  * Login - get household token
  */
 export const loginHousehold = householdData => dispatch => {
+  var link = ""
+  if (ReactIsInDevelomentMode()) {
+    link = DEV_SERVER_LINK + '/login';
+  } else {
+    link = PRODUCTION_SERVER_LINK + '/login';
+  }
+
   axios
-    .post("/api/household/login", householdData)
+    .post(link, householdData)
     .then(res => {
       // Save to localStorage
       // Set token to localStorage
@@ -57,7 +70,7 @@ export const setHouseholdLoading = () => {
 /**
  * Log household out
  */
-export const logouthousehold = () => dispatch => {
+export const logoutHousehold = () => dispatch => {
   // Remove token from local storage
   localStorage.removeItem("jwtToken");
 

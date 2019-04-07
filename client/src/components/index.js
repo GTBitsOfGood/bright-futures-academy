@@ -20,3 +20,8 @@ export { default as LandingPageNews } from './LandingPageNews';
 export { default as Calendar } from './Calendar';
 export { default as About } from './About';
 export { default as Leadership } from './Leadership';
+export { default as LandingPageTitleCard } from './LandingPageTitleCard';
+export { default as AboutUsVideo } from './AboutUsVideo';
+export { default as ContactUs } from './ContactUs';
+export { default as Snackbar } from './Snackbar';
+export { default as Academics } from './Academics';

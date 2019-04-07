@@ -1,0 +1,28 @@
+.backgroundImage {
+    background-size: 100% 100%;
+    top: 0;
+    left: 0;
+    position: relative;
+    z-index: -1;
+    object-fit: contain;
+    overflow: hidden;
+    width: 100%;
+    height: 40em;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    vertical-align: middle;
+    text-align: center;
+    background-image: url("../../images/infographic.jpg");
+}
+
+.imageOverlay {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(177, 74, 77, 0.8);
+    height: 100%;
+    width: 100%;
+    background-size: 100% 100%;
+}

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Footer, About, LandingPageHeader, LandingPageNavbar, Leadership, AboutUsVideo } from './../components';
+import { Footer, Academics, LandingPageHeader, LandingPageNavbar } from './../components';
 
 /**
- * About Us page for general user view on landing page.
+ * Academics page for more information about teachers.
  */
-class AboutUs extends Component {
+class AcademicsPage extends Component {
 
     constructor(props) {
         super(props)
@@ -19,9 +19,7 @@ class AboutUs extends Component {
             <div>
                 <LandingPageHeader />
                 <LandingPageNavbar />
-                <About />
-                <AboutUsVideo />
-                <Leadership />
+                <Academics />
                 <Footer />
             </div>
         );
@@ -29,4 +27,4 @@ class AboutUs extends Component {
 
 }
 
-export default AboutUs;
+export default AcademicsPage;
