@@ -43,12 +43,7 @@ class PayPalConnect extends Component {
                 name: 'PayPal Payment'
             })
         })
-<<<<<<< Updated upstream
             .then(() => this.props.onClickNextPage())
-=======
-        .then((res) => console.log("ok"))
-        // .then(() => this.props.onClickNextPage())
->>>>>>> Stashed changes
     }
 
     onError = (err) => {
