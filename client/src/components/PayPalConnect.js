@@ -20,8 +20,8 @@ class PayPalConnect extends Component {
             // TODO: get all of this information from Redux store
             totalFee: 0.01,
             tax: 0.0,
-            paymentTotal: 0.01,
-            householdId: '5ca7802e6bf2281dd453bdd9',
+            paymentTotal: 0.01, 
+            householdId: '5ca780096bf2281dd453bdd8',
             studentId: '5ca7802e6bf2281dd453bdd9'
         }
     }
@@ -30,7 +30,7 @@ class PayPalConnect extends Component {
         console.log(info)
         const { householdId, studentId } = this.state
         const { amount, id } = info.purchase_units[0]
-        const serverUrl = ReactIsInDevelomentMode()
+        var serverUrl = ReactIsInDevelomentMode()
             ? ACTIVITY_API_DEV
             : ACTIVITY_API_PROD
         serverUrl += `${householdId}/${studentId}/`
@@ -43,7 +43,12 @@ class PayPalConnect extends Component {
                 name: 'PayPal Payment'
             })
         })
+<<<<<<< Updated upstream
             .then(() => this.props.onClickNextPage())
+=======
+        .then((res) => console.log("ok"))
+        // .then(() => this.props.onClickNextPage())
+>>>>>>> Stashed changes
     }
 
     onError = (err) => {
