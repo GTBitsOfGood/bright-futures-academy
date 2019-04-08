@@ -1,3 +1,4 @@
+//component for leadership section of About Us page
 import React, { Component } from 'react';
 import { founders } from './../images'
 import BoardOfDirectors from './BoardOfDirectors';

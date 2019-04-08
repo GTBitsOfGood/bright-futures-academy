@@ -1,3 +1,4 @@
+//component for descriptions of each member of the board of directors
 import React, { Component } from 'react';
 import './css/BoardOfDirectors.css';
 
