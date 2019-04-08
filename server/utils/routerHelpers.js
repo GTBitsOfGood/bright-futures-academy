@@ -1,7 +1,6 @@
 const Household = require('../models/household');
 
 function getHousehold(householdId, callback) {
-    // householdId = new ObjectId(householdId)
     Household.findById(householdId, (err, household) => {
         if (err) {
             err.statusCode = 500
