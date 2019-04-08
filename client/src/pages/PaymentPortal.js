@@ -4,6 +4,7 @@ import {Button} from 'reactstrap';
 import './css/ParentPortal.css';
 import { connect } from 'react-redux';  
 import PropTypes from "prop-types";
+import jwt_decode from "jwt-decode";
 import {ReactIsInDevelomentMode} from '../components/Utils';
 
 //TODO: Figure out he correct URL's for Production
@@ -31,15 +32,17 @@ class PaymentPortal extends Component {
   componentDidMount(){
     //TODO: Figure out how it is being passed later : this.props.houseHoldID
     //TODO: Add logic for retrieving householdID
-    //TODO: Verify jwt with household id. Before demo day.
+
 
     const householdId = this.props.auth.household.householdId;
-
+    const idFromJwt = jwt_decode(localStorage.getItem('jwtToken'));
+    
     this.setState({
       householdId: householdId
     })
 
-    let urlToFetch = API_STUDENT_PROD + householdId;
+    if (idFromJwt.householdId == this.state.householdId) {
+      let urlToFetch = API_STUDENT_PROD + householdId;
     
     if (ReactIsInDevelomentMode()){
       //Fetch the student list
@@ -53,6 +56,7 @@ class PaymentPortal extends Component {
       return []
     }})
     .then(data => this.setState({students: data}))
+    }
 
   }
 
