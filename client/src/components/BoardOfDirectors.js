@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 //component for descriptions of each member of the board of directors
+=======
+>>>>>>> 465aaa67c26e82e3d845e1acedfc33090b79fc86
 import React, { Component } from 'react';
 import './css/BoardOfDirectors.css';
 

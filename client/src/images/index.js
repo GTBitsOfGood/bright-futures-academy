@@ -3,6 +3,7 @@ export { default as infographic } from "./infographic.jpg";
 export { default as gradCap } from "./graduation.png";
 export { default as book } from "./language.png";
 export { default as trophy } from "./trophy.png";
+export { default as founders } from "./founders.jpg";
 export { default as teacher0 } from './teacher0.jpg'
 export { default as teacher1 } from './teacher1.jpg'
 export { default as teacher2 } from './teacher2.jpg'
