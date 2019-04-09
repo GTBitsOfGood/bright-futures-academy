@@ -1,0 +1,90 @@
+h1 {
+    font-family: RobotoSlab;
+    font-size: 48px;
+    font-weight: bold;
+    color: #222222;
+}
+
+.Leadership {
+    margin-left: 25%;
+}
+
+.Leadership-Background {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.founders {
+    display: flex;
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+.background {
+    margin-bottom: 5%;
+}
+
+.founders-description {
+    display: inline-block;
+    margin-left: 10%;
+    width: 50%;
+}
+
+.board-of-directors {
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-right: 15%;
+}
+
+.board-of-directors top {
+    margin-left: 20%;
+    margin-top: 2%;
+    margin-right: 15%;
+}
+
+div p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.69;
+    letter-spacing: normal;
+    color: #222222;
+    text-align: left;
+}
+
+div h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #222222;
+    font-weight: bold;
+}
+
+div h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #222222;
+    font-weight: bold;
+}
+
+div h2 {
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    font-size: 2em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #222222;
+}
