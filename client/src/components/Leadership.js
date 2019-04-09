@@ -1,12 +1,11 @@
-<<<<<<< HEAD
-//component for leadership section of About Us page
-=======
->>>>>>> 465aaa67c26e82e3d845e1acedfc33090b79fc86
 import React, { Component } from 'react';
 import { founders } from './../images'
 import BoardOfDirectors from './BoardOfDirectors';
 import './css/Leadership.css';
 
+/**
+ * Component for leadership section of About Us page
+ */
 class Leadership extends Component {
     constructor(props) {
         super(props)
