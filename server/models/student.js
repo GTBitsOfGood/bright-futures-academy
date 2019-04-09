@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 const Activity = require('./activity').schema;
-const Schema = mongoose.Schema;
 require('mongoose-type-url');
 
-let StudentSchema = new Schema({
+let StudentSchema = new mongoose.Schema({
     studentId: {
         type: Number,
         required: true

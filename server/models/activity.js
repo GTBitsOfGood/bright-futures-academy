@@ -1,7 +1,6 @@
 let mongoose = require('mongoose');
-let Schema = mongoose.Schema;
 
-activitySchema = new Schema({
+activitySchema = new mongoose.Schema({
     date: {
         type: Date,
         required: true,
@@ -14,6 +13,9 @@ activitySchema = new Schema({
     name: {
         type: String,
         required: true
+    },
+    paypalId: {
+        type: String,
     }
 })
 

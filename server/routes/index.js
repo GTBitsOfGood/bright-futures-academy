@@ -8,9 +8,7 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
   //This is temporary
   // TODO: replace route with proper action
-
-  res.send(`<form action="/pay/payment/123/4801782027" method="post">
-
+  res.send(`<form action="api/payment/123/4801782027" method="post">
   <input type="submit" value="Buy">
 </form>`)
 });

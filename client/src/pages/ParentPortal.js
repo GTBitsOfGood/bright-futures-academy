@@ -29,10 +29,10 @@ class PaymentPortal extends Component {
     //TODO: Figure out how it is being passed later : this.props.houseHoldID
     //TODO: Add logic for retrieving householdID
     //TODO: Replact 5c8680ffad46ec4f26e7b46f with householdID from redux
-    let urlToFetch = API_STUDENT_PROD+ '5c8680ffad46ec4f26e7b46f';
+    let urlToFetch = API_STUDENT_PROD+ '5ca780096bf2281dd453bdd8';
     if (ReactIsInDevelomentMode()){
       //Fetch the student list
-      urlToFetch = API_STUDENT_DEV + '5c8680ffad46ec4f26e7b46f';
+      urlToFetch = API_STUDENT_DEV + '5ca780096bf2281dd453bdd8';
 
     }
     fetch(urlToFetch)

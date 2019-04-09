@@ -1,12 +1,8 @@
 let mongoose = require('mongoose');
-let Student = require('./student').schema;
-let Schema = mongoose.Schema;
+let Student = require('./student')
 
-let HouseholdSchema = new Schema({
-    students: [Student],
-    paypalId: {
-        type: String
-    },
+let HouseholdSchema = new mongoose.Schema({
+    students: [Object],
     householdId: {
         type: String,
         required: true
