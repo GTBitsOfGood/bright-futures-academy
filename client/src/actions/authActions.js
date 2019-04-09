@@ -7,7 +7,7 @@ import {
   HOUSEHOLD_LOADING
 } from "./types";
 
-import {ReactIsInDevelomentMode} from '../components/Utils';
+import { ReactIsInDevelomentMode } from '../components/Utils';
 
 const DEV_SERVER_LINK = "http://localhost:5000/api/household/"
 const STAGING_SERVER_LINK = "https://bright-futures-academy-staging.herokuapp.com/api/household/"
@@ -21,7 +21,7 @@ export const loginHousehold = householdData => dispatch => {
   if (ReactIsInDevelomentMode()) {
     link = DEV_SERVER_LINK + '/login';
   } else {
-    link = PRODUCTION_SERVER_LINK + '/login';
+    link = STAGING_SERVER_LINK + '/login';
   }
 
   axios
