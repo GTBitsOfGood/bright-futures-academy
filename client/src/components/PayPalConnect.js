@@ -10,7 +10,7 @@ import { ReactIsInDevelomentMode } from './../components/Utils';
  */
 
 const ACTIVITY_API_DEV = "http://localhost:5000/api/activity/";
-const ACTIVITY_API_PROD = "";
+const ACTIVITY_API_PROD = "https://bright-futures-academy-dev.herokuapp.com/api/activity/";
 
 class PayPalConnect extends Component {
     constructor(props) {
