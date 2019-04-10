@@ -20,7 +20,6 @@ class PaymentPortal extends Component {
 
     this.state = {
       students: [],
-      householdId: ''
     }
 
   }
@@ -33,31 +32,25 @@ class PaymentPortal extends Component {
     //TODO: Figure out how it is being passed later : this.props.houseHoldID
     //TODO: Add logic for retrieving householdID
 
+    const { householdId, mongooseId } = this.props.auth.household
+    const idFromJwt = jwt_decode(localStorage.getItem('jwtToken'))
 
-    const householdId = this.props.auth.household.householdId;
-    const idFromJwt = jwt_decode(localStorage.getItem('jwtToken'));
-    
-    this.setState({
-      householdId: householdId
-    })
+    if (idFromJwt.householdId === householdId) {
+      const urlToFetch = ReactIsInDevelomentMode()
+        ? API_STUDENT_DEV + mongooseId
+        : API_STUDENT_PROD + mongooseId
 
-    if (idFromJwt.householdId == this.state.householdId) {
-      let urlToFetch = API_STUDENT_PROD + householdId;
-    
-    if (ReactIsInDevelomentMode()){
-      //Fetch the student list
-      urlToFetch = API_STUDENT_DEV + householdId;
+      fetch(urlToFetch)
+        .then(response => {
+          if (response.status === 404 || response.status === 500) {
+            alert("Could not load students. Please try again.")
+            return []
+          } else {
+            return response.json()
+          }
+        })
+        .then(data => this.setState({students: data}))
     }
-    fetch(urlToFetch)
-    .then(response => {if (response.status !== 404) {
-      // TODO: Fix this, it'll break our shit in the future.
-      return response.json();
-    } else {
-      return []
-    }})
-    .then(data => this.setState({students: data}))
-    }
-
   }
 
  
