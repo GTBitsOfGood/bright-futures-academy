@@ -23,7 +23,6 @@ export const loginHousehold = householdData => dispatch => {
   } else {
     link = PRODUCTION_SERVER_LINK + '/login';
   }
-
   axios
     .post(link, householdData)
     .then(res => {
@@ -51,10 +50,10 @@ export const loginHousehold = householdData => dispatch => {
 /**
  * Set logged in household
  */
-export const setCurrentHousehold = decoded => {
+export const setCurrentHousehold = (decoded) => {
   return {
     type: SET_CURRENT_HOUSEHOLD,
-    payload: decoded
+    payload: decoded,
   };
 };
 

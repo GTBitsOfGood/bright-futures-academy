@@ -37,7 +37,9 @@ householdRouter.post("/login", (req, res) => {
           // User matched
           // Create JWT Payload
           const payload = {
-            householdId: household.householdId // might cause error with passport.js
+            // eventually householdId should just be called username to avoid confusion
+            householdId: household.householdId, // might cause error with passport.js
+            mongooseId: household._id 
           };
   // Sign token
           jwt.sign(
