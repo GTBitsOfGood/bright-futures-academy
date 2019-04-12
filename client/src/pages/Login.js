@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';  
 import PropTypes from "prop-types";
 import { loginHousehold } from "../actions/authActions";
-import './css/Login.css';
-
-import { logoImage } from './../images'
 
 /**
  * Login page for parents
@@ -60,24 +57,26 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="loginBackground">
-        <div className="loginBox">
-          <img alt="#" src={logoImage} className="loginBFALogo"/>
-          <div className="verticalLine"/>
-            <form className="loginForm" noValidate onSubmit={this.onSubmit}>
-              <h3 className="parentLogin">
-                Parent Log in
-              </h3>
+      <div className="container">
+        <div style={{ marginTop: "4rem" }} className="row">
+          <div className="col s8 offset-s2">
+            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+              <h4>
+                <b>Login to Bright Futures Academy</b>
+              </h4>
+              <p className="grey-text text-darken-1">
+                Don't have an account? <a href={"mailto:brightFuturesAcademyDev@gmail.com"}>Contact the Administrator</a>
+              </p>
+            </div>
+            <form noValidate onSubmit={this.onSubmit}>
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
                   value={this.state.householdId}
                   error={errors.householdId}
                   id="householdId"
-                  style={{"border": "none", "border-bottom": 1+"px solid"}}
-                  placeholder="Email"
-                  onFocus="if(this.value==this.defaultValue)this.value='';"                  
                 />
+                <label htmlFor="householdId">householdId</label>
               </div>
               <div className="input-field col s12">
                 <input
@@ -86,24 +85,25 @@ class Login extends Component {
                   error={errors.password}
                   id="password"
                   type="password"
-                  style={{"border": "none", "border-bottom": 1+"px solid"}}
-                  placeholder="Password"
-                  onFocus="if(this.value==this.defaultValue)this.value='';"
                 />
+                <label htmlFor="password">Password</label>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <input id="loginSubmitButton" type="submit" value="Submit" onClick={this.onSubmit}/>
+                <button
+                  style={{
+                    width: "150px",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px",
+                    marginTop: "1rem"
+                  }}
+                  type="submit"
+                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                >
+                  Login
+                </button>
               </div>
-              <a className="forgotUsernameText" href="#">
-              {/* TODO: Add links to this to redirect to */}
-                Forgot Username / Password?
-              </a>
-              <p></p>
-              <a className="forgotUsernameText" href="#">
-              {/* TODO: Add links to this to redirect to */}
-                Get your account →
-              </a>
             </form>
+          </div>
         </div>
       </div>
     );
