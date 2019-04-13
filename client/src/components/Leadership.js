@@ -19,18 +19,18 @@ class Leadership extends Component {
         return (
             <div className="background">
                 <div className="Leadership-Background">
-                    <h1>- LEADERSHIP -</h1>
+                    <h1 className="leadershipHeader h1Div">- LEADERSHIP -</h1>
                 </div>
                 <div className = "founders">
                     <img src={ founders } alt="Founders" width="25%" height="25%"/>
                     <div className="founders-description">
-                        <h2>Founders</h2>
-                        <h3>Philip & Gail Ross</h3>
-                        <p>This is a place holder for more information about founders needed from BFA. This is a place holder for more information about founders needed from BFA. This is a place holder for more information about founders needed from BFA. This is a place holder for more information about founders needed from BFA. This is a place holder for more information about founders needed from BFA. This is a place holder for more information about founders needed from BFA.</p>
+                        <h2 className="h2Div">Founders</h2>
+                        <h3 className="h3Div">Philip & Gail Ross</h3>
+                        <p className="pDiv">This is a place holder for more information about founders needed from BFA. This is a place holder for more information about founders needed from BFA. This is a place holder for more information about founders needed from BFA. This is a place holder for more information about founders needed from BFA. This is a place holder for more information about founders needed from BFA. This is a place holder for more information about founders needed from BFA.</p>
                     </div>
                 </div>
                 <div className="board-of-directors top">
-                    <h2>Board of Directors</h2>
+                    <h2 className="h2Div">Board of Directors</h2>
                     <BoardOfDirectors name="Rob Metcalf (Chairman)" position="International Director, JLL"
                     description="Rob leads the Atlanta Region for JLL Brokerage. He provides real estate solutions that create maximum value for his clients. His twenty-seven years’ of experience in the industry coupled with transactions totaling more than 15 million square feet allow him to exceed his client’s expectations, regardless of market conditions. Rob graduated from the University of Illinois with a degree in Finance and from Georgia State with a Masters in Real Estate. He has written numerous articles for the National Real Estate Investor and the Atlanta Business Chronicle. Rob has been recognized in numerous capacities for his success including; Atlanta Commercial Board of Realtors Top 10 Producers, Coldwell Colbert Circle, and CoStar Power Broker Award."/>
                 </div>

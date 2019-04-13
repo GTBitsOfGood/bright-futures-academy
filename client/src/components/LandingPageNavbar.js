@@ -42,13 +42,13 @@ class LandingPageNavbar extends Component {
                             </Link>
                         </form>
                     </p>
-                    <p>
+                    {/* <p>
                         <form action="">
                             <Link to='/admissions'>
                                 <input type="button" className="navbarButton" value="Admissions"/>
                             </Link>
                         </form>
-                    </p>
+                    </p> */}
                     <p>
                         <form action="">
                             <Link to='/events'>
