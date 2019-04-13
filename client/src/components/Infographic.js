@@ -17,20 +17,20 @@ class Infographic extends Component {
             <div className="row">
                 <div className="section">
                     <img src={book} className="icon"/>
-                    <h2>50+</h2>
-                    <p>Active Courses</p>
+                    <h2 className="infographicH2Div">50+</h2>
+                    <p className="infographicPDiv">Active Courses</p>
                 </div>
 
                 <div className="section">
                     <img src={gradCap} className="icon"/>
-                    <h2>200+</h2>
-                    <p>Active Students</p>
+                    <h2 className="infographicH2Div">200+</h2>
+                    <p className="infographicPDiv">Active Students</p>
                 </div>
 
                 <div className="section">
                     <img src={trophy} className="icon"/>
-                    <h2>10+</h2>
-                    <p>Awards</p>
+                    <h2 className="infographicH2Div">10+</h2>
+                    <p className="infographicPDiv">Awards</p>
                 </div>
             </div>
         </div>
