@@ -9,7 +9,7 @@ import {ReactIsInDevelomentMode} from '../components/Utils';
 
 //TODO: Figure out he correct URL's for Production
 const API_STUDENT_DEV = "http://localhost:5000/api/student/"
-const API_STUDENT_PROD = "https://bright-futures-academy-dev.herokuapp.com/";
+const API_STUDENT_PROD = "https://bright-futures-academy-dev.herokuapp.com/api/student/";
 /**
  * Parent class for Parent portal. Placeholder cards for student information
  */

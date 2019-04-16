@@ -5,7 +5,7 @@ import {ReactIsInDevelomentMode} from './Utils';
 
 //TODO: Determine the Production url for the api
 const API_ANNOUNCEMENTS_DEV = "http://localhost:5000/api/schoolInfo/announcements"
-const API_ANNOUNCEMENTS_PROD = "https://bright-futures-academy-dev.herokuapp.com/";
+const API_ANNOUNCEMENTS_PROD = "https://bright-futures-academy-dev.herokuapp.com/api/schoolInfo/announcements";
 
 /**
  * Container class for Announcents for the parent portal page.
