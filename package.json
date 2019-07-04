@@ -16,7 +16,9 @@
     "heroku-postbuild": "cd client && npm install --only=dev -f && npm install -f && rm -rf ~/node_modules/babel-jest ~/node_modules/jest && npm run build",
     "server": "nodemon server/app.js",
     "client": "cd client && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "npm": "~6.7.0",
@@ -25,6 +27,8 @@
   "dependencies": {
     "concurrently": "^4.1.0",
     "dotenv": "^6.2.0",
-    "mongoose": "^5.4.14"
-  }
+    "mongoose": "^5.4.14",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
