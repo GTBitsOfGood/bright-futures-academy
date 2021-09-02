@@ -25,6 +25,6 @@
   "dependencies": {
     "concurrently": "^4.1.0",
     "dotenv": "^6.2.0",
-    "mongoose": "^5.4.14"
+    "mongoose": "^6.0.4"
   }
 }
