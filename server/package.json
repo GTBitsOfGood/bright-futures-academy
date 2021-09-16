@@ -11,7 +11,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
-    "concurrently": "^4.1.0",
+    "concurrently": "^6.0.0",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
@@ -24,13 +24,13 @@
     "mongoose-type-url": "^1.0.5",
     "morgan": "~1.9.0",
     "nodemailer": "^5.1.1",
-    "nodemon": "^1.18.9",
+    "nodemon": "^2.0.3",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "paypal-rest-sdk": "^1.8.1",
     "validator": "^10.11.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "nodemon": "^2.0.3"
   }
 }
