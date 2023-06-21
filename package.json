@@ -23,7 +23,7 @@
     "node": "~11.7.0"
   },
   "dependencies": {
-    "concurrently": "^4.1.0",
+    "concurrently": "^6.2.2",
     "dotenv": "^6.2.0",
     "mongoose": "^5.4.14"
   }
