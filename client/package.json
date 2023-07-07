@@ -25,7 +25,7 @@
         "react-paypal-button-v2": "^2.3.1",
         "react-redux": "^6.0.1",
         "react-router-dom": "^4.3.1",
-        "react-scripts": "^2.1.5",
+        "react-scripts": "^3.0.0",
         "react-step-progress-bar": "^1.0.3",
         "reactstrap": "^7.1.0",
         "redux": "^4.0.1",
